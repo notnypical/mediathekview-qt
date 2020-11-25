@@ -33,6 +33,9 @@ public:
 
     void setWindowGeometry(const QByteArray &geometry);
     QByteArray windowGeometry() const;
+
+    void setWindowState(const QByteArray &state);
+    QByteArray windowState() const;
 };
 
 #endif // MAIN_WINDOW_H

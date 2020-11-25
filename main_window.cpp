@@ -52,3 +52,17 @@ QByteArray MainWindow::windowGeometry() const
 {
     return saveGeometry();
 }
+
+
+void MainWindow::setWindowState(const QByteArray &state)
+{
+    if (!state.isEmpty()) {
+        restoreState(state);
+    }
+}
+
+
+QByteArray MainWindow::windowState() const
+{
+    return saveState();
+}
