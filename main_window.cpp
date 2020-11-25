@@ -19,13 +19,36 @@
 
 #include "main_window.h"
 
+#include <QScreen>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
     setWindowIcon(QIcon(QStringLiteral(":/icons/apps/16/mediathekview.svg")));
+
+    setWindowGeometry(QByteArray());
 }
 
 MainWindow::~MainWindow()
 {
+}
+
+
+void MainWindow::setWindowGeometry(const QByteArray &geometry)
+{
+    if (!geometry.isEmpty()) {
+        restoreGeometry(geometry);
+    }
+    else {
+        const QRect availableGeometry = screen()->availableGeometry();
+        resize(availableGeometry.width() * 2/3, availableGeometry.height() * 2/3);
+        move((availableGeometry.width() - width()) / 2, (availableGeometry.height() - height()) / 2);
+    }
+}
+
+
+QByteArray MainWindow::windowGeometry() const
+{
+    return saveGeometry();
 }

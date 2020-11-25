@@ -30,6 +30,9 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+    void setWindowGeometry(const QByteArray &geometry);
+    QByteArray windowGeometry() const;
 };
 
 #endif // MAIN_WINDOW_H
