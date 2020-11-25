@@ -20,6 +20,7 @@
 #include "main_window.h"
 
 #include <QApplication>
+#include <QCommandLineParser>
 
 
 int main(int argc, char *argv[])
@@ -30,6 +31,12 @@ int main(int argc, char *argv[])
     app.setApplicationName(QStringLiteral("MediathekView-Qt"));
     app.setApplicationDisplayName(QStringLiteral("MediathekView-Qt"));
     app.setApplicationVersion(QStringLiteral("0.1.0"));
+
+    QCommandLineParser parser;
+    parser.setApplicationDescription(QStringLiteral("%1 - %2").arg(app.applicationName(), QStringLiteral("A front-end tool for the MediathekView database")));
+    parser.addHelpOption();
+    parser.addVersionOption();
+    parser.process(app);
 
     MainWindow window;
     window.show();
