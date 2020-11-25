@@ -25,6 +25,11 @@
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
+    app.setOrganizationName(QStringLiteral("NotNypical"));
+    app.setOrganizationDomain(QStringLiteral("https://notnypical.github.io"));
+    app.setApplicationName(QStringLiteral("MediathekView-Qt"));
+    app.setApplicationDisplayName(QStringLiteral("MediathekView-Qt"));
+    app.setApplicationVersion(QStringLiteral("0.1.0"));
 
     MainWindow window;
     window.show();
