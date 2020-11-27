@@ -62,6 +62,13 @@ void MainWindow::createActions()
     m_actionPreferences->setToolTip(QStringLiteral("Customize the appearance and behavior of the application"));
     connect(m_actionPreferences, &QAction::triggered, this, &MainWindow::onActionPreferencesTriggered);
 
+    m_actionQuit = new QAction(QStringLiteral("Quit"), this);
+    m_actionQuit->setObjectName(QStringLiteral("actionQuit"));
+    m_actionQuit->setIcon(QIcon::fromTheme(QStringLiteral("application-exit"), QIcon(QStringLiteral(":/icons/actions/16/application-exit.svg"))));
+    m_actionQuit->setShortcut(QKeySequence::Quit);
+    m_actionQuit->setToolTip(QStringLiteral("Quit the application [%1]").arg(m_actionQuit->shortcut().toString(QKeySequence::NativeText)));
+    connect(m_actionQuit, &QAction::triggered, this, &MainWindow::close);
+
 }
 
 
@@ -74,6 +81,8 @@ void MainWindow::createMenus()
     menuApplication->addAction(m_actionColophon);
     menuApplication->addSeparator();
     menuApplication->addAction(m_actionPreferences);
+    menuApplication->addSeparator();
+    menuApplication->addAction(m_actionQuit);
 
 }
 
@@ -85,6 +94,8 @@ void MainWindow::createToolbars()
     toolbarApplication->setObjectName(QStringLiteral("toolbarApplication"));
     toolbarApplication->addAction(m_actionAbout);
     toolbarApplication->addAction(m_actionPreferences);
+    toolbarApplication->addSeparator();
+    toolbarApplication->addAction(m_actionQuit);
 
 }
 
