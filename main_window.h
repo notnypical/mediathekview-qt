@@ -36,6 +36,10 @@ public:
 
     void setWindowState(const QByteArray &state);
     QByteArray windowState() const;
+
+private:
+    void createMenus();
+    void createToolbars();
 };
 
 #endif // MAIN_WINDOW_H

@@ -19,7 +19,9 @@
 
 #include "main_window.h"
 
+#include <QMenuBar>
 #include <QScreen>
+#include <QToolBar>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -27,11 +29,32 @@ MainWindow::MainWindow(QWidget *parent)
 {
     setWindowIcon(QIcon(QStringLiteral(":/icons/apps/16/mediathekview.svg")));
 
+    createMenus();
+    createToolbars();
+
     setWindowGeometry(QByteArray());
 }
 
 MainWindow::~MainWindow()
 {
+}
+
+
+void MainWindow::createMenus()
+{
+    // Menu: Application
+    auto *menuApplication = menuBar()->addMenu(QStringLiteral("Application"));
+    menuApplication->setObjectName(QStringLiteral("menuApplication"));
+
+}
+
+
+void MainWindow::createToolbars()
+{
+    // Toolbar: Application
+    auto *toolbarApplication = addToolBar(QStringLiteral("Application"));
+    toolbarApplication->setObjectName(QStringLiteral("toolbarApplication"));
+
 }
 
 
