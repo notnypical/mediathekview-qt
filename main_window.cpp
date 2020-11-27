@@ -46,9 +46,15 @@ void MainWindow::createActions()
 {
     // Actions: Application
     m_actionAbout = new QAction(QStringLiteral("About %1").arg(QApplication::applicationName()), this);
+    m_actionAbout->setObjectName(QStringLiteral("actionAbout"));
     m_actionAbout->setIcon(QIcon(QStringLiteral(":/icons/apps/16/mediathekview.svg")));
     m_actionAbout->setToolTip(QStringLiteral("Brief description of the application"));
     connect(m_actionAbout, &QAction::triggered, this, &MainWindow::onActionAboutTriggered);
+
+    m_actionColophon = new QAction(QStringLiteral("Colophon"), this);
+    m_actionColophon->setObjectName(QStringLiteral("actionColophon"));
+    m_actionColophon->setToolTip(QStringLiteral("Lengthy description of the application"));
+    connect(m_actionColophon, &QAction::triggered, this, &MainWindow::onActionColophonTriggered);
 
 }
 
@@ -59,6 +65,7 @@ void MainWindow::createMenus()
     auto *menuApplication = menuBar()->addMenu(QStringLiteral("Application"));
     menuApplication->setObjectName(QStringLiteral("menuApplication"));
     menuApplication->addAction(m_actionAbout);
+    menuApplication->addAction(m_actionColophon);
 
 }
 
@@ -107,6 +114,12 @@ QByteArray MainWindow::windowState() const
 
 
 void MainWindow::onActionAboutTriggered()
+{
+
+}
+
+
+void MainWindow::onActionColophonTriggered()
 {
 
 }

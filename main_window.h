@@ -40,6 +40,7 @@ public:
 
 private slots:
     void onActionAboutTriggered();
+    void onActionColophonTriggered();
 
 private:
     void createActions();
@@ -47,6 +48,7 @@ private:
     void createToolbars();
 
     QAction *m_actionAbout;
+    QAction *m_actionColophon;
 };
 
 #endif // MAIN_WINDOW_H
