@@ -19,6 +19,7 @@
 
 #include "main_window.h"
 
+#include <QApplication>
 #include <QMenuBar>
 #include <QScreen>
 #include <QToolBar>
@@ -29,6 +30,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     setWindowIcon(QIcon(QStringLiteral(":/icons/apps/16/mediathekview.svg")));
 
+    createActions();
     createMenus();
     createToolbars();
 
@@ -40,11 +42,23 @@ MainWindow::~MainWindow()
 }
 
 
+void MainWindow::createActions()
+{
+    // Actions: Application
+    m_actionAbout = new QAction(QStringLiteral("About %1").arg(QApplication::applicationName()), this);
+    m_actionAbout->setIcon(QIcon(QStringLiteral(":/icons/apps/16/mediathekview.svg")));
+    m_actionAbout->setToolTip(QStringLiteral("Brief description of the application"));
+    connect(m_actionAbout, &QAction::triggered, this, &MainWindow::onActionAboutTriggered);
+
+}
+
+
 void MainWindow::createMenus()
 {
     // Menu: Application
     auto *menuApplication = menuBar()->addMenu(QStringLiteral("Application"));
     menuApplication->setObjectName(QStringLiteral("menuApplication"));
+    menuApplication->addAction(m_actionAbout);
 
 }
 
@@ -54,6 +68,7 @@ void MainWindow::createToolbars()
     // Toolbar: Application
     auto *toolbarApplication = addToolBar(QStringLiteral("Application"));
     toolbarApplication->setObjectName(QStringLiteral("toolbarApplication"));
+    toolbarApplication->addAction(m_actionAbout);
 
 }
 
@@ -88,4 +103,10 @@ void MainWindow::setWindowState(const QByteArray &state)
 QByteArray MainWindow::windowState() const
 {
     return saveState();
+}
+
+
+void MainWindow::onActionAboutTriggered()
+{
+
 }

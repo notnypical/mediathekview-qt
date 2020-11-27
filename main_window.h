@@ -20,6 +20,7 @@
 #ifndef MAIN_WINDOW_H
 #define MAIN_WINDOW_H
 
+#include <QAction>
 #include <QMainWindow>
 
 
@@ -37,9 +38,15 @@ public:
     void setWindowState(const QByteArray &state);
     QByteArray windowState() const;
 
+private slots:
+    void onActionAboutTriggered();
+
 private:
+    void createActions();
     void createMenus();
     void createToolbars();
+
+    QAction *m_actionAbout;
 };
 
 #endif // MAIN_WINDOW_H
