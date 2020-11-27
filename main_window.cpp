@@ -56,6 +56,12 @@ void MainWindow::createActions()
     m_actionColophon->setToolTip(QStringLiteral("Lengthy description of the application"));
     connect(m_actionColophon, &QAction::triggered, this, &MainWindow::onActionColophonTriggered);
 
+    m_actionPreferences = new QAction(QStringLiteral("Preferences…"), this);
+    m_actionPreferences->setObjectName(QStringLiteral("actionPreferences"));
+    m_actionPreferences->setIcon(QIcon::fromTheme(QStringLiteral("configure"), QIcon(QStringLiteral(":/icons/actions/16/application-configure.svg"))));
+    m_actionPreferences->setToolTip(QStringLiteral("Customize the appearance and behavior of the application"));
+    connect(m_actionPreferences, &QAction::triggered, this, &MainWindow::onActionPreferencesTriggered);
+
 }
 
 
@@ -66,6 +72,8 @@ void MainWindow::createMenus()
     menuApplication->setObjectName(QStringLiteral("menuApplication"));
     menuApplication->addAction(m_actionAbout);
     menuApplication->addAction(m_actionColophon);
+    menuApplication->addSeparator();
+    menuApplication->addAction(m_actionPreferences);
 
 }
 
@@ -76,6 +84,7 @@ void MainWindow::createToolbars()
     auto *toolbarApplication = addToolBar(QStringLiteral("Application"));
     toolbarApplication->setObjectName(QStringLiteral("toolbarApplication"));
     toolbarApplication->addAction(m_actionAbout);
+    toolbarApplication->addAction(m_actionPreferences);
 
 }
 
@@ -120,6 +129,12 @@ void MainWindow::onActionAboutTriggered()
 
 
 void MainWindow::onActionColophonTriggered()
+{
+
+}
+
+
+void MainWindow::onActionPreferencesTriggered()
 {
 
 }
