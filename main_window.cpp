@@ -24,6 +24,8 @@
 #include <QScreen>
 #include <QToolBar>
 
+#include "about_dialog.h"
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -135,7 +137,11 @@ QByteArray MainWindow::windowState() const
 
 void MainWindow::onActionAboutTriggered()
 {
+    auto geometry = QByteArray();
 
+    AboutDialog dialog(this);
+    dialog.setDialogGeometry(geometry);
+    dialog.exec();
 }
 
 
