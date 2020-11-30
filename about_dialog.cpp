@@ -23,6 +23,8 @@
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 
+#include "dialog_title_box.h"
+
 
 AboutDialog::AboutDialog(QWidget *parent)
     : QDialog(parent)
@@ -32,6 +34,9 @@ AboutDialog::AboutDialog(QWidget *parent)
 
     setDialogGeometry(QByteArray());
 
+    // Title box
+    auto *titleBox = new DialogTitleBox;
+
 
     // Button box
     auto *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close);
@@ -39,6 +44,7 @@ AboutDialog::AboutDialog(QWidget *parent)
 
     // Main layout
     auto *layout = new QVBoxLayout(this);
+    layout->addWidget(titleBox);
     layout->addWidget(buttonBox);
 }
 
