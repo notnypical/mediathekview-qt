@@ -25,6 +25,7 @@
 #include <QToolBar>
 
 #include "about_dialog.h"
+#include "colophon_dialog.h"
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -147,7 +148,11 @@ void MainWindow::onActionAboutTriggered()
 
 void MainWindow::onActionColophonTriggered()
 {
+    auto geometry = QByteArray();
 
+    ColophonDialog dialog(this);
+    dialog.setDialogGeometry(geometry);
+    dialog.exec();
 }
 
 
