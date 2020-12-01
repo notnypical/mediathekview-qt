@@ -20,6 +20,7 @@
 #ifndef DIALOG_TITLE_BOX_H
 #define DIALOG_TITLE_BOX_H
 
+#include <QHBoxLayout>
 #include <QWidget>
 
 
@@ -29,6 +30,11 @@ class DialogTitleBox : public QWidget
 
 public:
     explicit DialogTitleBox(QWidget *parent = nullptr);
+
+    void setZeroMargins();
+
+private:
+    QHBoxLayout *layout;
 };
 
 #endif // DIALOG_TITLE_BOX_H

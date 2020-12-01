@@ -19,9 +19,38 @@
 
 #include "dialog_title_box.h"
 
+#include <QApplication>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QSvgWidget>
+#include <QVBoxLayout>
+
 
 DialogTitleBox::DialogTitleBox(QWidget *parent)
     : QWidget(parent)
 {
+    auto *logo = new QSvgWidget;
+    logo->load(QStringLiteral(":/icons/apps/22/mediathekview.svg"));
 
+    auto *name = new QLabel(tr("<strong style=\"font-size:large;\">%1</strong> v%2").arg(QApplication::applicationName(), QApplication::applicationVersion()));
+    auto *description = new QLabel(tr("A front-end tool for the MediathekView database"));
+
+    auto *labels = new QVBoxLayout;
+    labels->addWidget(name);
+    labels->addWidget(description);
+
+    // Main layout
+    layout = new QHBoxLayout(this);
+    layout->addWidget(logo);
+    layout->addLayout(labels);
+
+    // Set logo size
+    const int height = name->sizeHint().height() + labels->layout()->spacing() + description->sizeHint().height();
+    logo->setFixedSize(height, height);
+}
+
+
+void DialogTitleBox::setZeroMargins()
+{
+    layout->setContentsMargins(0, 0, 0, 0);
 }
