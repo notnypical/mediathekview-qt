@@ -17,24 +17,26 @@
  * along with MediathekView-Qt.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef DIALOG_TITLE_BOX_H
-#define DIALOG_TITLE_BOX_H
+#ifndef COLOPHON_ABOUT_PAGE_H
+#define COLOPHON_ABOUT_PAGE_H
 
-#include <QHBoxLayout>
+#include <QVBoxLayout>
 #include <QWidget>
 
 
-class DialogTitleBox : public QWidget
+class ColophonAboutPage : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit DialogTitleBox(QWidget *parent = nullptr);
+    explicit ColophonAboutPage(QWidget *parent = nullptr);
+
+    QString title() const;
 
     void setZeroMargins();
 
 private:
-    QHBoxLayout *m_layout;
+    QVBoxLayout *m_layout;
 };
 
-#endif // DIALOG_TITLE_BOX_H
+#endif // COLOPHON_ABOUT_PAGE_H

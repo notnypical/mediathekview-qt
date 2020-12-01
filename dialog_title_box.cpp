@@ -40,9 +40,9 @@ DialogTitleBox::DialogTitleBox(QWidget *parent)
     labels->addWidget(description);
 
     // Main layout
-    layout = new QHBoxLayout(this);
-    layout->addWidget(logo);
-    layout->addLayout(labels);
+    m_layout = new QHBoxLayout(this);
+    m_layout->addWidget(logo);
+    m_layout->addLayout(labels);
 
     // Set logo size
     const int height = name->sizeHint().height() + labels->layout()->spacing() + description->sizeHint().height();
@@ -52,5 +52,5 @@ DialogTitleBox::DialogTitleBox(QWidget *parent)
 
 void DialogTitleBox::setZeroMargins()
 {
-    layout->setContentsMargins(0, 0, 0, 0);
+    m_layout->setContentsMargins(0, 0, 0, 0);
 }
