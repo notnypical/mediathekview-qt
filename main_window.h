@@ -32,11 +32,11 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    void setWindowGeometry(const QByteArray &geometry);
-    QByteArray windowGeometry() const;
+    void setApplicationGeometry(const QByteArray &geometry);
+    QByteArray applicationGeometry() const;
 
-    void setWindowState(const QByteArray &state);
-    QByteArray windowState() const;
+    void setApplicationState(const QByteArray &state);
+    QByteArray applicationState() const;
 
 private slots:
     void onActionAboutTriggered();

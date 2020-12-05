@@ -37,7 +37,7 @@ MainWindow::MainWindow(QWidget *parent)
     createMenus();
     createToolbars();
 
-    setWindowGeometry(QByteArray());
+    setApplicationGeometry(QByteArray());
 }
 
 MainWindow::~MainWindow()
@@ -103,7 +103,7 @@ void MainWindow::createToolbars()
 }
 
 
-void MainWindow::setWindowGeometry(const QByteArray &geometry)
+void MainWindow::setApplicationGeometry(const QByteArray &geometry)
 {
     if (!geometry.isEmpty()) {
         restoreGeometry(geometry);
@@ -116,13 +116,13 @@ void MainWindow::setWindowGeometry(const QByteArray &geometry)
 }
 
 
-QByteArray MainWindow::windowGeometry() const
+QByteArray MainWindow::applicationGeometry() const
 {
     return saveGeometry();
 }
 
 
-void MainWindow::setWindowState(const QByteArray &state)
+void MainWindow::setApplicationState(const QByteArray &state)
 {
     if (!state.isEmpty()) {
         restoreState(state);
@@ -130,7 +130,7 @@ void MainWindow::setWindowState(const QByteArray &state)
 }
 
 
-QByteArray MainWindow::windowState() const
+QByteArray MainWindow::applicationState() const
 {
     return saveState();
 }
