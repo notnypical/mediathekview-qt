@@ -43,15 +43,21 @@ private slots:
     void onActionColophonTriggered();
     void onActionPreferencesTriggered();
 
+    void onActionFullScreenTriggered();
+
 private:
     void createActions();
     void createMenus();
     void createToolbars();
 
+    void updateActionFullScreen();
+
     QAction *m_actionAbout;
     QAction *m_actionColophon;
     QAction *m_actionPreferences;
     QAction *m_actionQuit;
+
+    QAction *m_actionFullScreen;
 };
 
 #endif // MAIN_WINDOW_H

@@ -38,6 +38,8 @@ MainWindow::MainWindow(QWidget *parent)
     createToolbars();
 
     setApplicationGeometry(QByteArray());
+
+    updateActionFullScreen();
 }
 
 MainWindow::~MainWindow()
@@ -72,6 +74,30 @@ void MainWindow::createActions()
     m_actionQuit->setToolTip(QStringLiteral("Quit the application [%1]").arg(m_actionQuit->shortcut().toString(QKeySequence::NativeText)));
     connect(m_actionQuit, &QAction::triggered, this, &MainWindow::close);
 
+    // Actions: View
+    m_actionFullScreen = new QAction(this);
+    m_actionFullScreen->setIconText(QStringLiteral("Full Screen"));
+    m_actionFullScreen->setCheckable(true);
+    m_actionFullScreen->setShortcuts(QList<QKeySequence>() << QKeySequence(Qt::Key_F11) << QKeySequence::FullScreen);
+    connect(m_actionFullScreen, &QAction::triggered, this, &MainWindow::onActionFullScreenTriggered);
+
+}
+
+
+void MainWindow::updateActionFullScreen()
+{
+    if (!isFullScreen()) {
+        m_actionFullScreen->setText(QStringLiteral("Full Screen Mode"));
+        m_actionFullScreen->setIcon(QIcon::fromTheme(QStringLiteral("view-fullscreen"), QIcon(QStringLiteral(":/icons/actions/16/view-fullscreen.svg"))));
+        m_actionFullScreen->setChecked(false);
+        m_actionFullScreen->setToolTip(QStringLiteral("Display the window in full screen [%1]").arg(m_actionFullScreen->shortcut().toString(QKeySequence::NativeText)));
+    }
+    else {
+        m_actionFullScreen->setText(QStringLiteral("Exit Full Screen Mode"));
+        m_actionFullScreen->setIcon(QIcon::fromTheme(QStringLiteral("view-restore"), QIcon(QStringLiteral(":/icons/actions/16/view-restore.svg"))));
+        m_actionFullScreen->setChecked(true);
+        m_actionFullScreen->setToolTip(QStringLiteral("Exit the full screen mode [%1]").arg(m_actionFullScreen->shortcut().toString(QKeySequence::NativeText)));
+    }
 }
 
 
@@ -90,6 +116,7 @@ void MainWindow::createMenus()
     // Menu: View
     auto *menuView = menuBar()->addMenu(QStringLiteral("View"));
     menuView->setObjectName(QStringLiteral("menuView"));
+    menuView->addAction(m_actionFullScreen);
 }
 
 
@@ -106,6 +133,7 @@ void MainWindow::createToolbars()
     // Toolbar: View
     auto *toolbarView = addToolBar(QStringLiteral("View"));
     toolbarView->setObjectName(QStringLiteral("toolbarView"));
+    toolbarView->addAction(m_actionFullScreen);
 }
 
 
@@ -165,4 +193,15 @@ void MainWindow::onActionColophonTriggered()
 void MainWindow::onActionPreferencesTriggered()
 {
 
+}
+
+
+void MainWindow::onActionFullScreenTriggered()
+{
+    if (!isFullScreen())
+        setWindowState(windowState() | Qt::WindowFullScreen);
+    else
+        setWindowState(windowState() & ~Qt::WindowFullScreen);
+
+    updateActionFullScreen();
 }
