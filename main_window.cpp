@@ -53,23 +53,27 @@ void MainWindow::createActions()
     m_actionAbout = new QAction(QStringLiteral("About %1").arg(QApplication::applicationName()), this);
     m_actionAbout->setObjectName(QStringLiteral("actionAbout"));
     m_actionAbout->setIcon(QIcon(QStringLiteral(":/icons/apps/16/mediathekview.svg")));
+    m_actionAbout->setIconText(QStringLiteral("About"));
     m_actionAbout->setToolTip(QStringLiteral("Brief description of the application"));
     connect(m_actionAbout, &QAction::triggered, this, &MainWindow::onActionAboutTriggered);
 
     m_actionColophon = new QAction(QStringLiteral("Colophon"), this);
     m_actionColophon->setObjectName(QStringLiteral("actionColophon"));
+    m_actionColophon->setIconText(QStringLiteral("Colophon"));
     m_actionColophon->setToolTip(QStringLiteral("Lengthy description of the application"));
     connect(m_actionColophon, &QAction::triggered, this, &MainWindow::onActionColophonTriggered);
 
     m_actionPreferences = new QAction(QStringLiteral("Preferences…"), this);
     m_actionPreferences->setObjectName(QStringLiteral("actionPreferences"));
     m_actionPreferences->setIcon(QIcon::fromTheme(QStringLiteral("configure"), QIcon(QStringLiteral(":/icons/actions/16/application-configure.svg"))));
+    m_actionPreferences->setIconText(QStringLiteral("Preferences"));
     m_actionPreferences->setToolTip(QStringLiteral("Customize the appearance and behavior of the application"));
     connect(m_actionPreferences, &QAction::triggered, this, &MainWindow::onActionPreferencesTriggered);
 
     m_actionQuit = new QAction(QStringLiteral("Quit"), this);
     m_actionQuit->setObjectName(QStringLiteral("actionQuit"));
     m_actionQuit->setIcon(QIcon::fromTheme(QStringLiteral("application-exit"), QIcon(QStringLiteral(":/icons/actions/16/application-exit.svg"))));
+    m_actionQuit->setIconText(QStringLiteral("Quit"));
     m_actionQuit->setShortcut(QKeySequence::Quit);
     m_actionQuit->setToolTip(QStringLiteral("Quit the application [%1]").arg(m_actionQuit->shortcut().toString(QKeySequence::NativeText)));
     connect(m_actionQuit, &QAction::triggered, this, &MainWindow::close);
