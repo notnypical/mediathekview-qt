@@ -87,6 +87,9 @@ void MainWindow::createMenus()
     menuApplication->addSeparator();
     menuApplication->addAction(m_actionQuit);
 
+    // Menu: View
+    auto *menuView = menuBar()->addMenu(QStringLiteral("View"));
+    menuView->setObjectName(QStringLiteral("menuView"));
 }
 
 
@@ -100,6 +103,9 @@ void MainWindow::createToolbars()
     toolbarApplication->addSeparator();
     toolbarApplication->addAction(m_actionQuit);
 
+    // Toolbar: View
+    auto *toolbarView = addToolBar(QStringLiteral("View"));
+    toolbarView->setObjectName(QStringLiteral("toolbarView"));
 }
 
 
