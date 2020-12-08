@@ -59,6 +59,7 @@ private:
 
     QAction *m_actionFullScreen;
     QAction *m_actionToolbarApplication;
+    QAction *m_actionToolbarChannels;
     QAction *m_actionToolbarView;
 
     QToolBar *m_toolbarApplication;
