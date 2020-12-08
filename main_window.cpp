@@ -37,7 +37,8 @@ MainWindow::MainWindow(QWidget *parent)
     createMenus();
     createToolbars();
 
-    setApplicationGeometry(QByteArray());
+    setApplicationGeometry();
+    setApplicationState();
 
     updateActionFullScreen();
 }
@@ -183,6 +184,9 @@ void MainWindow::setApplicationState(const QByteArray &state)
 {
     if (!state.isEmpty()) {
         restoreState(state);
+    }
+    else {
+        m_actionToolbarView->setChecked(false);
     }
 }
 

@@ -32,10 +32,10 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    void setApplicationGeometry(const QByteArray &geometry);
+    void setApplicationGeometry(const QByteArray &geometry = QByteArray());
     QByteArray applicationGeometry() const;
 
-    void setApplicationState(const QByteArray &state);
+    void setApplicationState(const QByteArray &state = QByteArray());
     QByteArray applicationState() const;
 
 private slots:
