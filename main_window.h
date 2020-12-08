@@ -62,6 +62,7 @@ private:
     QAction *m_actionToolbarView;
 
     QToolBar *m_toolbarApplication;
+    QToolBar *m_toolbarChannels;
     QToolBar *m_toolbarView;
 };
 

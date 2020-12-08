@@ -132,6 +132,10 @@ void MainWindow::createMenus()
     menuApplication->addSeparator();
     menuApplication->addAction(m_actionQuit);
 
+    // Menu: Channels
+    auto *menuChannels = menuBar()->addMenu(tr("Channels"));
+    menuChannels->setObjectName(QStringLiteral("menuChannels"));
+
     // Menu: View
     auto *menuView = menuBar()->addMenu(tr("View"));
     menuView->setObjectName(QStringLiteral("menuView"));
@@ -152,6 +156,10 @@ void MainWindow::createToolbars()
     m_toolbarApplication->addSeparator();
     m_toolbarApplication->addAction(m_actionQuit);
     connect(m_toolbarApplication, &QToolBar::visibilityChanged, [=](bool visible) { m_actionToolbarApplication->setChecked(visible); });
+
+    // Toolbar: Channels
+    m_toolbarChannels = addToolBar(tr("Channels Toolbar"));
+    m_toolbarChannels->setObjectName(QStringLiteral("toolbarChannels"));
 
     // Toolbar: View
     m_toolbarView = addToolBar(tr("View Toolbar"));
