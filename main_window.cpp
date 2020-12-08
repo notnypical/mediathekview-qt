@@ -85,6 +85,13 @@ void MainWindow::createActions()
     m_actionFullScreen->setShortcuts(QList<QKeySequence>() << QKeySequence(Qt::Key_F11) << QKeySequence::FullScreen);
     connect(m_actionFullScreen, &QAction::triggered, this, &MainWindow::onActionFullScreenTriggered);
 
+    m_actionToolbarApplication = new QAction(tr("Show Application Toolbar"), this);
+    m_actionToolbarApplication->setObjectName(QStringLiteral("actionToolbarApplication"));
+    m_actionToolbarApplication->setCheckable(true);
+    m_actionToolbarApplication->setChecked(true);
+    m_actionToolbarApplication->setToolTip(tr("Display the Application toolbar"));
+    connect(m_actionToolbarApplication, &QAction::toggled, [=](bool checked) { m_toolbarApplication->setVisible(checked); });
+
 }
 
 
@@ -121,18 +128,21 @@ void MainWindow::createMenus()
     auto *menuView = menuBar()->addMenu(QStringLiteral("View"));
     menuView->setObjectName(QStringLiteral("menuView"));
     menuView->addAction(m_actionFullScreen);
+    menuView->addSeparator();
+    menuView->addAction(m_actionToolbarApplication);
 }
 
 
 void MainWindow::createToolbars()
 {
     // Toolbar: Application
-    auto *toolbarApplication = addToolBar(QStringLiteral("Application"));
-    toolbarApplication->setObjectName(QStringLiteral("toolbarApplication"));
-    toolbarApplication->addAction(m_actionAbout);
-    toolbarApplication->addAction(m_actionPreferences);
-    toolbarApplication->addSeparator();
-    toolbarApplication->addAction(m_actionQuit);
+    m_toolbarApplication = addToolBar(QStringLiteral("Application Toolbar"));
+    m_toolbarApplication->setObjectName(QStringLiteral("toolbarApplication"));
+    m_toolbarApplication->addAction(m_actionAbout);
+    m_toolbarApplication->addAction(m_actionPreferences);
+    m_toolbarApplication->addSeparator();
+    m_toolbarApplication->addAction(m_actionQuit);
+    connect(m_toolbarApplication, &QToolBar::visibilityChanged, [=](bool visible) { m_actionToolbarApplication->setChecked(visible); });
 
     // Toolbar: View
     auto *toolbarView = addToolBar(QStringLiteral("View"));
