@@ -59,8 +59,10 @@ private:
 
     QAction *m_actionFullScreen;
     QAction *m_actionToolbarApplication;
+    QAction *m_actionToolbarView;
 
     QToolBar *m_toolbarApplication;
+    QToolBar *m_toolbarView;
 };
 
 #endif // MAIN_WINDOW_H
