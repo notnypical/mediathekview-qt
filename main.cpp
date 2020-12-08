@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
     app.setApplicationVersion(QStringLiteral("0.1.0"));
 
     QCommandLineParser parser;
-    parser.setApplicationDescription(QStringLiteral("%1 - %2").arg(app.applicationName(), QStringLiteral("A front-end tool for the MediathekView database")));
+    parser.setApplicationDescription(QCoreApplication::translate("main", "%1 - A front-end tool for the MediathekView database").arg(app.applicationName()));
     parser.addHelpOption();
     parser.addVersionOption();
     parser.process(app);
