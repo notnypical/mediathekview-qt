@@ -43,6 +43,8 @@ private slots:
     void onActionColophonTriggered();
     void onActionPreferencesTriggered();
 
+    void onActionLiveStreamsToggled(bool checked);
+
     void onActionFullScreenTriggered();
 
 private:
@@ -56,6 +58,8 @@ private:
     QAction *m_actionColophon;
     QAction *m_actionPreferences;
     QAction *m_actionQuit;
+
+    QAction *m_actionLiveStreams;
 
     QAction *m_actionFullScreen;
     QAction *m_actionToolbarApplication;

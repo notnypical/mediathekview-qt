@@ -79,6 +79,15 @@ void MainWindow::createActions()
     m_actionQuit->setToolTip(tr("Quit the application [%1]").arg(m_actionQuit->shortcut().toString(QKeySequence::NativeText)));
     connect(m_actionQuit, &QAction::triggered, this, &MainWindow::close);
 
+    // Actions: Channels
+    m_actionLiveStreams = new QAction(tr("Live streams"), this);
+    m_actionLiveStreams->setObjectName(QStringLiteral("actionLiveStreams"));
+    m_actionLiveStreams->setIcon(QIcon::fromTheme(QStringLiteral("network-wireless-hotspot"), QIcon(QStringLiteral(":/icons/actions/16/live-stream.svg"))));
+    m_actionLiveStreams->setIconText(tr("Live streams"));
+    m_actionLiveStreams->setCheckable(true);
+    m_actionLiveStreams->setToolTip(tr("Show all live streaming channels."));
+    connect(m_actionLiveStreams, &QAction::toggled, [=](bool checked) { onActionLiveStreamsToggled(checked); });
+
     // Actions: View
     m_actionFullScreen = new QAction(this);
     m_actionFullScreen->setIconText(tr("Full Screen"));
@@ -142,6 +151,7 @@ void MainWindow::createMenus()
     // Menu: Channels
     auto *menuChannels = menuBar()->addMenu(tr("Channels"));
     menuChannels->setObjectName(QStringLiteral("menuChannels"));
+    menuChannels->addAction(m_actionLiveStreams);
 
     // Menu: View
     auto *menuView = menuBar()->addMenu(tr("View"));
@@ -168,6 +178,7 @@ void MainWindow::createToolbars()
     // Toolbar: Channels
     m_toolbarChannels = addToolBar(tr("Channels Toolbar"));
     m_toolbarChannels->setObjectName(QStringLiteral("toolbarChannels"));
+    m_toolbarChannels->addAction(m_actionLiveStreams);
     connect(m_toolbarChannels, &QToolBar::visibilityChanged, [=](bool visible) { m_actionToolbarChannels->setChecked(visible); });
 
     // Toolbar: View
@@ -235,6 +246,12 @@ void MainWindow::onActionColophonTriggered()
 
 
 void MainWindow::onActionPreferencesTriggered()
+{
+
+}
+
+
+void MainWindow::onActionLiveStreamsToggled(bool checked)
 {
 
 }
