@@ -33,6 +33,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     setWindowIcon(QIcon(QStringLiteral(":/icons/apps/16/mediathekview.svg")));
 
+    createChannels();
     createActions();
     createMenus();
     createToolbars();
@@ -45,6 +46,29 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
+}
+
+
+void MainWindow::createChannels()
+{
+    m_listChannels[QStringLiteral("3sat")] = QStringList() << QStringLiteral("3sat");
+    m_listChannels[QStringLiteral("ard")] = QStringList() << QStringLiteral("ARD") << QStringLiteral("Das Erste");
+    m_listChannels[QStringLiteral("arteDe")] = QStringList() << QStringLiteral("ARTE.de");
+    m_listChannels[QStringLiteral("arteFr")] = QStringList() << QStringLiteral("ARTE.fr");
+    m_listChannels[QStringLiteral("br")] = QStringList() << QStringLiteral("BR") << QStringLiteral("Bayerischer Rundfunk");
+    m_listChannels[QStringLiteral("dw")] = QStringList() << QStringLiteral("DW TV") << QStringLiteral("Deutsche Welle");
+    m_listChannels[QStringLiteral("hr")] = QStringList() << QStringLiteral("HR") << QStringLiteral("Hessischer Rundfunk");
+    m_listChannels[QStringLiteral("kika")] = QStringList() << QStringLiteral("KiKA") << QStringLiteral("Kinderkanal von ARD und ZDF");
+    m_listChannels[QStringLiteral("mdr")] = QStringList() << QStringLiteral("MDR") << QStringLiteral("Mitteldeutscher Rundfunk");
+    m_listChannels[QStringLiteral("ndr")] = QStringList() << QStringLiteral("NDR") << QStringLiteral("Norddeutscher Rundfunk");
+    m_listChannels[QStringLiteral("orf")] = QStringList() << QStringLiteral("ORF") << QStringLiteral("Österreichischer Rundfunk");
+    m_listChannels[QStringLiteral("phoenix")] = QStringList() << QStringLiteral("phoenix");
+    m_listChannels[QStringLiteral("rbb")] = QStringList() << QStringLiteral("RBB") << QStringLiteral("Rundfunk Berlin-Brandenburg");
+    m_listChannels[QStringLiteral("sr")] = QStringList() << QStringLiteral("SR") << QStringLiteral("Saarländischer Rundfunk");
+    m_listChannels[QStringLiteral("srf")] = QStringList() << QStringLiteral("SRF") << QStringLiteral("Schweizer Rundfunk");
+    m_listChannels[QStringLiteral("swr")] = QStringList() << QStringLiteral("SWR") << QStringLiteral("Südwestrundfunk");
+    m_listChannels[QStringLiteral("wdr")] = QStringList() << QStringLiteral("WDR") << QStringLiteral("Westdeutscher Rundfunk");
+    m_listChannels[QStringLiteral("zdf")] = QStringList() << QStringLiteral("ZDF") << QStringLiteral("Zweites Deutsches Fernsehen");
 }
 
 

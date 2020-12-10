@@ -48,6 +48,9 @@ private slots:
     void onActionFullScreenTriggered();
 
 private:
+    QMap<QString, QStringList> m_listChannels;
+
+    void createChannels();
     void createActions();
     void createMenus();
     void createToolbars();
