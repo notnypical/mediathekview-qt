@@ -45,6 +45,7 @@ private slots:
 
     void onActionLiveStreamsToggled(bool checked);
     void onActionChannelsToggled(const QString &channel, bool checked);
+    void onActionSelectInvertToggled(bool checked);
 
     void onActionFullScreenTriggered();
 
@@ -65,6 +66,7 @@ private:
 
     QAction *m_actionLiveStreams;
     QList<QAction *> m_actionChannels;
+    QAction *m_actionSelectInvert;
 
     QAction *m_actionFullScreen;
     QAction *m_actionToolbarApplication;

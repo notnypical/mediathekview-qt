@@ -133,6 +133,14 @@ void MainWindow::createActions()
         m_actionChannels << channel;
     }
 
+    m_actionSelectInvert = new QAction(tr("Invert Selection"), this);
+    m_actionSelectInvert->setObjectName(QStringLiteral("actionSelectInvert"));
+    m_actionSelectInvert->setIcon(QIcon::fromTheme(QStringLiteral("edit-select-invert"), QIcon(QStringLiteral(":/icons/actions/16/edit-select-invert.svg"))));
+    m_actionSelectInvert->setIconText(tr("Invert"));
+    m_actionSelectInvert->setCheckable(true);
+    m_actionSelectInvert->setToolTip(tr("Invert list of selected channels"));
+    connect(m_actionSelectInvert, &QAction::toggled, [=](bool checked) { onActionSelectInvertToggled(checked); });
+
     // Actions: View
     m_actionFullScreen = new QAction(this);
     m_actionFullScreen->setIconText(tr("Full Screen"));
@@ -199,6 +207,8 @@ void MainWindow::createMenus()
     menuChannels->addAction(m_actionLiveStreams);
     menuChannels->addSeparator();
     menuChannels->addActions(m_actionChannels);
+    menuChannels->addSeparator();
+    menuChannels->addAction(m_actionSelectInvert);
 
     // Menu: View
     auto *menuView = menuBar()->addMenu(tr("View"));
@@ -228,6 +238,8 @@ void MainWindow::createToolbars()
     m_toolbarChannels->addAction(m_actionLiveStreams);
     m_toolbarChannels->addSeparator();
     m_toolbarChannels->addActions(m_actionChannels);
+    m_toolbarChannels->addSeparator();
+    m_toolbarChannels->addAction(m_actionSelectInvert);
     connect(m_toolbarChannels, &QToolBar::visibilityChanged, [=](bool visible) { m_actionToolbarChannels->setChecked(visible); });
 
     // Toolbar: View
@@ -307,6 +319,12 @@ void MainWindow::onActionLiveStreamsToggled(bool checked)
 
 
 void MainWindow::onActionChannelsToggled(const QString &channel, bool checked)
+{
+
+}
+
+
+void MainWindow::onActionSelectInvertToggled(bool checked)
 {
 
 }
