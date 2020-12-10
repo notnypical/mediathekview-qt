@@ -112,6 +112,27 @@ void MainWindow::createActions()
     m_actionLiveStreams->setToolTip(tr("Show all live streaming channels."));
     connect(m_actionLiveStreams, &QAction::toggled, [=](bool checked) { onActionLiveStreamsToggled(checked); });
 
+    QString text;
+    QAction *channel;
+    QMapIterator<QString, QStringList> it(m_listChannels);
+    while (it.hasNext()) {
+        it.next();
+
+        if (it.value().size() > 1)
+            text = tr("%1 (%2)").arg(it.value()[0], it.value()[1]);
+        else
+            text = it.value()[0];
+
+        channel = new QAction(text, this);
+        channel->setObjectName(QStringLiteral("actionChannel_%1").arg(it.key()));
+        channel->setIconText(it.value()[0]);
+        channel->setCheckable(true);
+        channel->setToolTip(tr("Show all programs of channel %1").arg(text));
+        connect(channel, &QAction::toggled, [=](bool checked) { onActionChannelsToggled(it.key(), checked); });
+
+        m_actionChannels << channel;
+    }
+
     // Actions: View
     m_actionFullScreen = new QAction(this);
     m_actionFullScreen->setIconText(tr("Full Screen"));
@@ -176,6 +197,8 @@ void MainWindow::createMenus()
     auto *menuChannels = menuBar()->addMenu(tr("Channels"));
     menuChannels->setObjectName(QStringLiteral("menuChannels"));
     menuChannels->addAction(m_actionLiveStreams);
+    menuChannels->addSeparator();
+    menuChannels->addActions(m_actionChannels);
 
     // Menu: View
     auto *menuView = menuBar()->addMenu(tr("View"));
@@ -203,6 +226,8 @@ void MainWindow::createToolbars()
     m_toolbarChannels = addToolBar(tr("Channels Toolbar"));
     m_toolbarChannels->setObjectName(QStringLiteral("toolbarChannels"));
     m_toolbarChannels->addAction(m_actionLiveStreams);
+    m_toolbarChannels->addSeparator();
+    m_toolbarChannels->addActions(m_actionChannels);
     connect(m_toolbarChannels, &QToolBar::visibilityChanged, [=](bool visible) { m_actionToolbarChannels->setChecked(visible); });
 
     // Toolbar: View
@@ -276,6 +301,12 @@ void MainWindow::onActionPreferencesTriggered()
 
 
 void MainWindow::onActionLiveStreamsToggled(bool checked)
+{
+
+}
+
+
+void MainWindow::onActionChannelsToggled(const QString &channel, bool checked)
 {
 
 }
