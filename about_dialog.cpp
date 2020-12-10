@@ -33,7 +33,7 @@ AboutDialog::AboutDialog(QWidget *parent)
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowTitle(tr("About %1").arg(QApplication::applicationName()));
 
-    setDialogGeometry(QByteArray());
+    setDialogGeometry();
 
     // Title box
     auto *titleBox = new DialogTitleBox;

@@ -30,7 +30,7 @@ class AboutDialog : public QDialog
 public:
     explicit AboutDialog(QWidget *parent = nullptr);
 
-    void setDialogGeometry(const QByteArray &geometry);
+    void setDialogGeometry(const QByteArray &geometry = QByteArray());
     QByteArray dialogGeometry() const;
 };
 

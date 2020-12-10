@@ -30,7 +30,7 @@ class ColophonDialog : public QDialog
 public:
     explicit ColophonDialog(QWidget *parent = nullptr);
 
-    void setDialogGeometry(const QByteArray &geometry);
+    void setDialogGeometry(const QByteArray &geometry = QByteArray());
     QByteArray dialogGeometry() const;
 };
 
