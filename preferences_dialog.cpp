@@ -33,10 +33,15 @@ PreferencesDialog::PreferencesDialog(QWidget *parent)
     setDialogGeometry();
 
     // Settings box
+    m_generalSettings = new PreferencesGeneralSettings(this);
+    connect(m_generalSettings, &PreferencesGeneralSettings::settingsChanged, this, &PreferencesDialog::onSettingsChanged);
+
     auto *stackedBox = new QStackedWidget;
+    stackedBox->addWidget(m_generalSettings);
     stackedBox->setCurrentIndex(0);
 
     auto *listBox = new QListWidget;
+    listBox->addItem(m_generalSettings->title());
     listBox->setCurrentRow(stackedBox->currentIndex());
     connect(listBox, &QListWidget::currentRowChanged, stackedBox, &QStackedWidget::setCurrentIndex);
 

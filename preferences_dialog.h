@@ -23,6 +23,8 @@
 #include <QDialog>
 #include <QPushButton>
 
+#include "preferences_general_settings.h"
+
 
 class PreferencesDialog : public QDialog
 {
@@ -45,6 +47,8 @@ private slots:
 
 private:
     QPushButton *m_buttonApply;
+
+    PreferencesGeneralSettings *m_generalSettings;
 };
 
 #endif // PREFERENCES_DIALOG_H
