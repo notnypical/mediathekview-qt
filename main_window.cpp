@@ -26,6 +26,7 @@
 
 #include "about_dialog.h"
 #include "colophon_dialog.h"
+#include "preferences_dialog.h"
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -308,7 +309,11 @@ void MainWindow::onActionColophonTriggered()
 
 void MainWindow::onActionPreferencesTriggered()
 {
+    auto geometry = QByteArray();
 
+    PreferencesDialog dialog(this);
+    dialog.setDialogGeometry(geometry);
+    dialog.exec();
 }
 
 
