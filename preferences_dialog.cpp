@@ -36,12 +36,17 @@ PreferencesDialog::PreferencesDialog(QWidget *parent)
     m_generalSettings = new PreferencesGeneralSettings(this);
     connect(m_generalSettings, &PreferencesGeneralSettings::settingsChanged, this, &PreferencesDialog::onSettingsChanged);
 
+    m_databaseSettings = new PreferencesDatabaseSettings(this);
+    connect(m_databaseSettings, &PreferencesDatabaseSettings::settingsChanged, this, &PreferencesDialog::onSettingsChanged);
+
     auto *stackedBox = new QStackedWidget;
     stackedBox->addWidget(m_generalSettings);
+    stackedBox->addWidget(m_databaseSettings);
     stackedBox->setCurrentIndex(0);
 
     auto *listBox = new QListWidget;
     listBox->addItem(m_generalSettings->title());
+    listBox->addItem(m_databaseSettings->title());
     listBox->setCurrentRow(stackedBox->currentIndex());
     connect(listBox, &QListWidget::currentRowChanged, stackedBox, &QStackedWidget::setCurrentIndex);
 
