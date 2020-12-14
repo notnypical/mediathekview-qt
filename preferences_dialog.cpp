@@ -32,12 +32,18 @@ PreferencesDialog::PreferencesDialog(QWidget *parent)
 
 
     // Button box
-    auto *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close);
+    auto *buttonBox = new QDialogButtonBox(QDialogButtonBox::RestoreDefaults | QDialogButtonBox::Ok | QDialogButtonBox::Apply | QDialogButtonBox::Cancel);
+    m_buttonApply = buttonBox->button(QDialogButtonBox::Apply);
+    connect(buttonBox->button(QDialogButtonBox::RestoreDefaults), &QAbstractButton::clicked, this, &PreferencesDialog::onButtonDefaultsClicked);
+    connect(buttonBox, &QDialogButtonBox::accepted, this, &PreferencesDialog::onButtonOkClicked);
+    connect(m_buttonApply, &QAbstractButton::clicked, this, &PreferencesDialog::onButtonApplyClicked);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &PreferencesDialog::close);
 
     // Main layout
     auto *layout = new QVBoxLayout(this);
     layout->addWidget(buttonBox);
+
+    updateSettings();
 }
 
 
@@ -55,4 +61,34 @@ void PreferencesDialog::setDialogGeometry(const QByteArray &geometry)
 QByteArray PreferencesDialog::dialogGeometry() const
 {
     return saveGeometry();
+}
+
+
+void PreferencesDialog::onSettingsChanged()
+{
+    m_buttonApply->setEnabled(true);
+}
+
+
+void PreferencesDialog::onButtonDefaultsClicked()
+{
+
+}
+
+
+void PreferencesDialog::onButtonOkClicked()
+{
+     close();
+}
+
+
+void PreferencesDialog::onButtonApplyClicked()
+{
+
+}
+
+
+void PreferencesDialog::updateSettings()
+{
+    m_buttonApply->setEnabled(false);
 }

@@ -21,6 +21,7 @@
 #define PREFERENCES_DIALOG_H
 
 #include <QDialog>
+#include <QPushButton>
 
 
 class PreferencesDialog : public QDialog
@@ -32,6 +33,18 @@ public:
 
     void setDialogGeometry(const QByteArray &geometry = QByteArray());
     QByteArray dialogGeometry() const;
+
+private slots:
+    void onSettingsChanged();
+
+    void onButtonDefaultsClicked();
+    void onButtonOkClicked();
+    void onButtonApplyClicked();
+
+    void updateSettings();
+
+private:
+    QPushButton *m_buttonApply;
 };
 
 #endif // PREFERENCES_DIALOG_H
