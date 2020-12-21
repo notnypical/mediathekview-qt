@@ -22,6 +22,7 @@
 #include <QApplication>
 #include <QMenuBar>
 #include <QScreen>
+#include <QStyle>
 #include <QToolBar>
 
 #include "about_dialog.h"
@@ -129,6 +130,7 @@ void MainWindow::createActions()
         channel->setIconText(it.value()[0]);
         channel->setCheckable(true);
         channel->setToolTip(tr("Show all programs of channel %1").arg(text));
+        channel->setData(text);
         connect(channel, &QAction::toggled, [=](bool checked) { onActionChannelsToggled(it.key(), checked); });
 
         m_actionChannels << channel;
@@ -236,6 +238,7 @@ void MainWindow::createToolbars()
     // Toolbar: Channels
     m_toolbarChannels = addToolBar(tr("Channels Toolbar"));
     m_toolbarChannels->setObjectName(QStringLiteral("toolbarChannels"));
+    m_toolbarChannels->setStyleSheet("*[invertChannel=true] { text-decoration: line-through; }");
     m_toolbarChannels->addAction(m_actionLiveStreams);
     m_toolbarChannels->addSeparator();
     m_toolbarChannels->addActions(m_actionChannels);
@@ -331,7 +334,19 @@ void MainWindow::onActionChannelsToggled(const QString &channel, bool checked)
 
 void MainWindow::onActionSelectInvertToggled(bool checked)
 {
+    // Tool buttons
+    for (int i = 0; i < m_actionChannels.size(); i++) {
 
+        auto *widget = m_toolbarChannels->widgetForAction(m_actionChannels[i]);
+        widget->setProperty("invertChannel", checked);
+        widget->style()->unpolish(widget);
+        widget->style()->polish(widget);
+
+        if (checked)
+            m_actionChannels[i]->setToolTip(tr("Hide all programs of channel %1").arg(m_actionChannels[i]->data().toString()));
+        else
+            m_actionChannels[i]->setToolTip(tr("Show all programs of channel %1").arg(m_actionChannels[i]->data().toString()));
+    }
 }
 
 
