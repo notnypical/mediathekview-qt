@@ -25,12 +25,14 @@
 PreferencesGeneralSettings::PreferencesGeneralSettings(QWidget *parent)
     : QWidget(parent)
 {
-    auto *label = new QLabel(tr("<strong style=\"font-size:large;\">General Options</strong>"));
+    // Title
+    auto *title = new QLabel(tr("<strong style=\"font-size:large;\">General Settings</strong>"));
 
 
     // Main layout
     m_layout = new QVBoxLayout(this);
-    m_layout->addWidget(label);
+    m_layout->addWidget(title);
+    m_layout->addStretch();
 }
 
 

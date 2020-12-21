@@ -35,9 +35,11 @@ PreferencesDialog::PreferencesDialog(QWidget *parent)
 
     // Settings box
     m_generalSettings = new PreferencesGeneralSettings(this);
+    m_generalSettings->setZeroMargins();
     connect(m_generalSettings, &PreferencesGeneralSettings::settingsChanged, this, &PreferencesDialog::onSettingsChanged);
 
     m_databaseSettings = new PreferencesDatabaseSettings(this);
+    m_databaseSettings->setZeroMargins();
     connect(m_databaseSettings, &PreferencesDatabaseSettings::settingsChanged, this, &PreferencesDialog::onSettingsChanged);
 
     auto *stackedBox = new QStackedWidget;
@@ -68,7 +70,8 @@ PreferencesDialog::PreferencesDialog(QWidget *parent)
     layout->addLayout(settingsBox);
     layout->addWidget(buttonBox);
 
-    updateSettings();
+    updateSettings(m_settings);
+    m_buttonApply->setEnabled(false);
 }
 
 
@@ -89,6 +92,20 @@ QByteArray PreferencesDialog::dialogGeometry() const
 }
 
 
+void PreferencesDialog::setSettings(const Settings &settings)
+{
+    updateSettings(settings);
+    saveSettings();
+    m_buttonApply->setEnabled(false);
+}
+
+
+Settings PreferencesDialog::settings() const
+{
+    return m_settings;
+}
+
+
 void PreferencesDialog::onSettingsChanged()
 {
     m_buttonApply->setEnabled(true);
@@ -97,23 +114,32 @@ void PreferencesDialog::onSettingsChanged()
 
 void PreferencesDialog::onButtonDefaultsClicked()
 {
-
+    Settings settings;
+    updateSettings(settings);
 }
 
 
 void PreferencesDialog::onButtonOkClicked()
 {
-     close();
+    saveSettings();
+    close();
 }
 
 
 void PreferencesDialog::onButtonApplyClicked()
 {
+    saveSettings();
+    m_buttonApply->setEnabled(false);
+}
+
+
+void PreferencesDialog::updateSettings(const Settings &settings)
+{
 
 }
 
 
-void PreferencesDialog::updateSettings()
+void PreferencesDialog::saveSettings()
 {
-    m_buttonApply->setEnabled(false);
+
 }
