@@ -20,8 +20,8 @@
 #ifndef PREFERENCES_DATABASE_SETTINGS_H
 #define PREFERENCES_DATABASE_SETTINGS_H
 
-#include <QWidget>
 #include <QVBoxLayout>
+#include <QWidget>
 
 
 class PreferencesDatabaseSettings : public QWidget

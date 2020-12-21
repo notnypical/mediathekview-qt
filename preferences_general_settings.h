@@ -20,8 +20,8 @@
 #ifndef PREFERENCES_GENERAL_SETTINGS_H
 #define PREFERENCES_GENERAL_SETTINGS_H
 
-#include <QWidget>
 #include <QVBoxLayout>
+#include <QWidget>
 
 
 class PreferencesGeneralSettings : public QWidget

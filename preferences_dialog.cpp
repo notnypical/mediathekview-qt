@@ -20,6 +20,7 @@
 #include "preferences_dialog.h"
 
 #include <QDialogButtonBox>
+#include <QHBoxLayout>
 #include <QListWidget>
 #include <QStackedWidget>
 #include <QVBoxLayout>
