@@ -22,6 +22,7 @@
 #include <QApplication>
 #include <QMenuBar>
 #include <QScreen>
+#include <QSettings>
 #include <QStyle>
 #include <QToolBar>
 
@@ -255,14 +256,23 @@ void MainWindow::createToolbars()
 
 void MainWindow::readSettings()
 {
+    QSettings settings;
+
+    // Application and dialog properties
+    const auto applicationState = settings.value(QStringLiteral("Application/state"), QByteArray()).toByteArray();
+
+    // Set application properties
     setApplicationGeometry();
-    setApplicationState();
+    setApplicationState(applicationState);
 }
 
 
 void MainWindow::writeSettings()
 {
+    QSettings settings;
 
+    // Application and dialog properties
+    settings.setValue(QStringLiteral("Application/state"), applicationState());
 }
 
 
