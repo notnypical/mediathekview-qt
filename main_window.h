@@ -86,6 +86,7 @@ private:
     void writeSettings();
 
     QByteArray m_aboutDialogGeometry;
+    QByteArray m_colophonDialogGeometry;
 };
 
 #endif // MAIN_WINDOW_H
