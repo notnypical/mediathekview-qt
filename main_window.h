@@ -21,6 +21,7 @@
 #define MAIN_WINDOW_H
 
 #include <QAction>
+#include <QByteArray>
 #include <QCloseEvent>
 #include <QMainWindow>
 
@@ -83,6 +84,8 @@ private:
 
     void readSettings();
     void writeSettings();
+
+    QByteArray m_aboutDialogGeometry;
 };
 
 #endif // MAIN_WINDOW_H

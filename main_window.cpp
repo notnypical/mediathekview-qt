@@ -261,6 +261,7 @@ void MainWindow::readSettings()
     // Application and dialog properties
     const auto applicationGeometry = settings.value(QStringLiteral("Application/geometry"), QByteArray()).toByteArray();
     const auto applicationState = settings.value(QStringLiteral("Application/state"), QByteArray()).toByteArray();
+    m_aboutDialogGeometry = settings.value(QStringLiteral("AboutDialog/geometry"), QByteArray()).toByteArray();
 
     // Set application properties
     setApplicationGeometry(applicationGeometry);
@@ -275,6 +276,7 @@ void MainWindow::writeSettings()
     // Application and dialog properties
     settings.setValue(QStringLiteral("Application/geometry"), applicationGeometry());
     settings.setValue(QStringLiteral("Application/state"), applicationState());
+    settings.setValue(QStringLiteral("AboutDialog/geometry"), m_aboutDialogGeometry);
 }
 
 
@@ -323,11 +325,13 @@ void MainWindow::closeEvent(QCloseEvent *event)
 
 void MainWindow::onActionAboutTriggered()
 {
-    auto geometry = QByteArray();
+    auto geometry = m_aboutDialogGeometry;
 
     AboutDialog dialog(this);
     dialog.setDialogGeometry(geometry);
     dialog.exec();
+
+    m_aboutDialogGeometry = dialog.dialogGeometry();
 }
 
 
