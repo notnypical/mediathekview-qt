@@ -40,8 +40,7 @@ MainWindow::MainWindow(QWidget *parent)
     createMenus();
     createToolbars();
 
-    setApplicationGeometry();
-    setApplicationState();
+    readSettings();
 
     updateActionFullScreen();
 }
@@ -251,6 +250,13 @@ void MainWindow::createToolbars()
     m_toolbarView->setObjectName(QStringLiteral("toolbarView"));
     m_toolbarView->addAction(m_actionFullScreen);
     connect(m_toolbarView, &QToolBar::visibilityChanged, [=](bool visible) { m_actionToolbarView->setChecked(visible); });
+}
+
+
+void MainWindow::readSettings()
+{
+    setApplicationGeometry();
+    setApplicationState();
 }
 
 

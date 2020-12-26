@@ -76,6 +76,8 @@ private:
     QToolBar *m_toolbarApplication;
     QToolBar *m_toolbarChannels;
     QToolBar *m_toolbarView;
+
+    void readSettings();
 };
 
 #endif // MAIN_WINDOW_H
