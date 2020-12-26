@@ -260,6 +260,12 @@ void MainWindow::readSettings()
 }
 
 
+void MainWindow::writeSettings()
+{
+
+}
+
+
 void MainWindow::setApplicationGeometry(const QByteArray &geometry)
 {
     if (!geometry.isEmpty()) {
@@ -293,6 +299,13 @@ void MainWindow::setApplicationState(const QByteArray &state)
 QByteArray MainWindow::applicationState() const
 {
     return saveState();
+}
+
+
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    writeSettings();
+    event->accept();
 }
 
 

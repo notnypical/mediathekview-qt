@@ -21,6 +21,7 @@
 #define MAIN_WINDOW_H
 
 #include <QAction>
+#include <QCloseEvent>
 #include <QMainWindow>
 
 
@@ -37,6 +38,9 @@ public:
 
     void setApplicationState(const QByteArray &state = QByteArray());
     QByteArray applicationState() const;
+
+protected:
+    void closeEvent(QCloseEvent *event) override;
 
 private slots:
     void onActionAboutTriggered();
@@ -78,6 +82,7 @@ private:
     QToolBar *m_toolbarView;
 
     void readSettings();
+    void writeSettings();
 };
 
 #endif // MAIN_WINDOW_H
