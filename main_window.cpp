@@ -259,10 +259,11 @@ void MainWindow::readSettings()
     QSettings settings;
 
     // Application and dialog properties
+    const auto applicationGeometry = settings.value(QStringLiteral("Application/geometry"), QByteArray()).toByteArray();
     const auto applicationState = settings.value(QStringLiteral("Application/state"), QByteArray()).toByteArray();
 
     // Set application properties
-    setApplicationGeometry();
+    setApplicationGeometry(applicationGeometry);
     setApplicationState(applicationState);
 }
 
@@ -272,6 +273,7 @@ void MainWindow::writeSettings()
     QSettings settings;
 
     // Application and dialog properties
+    settings.setValue(QStringLiteral("Application/geometry"), applicationGeometry());
     settings.setValue(QStringLiteral("Application/state"), applicationState());
 }
 
