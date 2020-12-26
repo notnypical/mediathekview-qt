@@ -263,6 +263,7 @@ void MainWindow::readSettings()
     const auto applicationState = settings.value(QStringLiteral("Application/state"), QByteArray()).toByteArray();
     m_aboutDialogGeometry = settings.value(QStringLiteral("AboutDialog/geometry"), QByteArray()).toByteArray();
     m_colophonDialogGeometry = settings.value(QStringLiteral("ColophonDialog/geometry"), QByteArray()).toByteArray();
+    m_preferencesDialogGeometry = settings.value(QStringLiteral("PreferencesDialog/geometry"), QByteArray()).toByteArray();
 
     // Set application properties
     setApplicationGeometry(applicationGeometry);
@@ -279,6 +280,7 @@ void MainWindow::writeSettings()
     settings.setValue(QStringLiteral("Application/state"), applicationState());
     settings.setValue(QStringLiteral("AboutDialog/geometry"), m_aboutDialogGeometry);
     settings.setValue(QStringLiteral("ColophonDialog/geometry"), m_colophonDialogGeometry);
+    settings.setValue(QStringLiteral("PreferencesDialog/geometry"), m_preferencesDialogGeometry);
 }
 
 
@@ -351,11 +353,13 @@ void MainWindow::onActionColophonTriggered()
 
 void MainWindow::onActionPreferencesTriggered()
 {
-    auto geometry = QByteArray();
+    auto geometry = m_preferencesDialogGeometry;
 
     PreferencesDialog dialog(this);
     dialog.setDialogGeometry(geometry);
     dialog.exec();
+
+    m_preferencesDialogGeometry = dialog.dialogGeometry();
 }
 
 
