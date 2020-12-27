@@ -20,7 +20,6 @@
 #include "dialog_title_box.h"
 
 #include <QApplication>
-#include <QHBoxLayout>
 #include <QLabel>
 #include <QSvgWidget>
 #include <QVBoxLayout>

@@ -154,21 +154,18 @@ void MainWindow::createActions()
     m_actionToolbarApplication = new QAction(tr("Show Application Toolbar"), this);
     m_actionToolbarApplication->setObjectName(QStringLiteral("actionToolbarApplication"));
     m_actionToolbarApplication->setCheckable(true);
-    m_actionToolbarApplication->setChecked(true);
     m_actionToolbarApplication->setToolTip(tr("Display the Application toolbar"));
     connect(m_actionToolbarApplication, &QAction::toggled, [=](bool checked) { m_toolbarApplication->setVisible(checked); });
 
     m_actionToolbarChannels = new QAction(tr("Show Channels Toolbar"), this);
     m_actionToolbarChannels->setObjectName(QStringLiteral("actionToolbarChannels"));
     m_actionToolbarChannels->setCheckable(true);
-    m_actionToolbarChannels->setChecked(true);
     m_actionToolbarChannels->setToolTip(tr("Display the Channels toolbar"));
     connect(m_actionToolbarChannels, &QAction::toggled, [=](bool checked) { m_toolbarChannels->setVisible(checked); });
 
     m_actionToolbarView = new QAction(tr("Show View Toolbar"), this);
     m_actionToolbarView->setObjectName(QStringLiteral("actionToolbarView"));
     m_actionToolbarView->setCheckable(true);
-    m_actionToolbarView->setChecked(true);
     m_actionToolbarView->setToolTip(tr("Display the View toolbar"));
     connect(m_actionToolbarView, &QAction::toggled, [=](bool checked) { m_toolbarView->setVisible(checked); });
 
@@ -309,7 +306,9 @@ void MainWindow::setApplicationState(const QByteArray &state)
         restoreState(state);
     }
     else {
-        m_actionToolbarView->setChecked(false);
+        m_toolbarApplication->setVisible(true);
+        m_toolbarChannels->setVisible(true);
+        m_toolbarView->setVisible(false);
     }
 }
 
