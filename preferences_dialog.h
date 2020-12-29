@@ -38,7 +38,7 @@ public:
     void setDialogGeometry(const QByteArray &geometry = QByteArray());
     QByteArray dialogGeometry() const;
 
-    void setSettings(Settings &settings);
+    void setSettings(const Settings &settings);
     Settings settings() const;
 
 private slots:
@@ -52,7 +52,7 @@ private:
     QPushButton *m_buttonApply;
 
     Settings m_settings;
-    void updateSettings(Settings &settings);
+    void updateSettings(bool isDefault = false);
     void saveSettings();
 
     PreferencesGeneralSettings *m_generalSettings;

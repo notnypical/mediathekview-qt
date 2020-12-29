@@ -70,7 +70,7 @@ PreferencesDialog::PreferencesDialog(QWidget *parent)
     layout->addLayout(settingsBox);
     layout->addWidget(buttonBox);
 
-    updateSettings(m_settings);
+    updateSettings();
     m_buttonApply->setEnabled(false);
 }
 
@@ -92,10 +92,11 @@ QByteArray PreferencesDialog::dialogGeometry() const
 }
 
 
-void PreferencesDialog::setSettings(Settings &settings)
+void PreferencesDialog::setSettings(const Settings &settings)
 {
-    updateSettings(settings);
-    saveSettings();
+    m_settings = settings;
+
+    updateSettings();
     m_buttonApply->setEnabled(false);
 }
 
@@ -114,8 +115,7 @@ void PreferencesDialog::onSettingsChanged()
 
 void PreferencesDialog::onButtonDefaultsClicked()
 {
-    Settings settings;
-    updateSettings(settings);
+    updateSettings(true);
 }
 
 
@@ -133,12 +133,12 @@ void PreferencesDialog::onButtonApplyClicked()
 }
 
 
-void PreferencesDialog::updateSettings(Settings &settings)
+void PreferencesDialog::updateSettings(bool isDefault)
 {
     // General
-    m_generalSettings->setRestoreApplicationState(settings.restoreApplicationState());
-    m_generalSettings->setRestoreApplicationGeometry(settings.restoreApplicationGeometry());
-    m_generalSettings->setRestoreDialogGeometry(settings.restoreDialogGeometry());
+    m_generalSettings->setRestoreApplicationState(m_settings.restoreApplicationState(isDefault));
+    m_generalSettings->setRestoreApplicationGeometry(m_settings.restoreApplicationGeometry(isDefault));
+    m_generalSettings->setRestoreDialogGeometry(m_settings.restoreDialogGeometry(isDefault));
 }
 
 
