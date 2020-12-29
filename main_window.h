@@ -78,10 +78,12 @@ private:
     QAction *m_actionFullScreen;
     QAction *m_actionToolbarApplication;
     QAction *m_actionToolbarChannels;
+    QAction *m_actionToolbarTools;
     QAction *m_actionToolbarView;
 
     QToolBar *m_toolbarApplication;
     QToolBar *m_toolbarChannels;
+    QToolBar *m_toolbarTools;
     QToolBar *m_toolbarView;
 
     Settings m_settings;
