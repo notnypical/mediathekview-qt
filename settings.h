@@ -24,6 +24,7 @@
 
 
 const bool RESTORE_APPLICATION_STATE_DEFAULT = true;
+const bool RESTORE_APPLICATION_GEOMETRY_DEFAULT = true;
 
 
 class Settings
@@ -37,8 +38,12 @@ public:
     void setRestoreApplicationState(bool value);
     bool restoreApplicationState(bool isDefault = false);
 
+    void setRestoreApplicationGeometry(bool value);
+    bool restoreApplicationGeometry(bool isDefault = false);
+
 private:
     bool m_restoreApplicationState;
+    bool m_restoreApplicationGeometry;
 };
 
 #endif // SETTINGS_H

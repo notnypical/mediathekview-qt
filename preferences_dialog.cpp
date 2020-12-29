@@ -137,6 +137,7 @@ void PreferencesDialog::updateSettings(Settings &settings)
 {
     // General
     m_generalSettings->setRestoreApplicationState(settings.restoreApplicationState());
+    m_generalSettings->setRestoreApplicationGeometry(settings.restoreApplicationGeometry());
 }
 
 
@@ -144,4 +145,5 @@ void PreferencesDialog::saveSettings()
 {
     // General
     m_settings.setRestoreApplicationState(m_generalSettings->restoreApplicationState());
+    m_settings.setRestoreApplicationGeometry(m_generalSettings->restoreApplicationGeometry());
 }

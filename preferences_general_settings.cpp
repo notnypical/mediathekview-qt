@@ -33,8 +33,12 @@ PreferencesGeneralSettings::PreferencesGeneralSettings(QWidget *parent)
     m_chkRestoreApplicationState = new QCheckBox(tr("Save and restore the application state"));
     connect(m_chkRestoreApplicationState, &QCheckBox::stateChanged, this, &PreferencesGeneralSettings::onSettingsChanged);
 
+    m_chkRestoreApplicationGeometry = new QCheckBox(tr("Save and restore the application geometry"));
+    connect(m_chkRestoreApplicationGeometry, &QCheckBox::stateChanged, this, &PreferencesGeneralSettings::onSettingsChanged);
+
     auto *stateGeometryLayout = new QVBoxLayout;
     stateGeometryLayout->addWidget(m_chkRestoreApplicationState);
+    stateGeometryLayout->addWidget(m_chkRestoreApplicationGeometry);
 
     auto *stateGeometryGroup = new QGroupBox(tr("State && Geometries"));
     stateGeometryGroup->setLayout(stateGeometryLayout);
@@ -74,4 +78,16 @@ void PreferencesGeneralSettings::setRestoreApplicationState(const bool checked)
 bool PreferencesGeneralSettings::restoreApplicationState() const
 {
     return m_chkRestoreApplicationState->isChecked();
+}
+
+
+void PreferencesGeneralSettings::setRestoreApplicationGeometry(const bool checked)
+{
+    m_chkRestoreApplicationGeometry->setChecked(checked);
+}
+
+
+bool PreferencesGeneralSettings::restoreApplicationGeometry() const
+{
+    return m_chkRestoreApplicationGeometry->isChecked();
 }

@@ -266,7 +266,11 @@ void MainWindow::readSettings()
     m_preferencesDialogGeometry = settings.value(QStringLiteral("PreferencesDialog/geometry"), QByteArray()).toByteArray();
 
     // Set application properties
-    setApplicationGeometry(applicationGeometry);
+    if (m_settings.restoreApplicationGeometry())
+        setApplicationGeometry(applicationGeometry);
+    else
+        setApplicationGeometry();
+
     if (m_settings.restoreApplicationState())
         setApplicationState(applicationState);
     else
