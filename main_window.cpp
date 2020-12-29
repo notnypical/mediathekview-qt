@@ -340,7 +340,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
 
 void MainWindow::onActionAboutTriggered()
 {
-    auto geometry = m_aboutDialogGeometry;
+    auto geometry = m_settings.restoreDialogGeometry() ? m_aboutDialogGeometry : QByteArray();
 
     AboutDialog dialog(this);
     dialog.setDialogGeometry(geometry);
@@ -352,7 +352,7 @@ void MainWindow::onActionAboutTriggered()
 
 void MainWindow::onActionColophonTriggered()
 {
-    auto geometry = m_colophonDialogGeometry;
+    auto geometry = m_settings.restoreDialogGeometry() ? m_colophonDialogGeometry : QByteArray();
 
     ColophonDialog dialog(this);
     dialog.setDialogGeometry(geometry);
@@ -364,7 +364,7 @@ void MainWindow::onActionColophonTriggered()
 
 void MainWindow::onActionPreferencesTriggered()
 {
-    auto geometry = m_preferencesDialogGeometry;
+    auto geometry = m_settings.restoreDialogGeometry() ? m_preferencesDialogGeometry : QByteArray();
 
     PreferencesDialog dialog(this);
     dialog.setDialogGeometry(geometry);
