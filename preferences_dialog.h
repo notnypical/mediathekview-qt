@@ -25,8 +25,7 @@
 
 #include "preferences_database_settings.h"
 #include "preferences_general_settings.h"
-
-class Settings {};
+#include "settings.h"
 
 
 class PreferencesDialog : public QDialog

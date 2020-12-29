@@ -40,7 +40,8 @@ SOURCES += \
     main_window.cpp \
     preferences_database_settings.cpp \
     preferences_dialog.cpp \
-    preferences_general_settings.cpp
+    preferences_general_settings.cpp \
+    settings.cpp
 
 HEADERS += \
     about_dialog.h \
@@ -54,7 +55,8 @@ HEADERS += \
     main_window.h \
     preferences_database_settings.h \
     preferences_dialog.h \
-    preferences_general_settings.h
+    preferences_general_settings.h \
+    settings.h
 
 TRANSLATIONS += \
     translations/mediathekview-qt_en.ts

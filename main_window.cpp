@@ -48,6 +48,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
+
 }
 
 
@@ -255,6 +256,8 @@ void MainWindow::readSettings()
 {
     QSettings settings;
 
+    m_settings.load(settings);
+
     // Application and dialog properties
     const auto applicationGeometry = settings.value(QStringLiteral("Application/geometry"), QByteArray()).toByteArray();
     const auto applicationState = settings.value(QStringLiteral("Application/state"), QByteArray()).toByteArray();
@@ -271,6 +274,8 @@ void MainWindow::readSettings()
 void MainWindow::writeSettings()
 {
     QSettings settings;
+
+    m_settings.save(settings);
 
     // Application and dialog properties
     settings.setValue(QStringLiteral("Application/geometry"), applicationGeometry());

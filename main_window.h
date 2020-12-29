@@ -25,6 +25,8 @@
 #include <QCloseEvent>
 #include <QMainWindow>
 
+#include "settings.h"
+
 
 class MainWindow : public QMainWindow
 {
@@ -82,6 +84,7 @@ private:
     QToolBar *m_toolbarChannels;
     QToolBar *m_toolbarView;
 
+    Settings m_settings;
     void readSettings();
     void writeSettings();
 
