@@ -211,6 +211,10 @@ void MainWindow::createMenus()
     menuChannels->addSeparator();
     menuChannels->addAction(m_actionSelectInvert);
 
+    // Menu: Tools
+    auto *menuTools = menuBar()->addMenu(tr("Tools"));
+    menuTools->setObjectName(QStringLiteral("menuTools"));
+
     // Menu: View
     auto *menuView = menuBar()->addMenu(tr("View"));
     menuView->setObjectName(QStringLiteral("menuView"));
