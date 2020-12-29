@@ -267,7 +267,10 @@ void MainWindow::readSettings()
 
     // Set application properties
     setApplicationGeometry(applicationGeometry);
-    setApplicationState(applicationState);
+    if (m_settings.restoreApplicationState())
+        setApplicationState(applicationState);
+    else
+        setApplicationState();
 }
 
 
@@ -361,9 +364,11 @@ void MainWindow::onActionPreferencesTriggered()
 
     PreferencesDialog dialog(this);
     dialog.setDialogGeometry(geometry);
+    dialog.setSettings(m_settings);
     dialog.exec();
 
     m_preferencesDialogGeometry = dialog.dialogGeometry();
+    m_settings = dialog.settings();
 }
 
 

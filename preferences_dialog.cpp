@@ -92,7 +92,7 @@ QByteArray PreferencesDialog::dialogGeometry() const
 }
 
 
-void PreferencesDialog::setSettings(const Settings &settings)
+void PreferencesDialog::setSettings(Settings &settings)
 {
     updateSettings(settings);
     saveSettings();
@@ -133,13 +133,15 @@ void PreferencesDialog::onButtonApplyClicked()
 }
 
 
-void PreferencesDialog::updateSettings(const Settings &settings)
+void PreferencesDialog::updateSettings(Settings &settings)
 {
-
+    // General
+    m_generalSettings->setRestoreApplicationState(settings.restoreApplicationState());
 }
 
 
 void PreferencesDialog::saveSettings()
 {
-
+    // General
+    m_settings.setRestoreApplicationState(m_generalSettings->restoreApplicationState());
 }

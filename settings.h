@@ -23,6 +23,9 @@
 #include <QSettings>
 
 
+const bool RESTORE_APPLICATION_STATE_DEFAULT = true;
+
+
 class Settings
 {
 public:
@@ -30,6 +33,12 @@ public:
 
     void load(QSettings &settings);
     void save(QSettings &settings);
+
+    void setRestoreApplicationState(bool value);
+    bool restoreApplicationState(bool isDefault = false);
+
+private:
+    bool m_restoreApplicationState;
 };
 
 #endif // SETTINGS_H

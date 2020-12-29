@@ -19,6 +19,7 @@
 
 #include "preferences_general_settings.h"
 
+#include <QGroupBox>
 #include <QLabel>
 
 
@@ -28,10 +29,20 @@ PreferencesGeneralSettings::PreferencesGeneralSettings(QWidget *parent)
     // Title
     auto *title = new QLabel(tr("<strong style=\"font-size:large;\">General Settings</strong>"));
 
+    // State and geometries
+    m_chkRestoreApplicationState = new QCheckBox(tr("Save and restore the application state"));
+    connect(m_chkRestoreApplicationState, &QCheckBox::stateChanged, this, &PreferencesGeneralSettings::onSettingsChanged);
+
+    auto *stateGeometryLayout = new QVBoxLayout;
+    stateGeometryLayout->addWidget(m_chkRestoreApplicationState);
+
+    auto *stateGeometryGroup = new QGroupBox(tr("State && Geometries"));
+    stateGeometryGroup->setLayout(stateGeometryLayout);
 
     // Main layout
     m_layout = new QVBoxLayout(this);
     m_layout->addWidget(title);
+    m_layout->addWidget(stateGeometryGroup);
     m_layout->addStretch();
 }
 
@@ -51,4 +62,16 @@ void PreferencesGeneralSettings::setZeroMargins()
 void PreferencesGeneralSettings::onSettingsChanged()
 {
     emit settingsChanged();
+}
+
+
+void PreferencesGeneralSettings::setRestoreApplicationState(const bool checked)
+{
+    m_chkRestoreApplicationState->setChecked(checked);
+}
+
+
+bool PreferencesGeneralSettings::restoreApplicationState() const
+{
+    return m_chkRestoreApplicationState->isChecked();
 }
