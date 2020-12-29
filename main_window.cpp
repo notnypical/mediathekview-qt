@@ -145,6 +145,15 @@ void MainWindow::createActions()
     m_actionSelectInvert->setToolTip(tr("Invert list of selected channels"));
     connect(m_actionSelectInvert, &QAction::toggled, [=](bool checked) { onActionSelectInvertToggled(checked); });
 
+    // Actions: Tools
+    m_actionUpdate = new QAction(tr("Update Database"), this);
+    m_actionUpdate->setObjectName(QStringLiteral("actionUpdate"));
+    m_actionUpdate->setIcon(QIcon::fromTheme(QStringLiteral("edit-download"), QIcon(QStringLiteral(":/icons/actions/16/edit-download.svg"))));
+    m_actionUpdate->setIconText(tr("Update"));
+    m_actionUpdate->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_F5));
+    m_actionUpdate->setToolTip(tr("Update the local database [%1]").arg(m_actionUpdate->shortcut().toString(QKeySequence::NativeText)));
+    connect(m_actionUpdate, &QAction::triggered, this, &MainWindow::onActionUpdateTriggered);
+
     // Actions: View
     m_actionFullScreen = new QAction(this);
     m_actionFullScreen->setObjectName(QStringLiteral("actionFullScreen"));
@@ -221,6 +230,7 @@ void MainWindow::createMenus()
     // Menu: Tools
     auto *menuTools = menuBar()->addMenu(tr("Tools"));
     menuTools->setObjectName(QStringLiteral("menuTools"));
+    menuTools->addAction(m_actionUpdate);
 
     // Menu: View
     auto *menuView = menuBar()->addMenu(tr("View"));
@@ -256,9 +266,10 @@ void MainWindow::createToolbars()
     m_toolbarChannels->addAction(m_actionSelectInvert);
     connect(m_toolbarChannels, &QToolBar::visibilityChanged, [=](bool visible) { m_actionToolbarChannels->setChecked(visible); });
 
-    // Toolbar: View
+    // Toolbar: Tools
     m_toolbarTools = addToolBar(tr("Tools Toolbar"));
     m_toolbarTools->setObjectName(QStringLiteral("toolbarTools"));
+    m_toolbarTools->addAction(m_actionUpdate);
     connect(m_toolbarTools, &QToolBar::visibilityChanged, [=](bool visible) { m_actionToolbarTools->setChecked(visible); });
 
     // Toolbar: View
@@ -418,6 +429,12 @@ void MainWindow::onActionSelectInvertToggled(bool checked)
         else
             m_actionChannels[i]->setToolTip(tr("Show all programs of channel %1").arg(m_actionChannels[i]->data().toString()));
     }
+}
+
+
+void MainWindow::onActionUpdateTriggered()
+{
+
 }
 
 
