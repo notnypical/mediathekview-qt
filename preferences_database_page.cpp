@@ -26,7 +26,7 @@ PreferencesDatabasePage::PreferencesDatabasePage(QWidget *parent)
     : QWidget(parent)
 {
     // Title
-    auto *title = new QLabel(tr("<strong style=\"font-size:large;\">Database Settings</strong>"));
+    auto *title = new QLabel(tr("<strong style=\"font-size:large;\">Database</strong>"));
 
 
     // Main layout
