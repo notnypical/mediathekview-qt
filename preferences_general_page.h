@@ -17,20 +17,20 @@
  * along with MediathekView-Qt.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef PREFERENCES_GENERAL_SETTINGS_H
-#define PREFERENCES_GENERAL_SETTINGS_H
+#ifndef PREFERENCES_GENERAL_PAGE_H
+#define PREFERENCES_GENERAL_PAGE_H
 
 #include <QCheckBox>
 #include <QVBoxLayout>
 #include <QWidget>
 
 
-class PreferencesGeneralSettings : public QWidget
+class PreferencesGeneralPage : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit PreferencesGeneralSettings(QWidget *parent = nullptr);
+    explicit PreferencesGeneralPage(QWidget *parent = nullptr);
 
     QString title() const;
 
@@ -59,4 +59,4 @@ private:
     QCheckBox *m_chkRestoreDialogGeometry;
 };
 
-#endif // PREFERENCES_GENERAL_SETTINGS_H
+#endif // PREFERENCES_GENERAL_PAGE_H

@@ -34,22 +34,22 @@ PreferencesDialog::PreferencesDialog(QWidget *parent)
     setDialogGeometry();
 
     // Settings box
-    m_generalSettings = new PreferencesGeneralSettings(this);
-    m_generalSettings->setZeroMargins();
-    connect(m_generalSettings, &PreferencesGeneralSettings::settingsChanged, this, &PreferencesDialog::onSettingsChanged);
+    m_generalPage = new PreferencesGeneralPage(this);
+    m_generalPage->setZeroMargins();
+    connect(m_generalPage, &PreferencesGeneralPage::settingsChanged, this, &PreferencesDialog::onSettingsChanged);
 
-    m_databaseSettings = new PreferencesDatabaseSettings(this);
-    m_databaseSettings->setZeroMargins();
-    connect(m_databaseSettings, &PreferencesDatabaseSettings::settingsChanged, this, &PreferencesDialog::onSettingsChanged);
+    m_databasePage = new PreferencesDatabasePage(this);
+    m_databasePage->setZeroMargins();
+    connect(m_databasePage, &PreferencesDatabasePage::settingsChanged, this, &PreferencesDialog::onSettingsChanged);
 
     auto *stackedBox = new QStackedWidget;
-    stackedBox->addWidget(m_generalSettings);
-    stackedBox->addWidget(m_databaseSettings);
+    stackedBox->addWidget(m_generalPage);
+    stackedBox->addWidget(m_databasePage);
     stackedBox->setCurrentIndex(0);
 
     auto *listBox = new QListWidget;
-    listBox->addItem(m_generalSettings->title());
-    listBox->addItem(m_databaseSettings->title());
+    listBox->addItem(m_generalPage->title());
+    listBox->addItem(m_databasePage->title());
     listBox->setCurrentRow(stackedBox->currentIndex());
     connect(listBox, &QListWidget::currentRowChanged, stackedBox, &QStackedWidget::setCurrentIndex);
 
@@ -136,16 +136,16 @@ void PreferencesDialog::onButtonApplyClicked()
 void PreferencesDialog::updateSettings(bool isDefault)
 {
     // General
-    m_generalSettings->setRestoreApplicationState(m_settings.restoreApplicationState(isDefault));
-    m_generalSettings->setRestoreApplicationGeometry(m_settings.restoreApplicationGeometry(isDefault));
-    m_generalSettings->setRestoreDialogGeometry(m_settings.restoreDialogGeometry(isDefault));
+    m_generalPage->setRestoreApplicationState(m_settings.restoreApplicationState(isDefault));
+    m_generalPage->setRestoreApplicationGeometry(m_settings.restoreApplicationGeometry(isDefault));
+    m_generalPage->setRestoreDialogGeometry(m_settings.restoreDialogGeometry(isDefault));
 }
 
 
 void PreferencesDialog::saveSettings()
 {
     // General
-    m_settings.setRestoreApplicationState(m_generalSettings->restoreApplicationState());
-    m_settings.setRestoreApplicationGeometry(m_generalSettings->restoreApplicationGeometry());
-    m_settings.setRestoreDialogGeometry(m_generalSettings->restoreDialogGeometry());
+    m_settings.setRestoreApplicationState(m_generalPage->restoreApplicationState());
+    m_settings.setRestoreApplicationGeometry(m_generalPage->restoreApplicationGeometry());
+    m_settings.setRestoreDialogGeometry(m_generalPage->restoreDialogGeometry());
 }

@@ -17,12 +17,12 @@
  * along with MediathekView-Qt.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "preferences_database_settings.h"
+#include "preferences_database_page.h"
 
 #include <QLabel>
 
 
-PreferencesDatabaseSettings::PreferencesDatabaseSettings(QWidget *parent)
+PreferencesDatabasePage::PreferencesDatabasePage(QWidget *parent)
     : QWidget(parent)
 {
     // Title
@@ -36,19 +36,19 @@ PreferencesDatabaseSettings::PreferencesDatabaseSettings(QWidget *parent)
 }
 
 
-QString PreferencesDatabaseSettings::title() const
+QString PreferencesDatabasePage::title() const
 {
     return tr("Database");
 }
 
 
-void PreferencesDatabaseSettings::setZeroMargins()
+void PreferencesDatabasePage::setZeroMargins()
 {
     m_layout->setContentsMargins(0, 0, 0, 0);
 }
 
 
-void PreferencesDatabaseSettings::onSettingsChanged()
+void PreferencesDatabasePage::onSettingsChanged()
 {
     emit settingsChanged();
 }

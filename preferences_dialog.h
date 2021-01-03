@@ -23,8 +23,8 @@
 #include <QDialog>
 #include <QPushButton>
 
-#include "preferences_database_settings.h"
-#include "preferences_general_settings.h"
+#include "preferences_database_page.h"
+#include "preferences_general_page.h"
 #include "settings.h"
 
 
@@ -55,8 +55,8 @@ private:
     void updateSettings(bool isDefault = false);
     void saveSettings();
 
-    PreferencesGeneralSettings *m_generalSettings;
-    PreferencesDatabaseSettings *m_databaseSettings;
+    PreferencesGeneralPage *m_generalPage;
+    PreferencesDatabasePage *m_databasePage;
 };
 
 #endif // PREFERENCES_DIALOG_H

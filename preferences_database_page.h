@@ -17,19 +17,19 @@
  * along with MediathekView-Qt.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef PREFERENCES_DATABASE_SETTINGS_H
-#define PREFERENCES_DATABASE_SETTINGS_H
+#ifndef PREFERENCES_DATABASE_PAGE_H
+#define PREFERENCES_DATABASE_PAGE_H
 
 #include <QVBoxLayout>
 #include <QWidget>
 
 
-class PreferencesDatabaseSettings : public QWidget
+class PreferencesDatabasePage : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit PreferencesDatabaseSettings(QWidget *parent = nullptr);
+    explicit PreferencesDatabasePage(QWidget *parent = nullptr);
 
     QString title() const;
 
@@ -45,4 +45,4 @@ private:
     QVBoxLayout *m_layout;
 };
 
-#endif // PREFERENCES_DATABASE_SETTINGS_H
+#endif // PREFERENCES_DATABASE_PAGE_H
