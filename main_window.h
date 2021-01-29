@@ -36,11 +36,11 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    void setApplicationGeometry(const QByteArray &geometry = QByteArray());
-    QByteArray applicationGeometry() const;
-
     void setApplicationState(const QByteArray &state = QByteArray());
     QByteArray applicationState() const;
+
+    void setApplicationGeometry(const QByteArray &geometry = QByteArray());
+    QByteArray applicationGeometry() const;
 
 protected:
     void closeEvent(QCloseEvent *event) override;
@@ -59,6 +59,10 @@ private slots:
     void onActionFullScreenTriggered();
 
 private:
+    Settings m_settings;
+    void readSettings();
+    void writeSettings();
+
     QMap<QString, QStringList> m_listChannels;
     void createChannels();
 
@@ -89,10 +93,6 @@ private:
     QToolBar *m_toolbarChannels;
     QToolBar *m_toolbarTools;
     QToolBar *m_toolbarView;
-
-    Settings m_settings;
-    void readSettings();
-    void writeSettings();
 
     QByteArray m_aboutDialogGeometry;
     QByteArray m_colophonDialogGeometry;
