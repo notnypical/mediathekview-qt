@@ -36,15 +36,15 @@ PreferencesDatabasePage::PreferencesDatabasePage(QWidget *parent)
 }
 
 
-QString PreferencesDatabasePage::title() const
-{
-    return tr("Database");
-}
-
-
 void PreferencesDatabasePage::setZeroMargins()
 {
     m_layout->setContentsMargins(0, 0, 0, 0);
+}
+
+
+QString PreferencesDatabasePage::title() const
+{
+    return tr("Database");
 }
 
 

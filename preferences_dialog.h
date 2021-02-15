@@ -49,11 +49,12 @@ private slots:
     void onButtonApplyClicked();
 
 private:
-    QPushButton *m_buttonApply;
-
     Preferences m_preferences;
+
     void updatePreferences(bool isDefault = false);
     void savePreferences();
+
+    QPushButton *m_buttonApply;
 
     PreferencesGeneralPage *m_generalPage;
     PreferencesDatabasePage *m_databasePage;

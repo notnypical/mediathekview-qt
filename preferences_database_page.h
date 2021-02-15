@@ -31,9 +31,9 @@ class PreferencesDatabasePage : public QWidget
 public:
     explicit PreferencesDatabasePage(QWidget *parent = nullptr);
 
-    QString title() const;
-
     void setZeroMargins();
+
+    QString title() const;
 
 signals:
     void preferencesChanged();
