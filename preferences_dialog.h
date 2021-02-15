@@ -23,9 +23,9 @@
 #include <QDialog>
 #include <QPushButton>
 
+#include "preferences.h"
 #include "preferences_database_page.h"
 #include "preferences_general_page.h"
-#include "settings.h"
 
 
 class PreferencesDialog : public QDialog
@@ -38,11 +38,11 @@ public:
     void setDialogGeometry(const QByteArray &geometry = QByteArray());
     QByteArray dialogGeometry() const;
 
-    void setSettings(const Settings &settings);
-    Settings settings() const;
+    void setPreferences(const Preferences &preferences);
+    Preferences preferences() const;
 
 private slots:
-    void onSettingsChanged();
+    void onPreferencesChanged();
 
     void onButtonDefaultsClicked();
     void onButtonOkClicked();
@@ -51,9 +51,9 @@ private slots:
 private:
     QPushButton *m_buttonApply;
 
-    Settings m_settings;
-    void updateSettings(bool isDefault = false);
-    void saveSettings();
+    Preferences m_preferences;
+    void updatePreferences(bool isDefault = false);
+    void savePreferences();
 
     PreferencesGeneralPage *m_generalPage;
     PreferencesDatabasePage *m_databasePage;

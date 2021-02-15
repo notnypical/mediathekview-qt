@@ -38,10 +38,10 @@ SOURCES += \
     dialog_title_box.cpp \
     main.cpp \
     main_window.cpp \
+    preferences.cpp \
     preferences_database_page.cpp \
     preferences_dialog.cpp \
-    preferences_general_page.cpp \
-    settings.cpp
+    preferences_general_page.cpp
 
 HEADERS += \
     about_dialog.h \
@@ -53,10 +53,10 @@ HEADERS += \
     colophon_license_page.h \
     dialog_title_box.h \
     main_window.h \
+    preferences.h \
     preferences_database_page.h \
     preferences_dialog.h \
-    preferences_general_page.h \
-    settings.h
+    preferences_general_page.h
 
 TRANSLATIONS += \
     translations/mediathekview-qt_en.ts

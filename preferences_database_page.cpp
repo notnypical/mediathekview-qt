@@ -48,7 +48,7 @@ void PreferencesDatabasePage::setZeroMargins()
 }
 
 
-void PreferencesDatabasePage::onSettingsChanged()
+void PreferencesDatabasePage::onPreferencesChanged()
 {
-    emit settingsChanged();
+    emit preferencesChanged();
 }
