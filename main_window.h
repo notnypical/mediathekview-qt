@@ -63,6 +63,12 @@ private:
     void readSettings();
     void writeSettings();
 
+    QByteArray m_applicationState;
+    QByteArray m_applicationGeometry;
+    QByteArray m_aboutDialogGeometry;
+    QByteArray m_colophonDialogGeometry;
+    QByteArray m_preferencesDialogGeometry;
+
     QMap<QString, QStringList> m_listChannels;
     void createChannels();
 
@@ -93,10 +99,6 @@ private:
     QToolBar *m_toolbarChannels;
     QToolBar *m_toolbarTools;
     QToolBar *m_toolbarView;
-
-    QByteArray m_aboutDialogGeometry;
-    QByteArray m_colophonDialogGeometry;
-    QByteArray m_preferencesDialogGeometry;
 };
 
 #endif // MAIN_WINDOW_H
