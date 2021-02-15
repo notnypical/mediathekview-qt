@@ -24,6 +24,7 @@
 #include <QByteArray>
 #include <QCloseEvent>
 #include <QMainWindow>
+#include <QToolBar>
 
 #include "preferences.h"
 
@@ -69,14 +70,19 @@ private:
     QByteArray m_colophonDialogGeometry;
     QByteArray m_preferencesDialogGeometry;
 
-    QMap<QString, QStringList> m_listChannels;
     void createChannels();
+    QMap<QString, QStringList> m_listChannels;
 
     void createActions();
     void createMenus();
-    void createToolbars();
+    void createToolBars();
 
     void updateActionFullScreen();
+
+    QToolBar *m_toolbarApplication;
+    QToolBar *m_toolbarChannels;
+    QToolBar *m_toolbarTools;
+    QToolBar *m_toolbarView;
 
     QAction *m_actionAbout;
     QAction *m_actionColophon;
@@ -94,11 +100,6 @@ private:
     QAction *m_actionToolbarChannels;
     QAction *m_actionToolbarTools;
     QAction *m_actionToolbarView;
-
-    QToolBar *m_toolbarApplication;
-    QToolBar *m_toolbarChannels;
-    QToolBar *m_toolbarTools;
-    QToolBar *m_toolbarView;
 };
 
 #endif // MAIN_WINDOW_H

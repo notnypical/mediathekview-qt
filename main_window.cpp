@@ -22,9 +22,7 @@
 #include <QApplication>
 #include <QMenuBar>
 #include <QScreen>
-#include <QSettings>
 #include <QStyle>
-#include <QToolBar>
 
 #include "about_dialog.h"
 #include "colophon_dialog.h"
@@ -42,7 +40,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     createActions();
     createMenus();
-    createToolbars();
+    createToolBars();
 
     setApplicationState(m_applicationState);
     setApplicationGeometry(m_applicationGeometry);
@@ -143,24 +141,24 @@ void MainWindow::writeSettings()
 
 void MainWindow::createChannels()
 {
-    m_listChannels[QStringLiteral("3sat")] = QStringList() << QStringLiteral("3sat");
-    m_listChannels[QStringLiteral("ard")] = QStringList() << QStringLiteral("ARD") << QStringLiteral("Das Erste");
-    m_listChannels[QStringLiteral("arteDe")] = QStringList() << QStringLiteral("ARTE.de");
-    m_listChannels[QStringLiteral("arteFr")] = QStringList() << QStringLiteral("ARTE.fr");
-    m_listChannels[QStringLiteral("br")] = QStringList() << QStringLiteral("BR") << QStringLiteral("Bayerischer Rundfunk");
-    m_listChannels[QStringLiteral("dw")] = QStringList() << QStringLiteral("DW TV") << QStringLiteral("Deutsche Welle");
-    m_listChannels[QStringLiteral("hr")] = QStringList() << QStringLiteral("HR") << QStringLiteral("Hessischer Rundfunk");
-    m_listChannels[QStringLiteral("kika")] = QStringList() << QStringLiteral("KiKA") << QStringLiteral("Kinderkanal von ARD und ZDF");
-    m_listChannels[QStringLiteral("mdr")] = QStringList() << QStringLiteral("MDR") << QStringLiteral("Mitteldeutscher Rundfunk");
-    m_listChannels[QStringLiteral("ndr")] = QStringList() << QStringLiteral("NDR") << QStringLiteral("Norddeutscher Rundfunk");
-    m_listChannels[QStringLiteral("orf")] = QStringList() << QStringLiteral("ORF") << QStringLiteral("Österreichischer Rundfunk");
-    m_listChannels[QStringLiteral("phoenix")] = QStringList() << QStringLiteral("phoenix");
-    m_listChannels[QStringLiteral("rbb")] = QStringList() << QStringLiteral("RBB") << QStringLiteral("Rundfunk Berlin-Brandenburg");
-    m_listChannels[QStringLiteral("sr")] = QStringList() << QStringLiteral("SR") << QStringLiteral("Saarländischer Rundfunk");
-    m_listChannels[QStringLiteral("srf")] = QStringList() << QStringLiteral("SRF") << QStringLiteral("Schweizer Rundfunk");
-    m_listChannels[QStringLiteral("swr")] = QStringList() << QStringLiteral("SWR") << QStringLiteral("Südwestrundfunk");
-    m_listChannels[QStringLiteral("wdr")] = QStringList() << QStringLiteral("WDR") << QStringLiteral("Westdeutscher Rundfunk");
-    m_listChannels[QStringLiteral("zdf")] = QStringList() << QStringLiteral("ZDF") << QStringLiteral("Zweites Deutsches Fernsehen");
+    m_listChannels[QStringLiteral("3sat")] = QStringList() << tr("3sat") << QString("");
+    m_listChannels[QStringLiteral("ard")] = QStringList() << tr("ARD") << tr("Das Erste");
+    m_listChannels[QStringLiteral("arteDe")] = QStringList() << tr("ARTE.de") << QString("");
+    m_listChannels[QStringLiteral("arteFr")] = QStringList() << tr("ARTE.fr") << QString("");
+    m_listChannels[QStringLiteral("br")] = QStringList() << tr("BR") << tr("Bayerischer Rundfunk");
+    m_listChannels[QStringLiteral("dw")] = QStringList() << tr("DW TV") << tr("Deutsche Welle");
+    m_listChannels[QStringLiteral("hr")] = QStringList() << tr("HR") << tr("Hessischer Rundfunk");
+    m_listChannels[QStringLiteral("kika")] = QStringList() << tr("KiKA") << tr("Kinderkanal von ARD und ZDF");
+    m_listChannels[QStringLiteral("mdr")] = QStringList() << tr("MDR") << tr("Mitteldeutscher Rundfunk");
+    m_listChannels[QStringLiteral("ndr")] = QStringList() << tr("NDR") << tr("Norddeutscher Rundfunk");
+    m_listChannels[QStringLiteral("orf")] = QStringList() << tr("ORF") << tr("Österreichischer Rundfunk");
+    m_listChannels[QStringLiteral("phoenix")] = QStringList() << tr("phoenix") << QString("");
+    m_listChannels[QStringLiteral("rbb")] = QStringList() << tr("RBB") << tr("Rundfunk Berlin-Brandenburg");
+    m_listChannels[QStringLiteral("sr")] = QStringList() << tr("SR") << tr("Saarländischer Rundfunk");
+    m_listChannels[QStringLiteral("srf")] = QStringList() << tr("SRF") << tr("Schweizer Rundfunk");
+    m_listChannels[QStringLiteral("swr")] = QStringList() << tr("SWR") << tr("Südwestrundfunk");
+    m_listChannels[QStringLiteral("wdr")] = QStringList() << tr("WDR") << tr("Westdeutscher Rundfunk");
+    m_listChannels[QStringLiteral("zdf")] = QStringList() << tr("ZDF") << tr("Zweites Deutsches Fernsehen");
 }
 
 
@@ -176,7 +174,6 @@ void MainWindow::createActions()
 
     m_actionColophon = new QAction(tr("Colophon"), this);
     m_actionColophon->setObjectName(QStringLiteral("actionColophon"));
-    m_actionColophon->setIconText(tr("Colophon"));
     m_actionColophon->setToolTip(tr("Lengthy description of the application"));
     connect(m_actionColophon, &QAction::triggered, this, &MainWindow::onActionColophonTriggered);
 
@@ -196,32 +193,26 @@ void MainWindow::createActions()
     connect(m_actionQuit, &QAction::triggered, this, &MainWindow::close);
 
     // Actions: Channels
-    m_actionLiveStreams = new QAction(tr("Live streams"), this);
+    m_actionLiveStreams = new QAction(tr("Live Streams"), this);
     m_actionLiveStreams->setObjectName(QStringLiteral("actionLiveStreams"));
     m_actionLiveStreams->setIcon(QIcon::fromTheme(QStringLiteral("network-wireless-hotspot"), QIcon(QStringLiteral(":/icons/actions/16/live-stream.svg"))));
-    m_actionLiveStreams->setIconText(tr("Live streams"));
+    m_actionLiveStreams->setIconText(tr("Live"));
     m_actionLiveStreams->setCheckable(true);
-    m_actionLiveStreams->setToolTip(tr("Show all live streaming channels."));
+    m_actionLiveStreams->setToolTip(tr("Show all live streaming channels"));
     connect(m_actionLiveStreams, &QAction::toggled, [=](bool checked) { onActionLiveStreamsToggled(checked); });
 
-    QString text;
-    QAction *channel;
     QMapIterator<QString, QStringList> it(m_listChannels);
     while (it.hasNext()) {
         it.next();
 
-        if (it.value().size() > 1)
-            text = tr("%1 (%2)").arg(it.value()[0], it.value()[1]);
-        else
-            text = it.value()[0];
+        auto text = !it.value()[1].isEmpty() ? tr("%1 (%2)").arg(it.value()[0], it.value()[1]) : it.value()[0];
 
-        channel = new QAction(text, this);
+        auto *channel = new QAction(text, this);
         channel->setObjectName(QStringLiteral("actionChannel_%1").arg(it.key()));
         channel->setIconText(it.value()[0]);
         channel->setCheckable(true);
         channel->setToolTip(tr("Show all programs of channel %1").arg(text));
-        channel->setData(text);
-        connect(channel, &QAction::toggled, [=](bool checked) { onActionChannelsToggled(it.key(), checked); });
+        connect(channel, &QAction::toggled, [=](bool checked) { onActionChannelsToggled(channel->objectName(), checked); });
 
         m_actionChannels << channel;
     }
@@ -274,7 +265,6 @@ void MainWindow::createActions()
     m_actionToolbarView->setCheckable(true);
     m_actionToolbarView->setToolTip(tr("Display the View toolbar"));
     connect(m_actionToolbarView, &QAction::toggled, [=](bool checked) { m_toolbarView->setVisible(checked); });
-
 }
 
 
@@ -333,7 +323,7 @@ void MainWindow::createMenus()
 }
 
 
-void MainWindow::createToolbars()
+void MainWindow::createToolBars()
 {
     // Toolbar: Application
     m_toolbarApplication = addToolBar(tr("Application Toolbar"));
@@ -430,9 +420,9 @@ void MainWindow::onActionSelectInvertToggled(bool checked)
         widget->style()->polish(widget);
 
         if (checked)
-            m_actionChannels[i]->setToolTip(tr("Hide all programs of channel %1").arg(m_actionChannels[i]->data().toString()));
+            m_actionChannels[i]->setToolTip(tr("Hide all programs of channel %1").arg(m_actionChannels[i]->text()));
         else
-            m_actionChannels[i]->setToolTip(tr("Show all programs of channel %1").arg(m_actionChannels[i]->data().toString()));
+            m_actionChannels[i]->setToolTip(tr("Show all programs of channel %1").arg(m_actionChannels[i]->text()));
     }
 }
 
