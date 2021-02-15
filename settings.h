@@ -23,11 +23,6 @@
 #include <QSettings>
 
 
-const bool RESTORE_APPLICATION_STATE_DEFAULT = true;
-const bool RESTORE_APPLICATION_GEOMETRY_DEFAULT = true;
-const bool RESTORE_DIALOG_GEOMETRY_DEFAULT = true;
-
-
 class Settings
 {
 public:
