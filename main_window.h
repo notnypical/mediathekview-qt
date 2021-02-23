@@ -61,8 +61,6 @@ private slots:
 
 private:
     Preferences m_preferences;
-    void readSettings();
-    void writeSettings();
 
     QByteArray m_applicationState;
     QByteArray m_applicationGeometry;
@@ -70,20 +68,25 @@ private:
     QByteArray m_colophonDialogGeometry;
     QByteArray m_preferencesDialogGeometry;
 
-    void createChannels();
+    void readSettings();
+    void writeSettings();
+
     QMap<QString, QStringList> m_listChannels;
 
-    void createActions();
-    void createMenus();
-    void createToolBars();
-
-    void updateActionFullScreen();
+    void createChannels();
 
     QToolBar *m_toolbarApplication;
     QToolBar *m_toolbarChannels;
     QToolBar *m_toolbarTools;
     QToolBar *m_toolbarView;
     QToolBar *m_toolbarHelp;
+
+    void createActions();
+    void createMenus();
+    void createToolBars();
+
+    void updateActionChannels(bool invert = false);
+    void updateActionFullScreen();
 
     QAction *m_actionAbout;
     QAction *m_actionColophon;

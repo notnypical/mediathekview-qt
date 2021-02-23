@@ -45,6 +45,7 @@ MainWindow::MainWindow(QWidget *parent)
     setApplicationState(m_applicationState);
     setApplicationGeometry(m_applicationGeometry);
 
+    updateActionChannels();
     updateActionFullScreen();
 }
 
@@ -276,23 +277,6 @@ void MainWindow::createActions()
 }
 
 
-void MainWindow::updateActionFullScreen()
-{
-    if (!isFullScreen()) {
-        m_actionFullScreen->setText(tr("Full Screen Mode"));
-        m_actionFullScreen->setIcon(QIcon::fromTheme(QStringLiteral("view-fullscreen"), QIcon(QStringLiteral(":/icons/actions/16/view-fullscreen.svg"))));
-        m_actionFullScreen->setChecked(false);
-        m_actionFullScreen->setToolTip(tr("Display the window in full screen [%1]").arg(m_actionFullScreen->shortcut().toString(QKeySequence::NativeText)));
-    }
-    else {
-        m_actionFullScreen->setText(tr("Exit Full Screen Mode"));
-        m_actionFullScreen->setIcon(QIcon::fromTheme(QStringLiteral("view-restore"), QIcon(QStringLiteral(":/icons/actions/16/view-restore.svg"))));
-        m_actionFullScreen->setChecked(true);
-        m_actionFullScreen->setToolTip(tr("Exit the full screen mode [%1]").arg(m_actionFullScreen->shortcut().toString(QKeySequence::NativeText)));
-    }
-}
-
-
 void MainWindow::createMenus()
 {
     // Menu: Application
@@ -377,6 +361,41 @@ void MainWindow::createToolBars()
 }
 
 
+void MainWindow::updateActionChannels(bool invert)
+{
+    // Tool buttons
+    for (int idx = 0; idx < m_actionChannels.size(); idx++) {
+
+        auto *widget = m_toolbarChannels->widgetForAction(m_actionChannels[idx]);
+        widget->setProperty("invertChannel", invert);
+        widget->style()->unpolish(widget);
+        widget->style()->polish(widget);
+
+        if (!invert)
+            m_actionChannels[idx]->setToolTip(tr("Show all programs of channel %1").arg(m_actionChannels[idx]->text()));
+        else
+            m_actionChannels[idx]->setToolTip(tr("Hide all programs of channel %1").arg(m_actionChannels[idx]->text()));
+    }
+}
+
+
+void MainWindow::updateActionFullScreen()
+{
+    if (!isFullScreen()) {
+        m_actionFullScreen->setText(tr("Full Screen Mode"));
+        m_actionFullScreen->setIcon(QIcon::fromTheme(QStringLiteral("view-fullscreen"), QIcon(QStringLiteral(":/icons/actions/16/view-fullscreen.svg"))));
+        m_actionFullScreen->setChecked(false);
+        m_actionFullScreen->setToolTip(tr("Display the window in full screen [%1]").arg(m_actionFullScreen->shortcut().toString(QKeySequence::NativeText)));
+    }
+    else {
+        m_actionFullScreen->setText(tr("Exit Full Screen Mode"));
+        m_actionFullScreen->setIcon(QIcon::fromTheme(QStringLiteral("view-restore"), QIcon(QStringLiteral(":/icons/actions/16/view-restore.svg"))));
+        m_actionFullScreen->setChecked(true);
+        m_actionFullScreen->setToolTip(tr("Exit the full screen mode [%1]").arg(m_actionFullScreen->shortcut().toString(QKeySequence::NativeText)));
+    }
+}
+
+
 void MainWindow::onActionAboutTriggered()
 {
     const auto geometry = m_preferences.restoreDialogGeometry() ? m_aboutDialogGeometry : QByteArray();
@@ -429,19 +448,7 @@ void MainWindow::onActionChannelsToggled(const QString &channel, bool checked)
 
 void MainWindow::onActionSelectInvertToggled(bool checked)
 {
-    // Tool buttons
-    for (int i = 0; i < m_actionChannels.size(); i++) {
-
-        auto *widget = m_toolbarChannels->widgetForAction(m_actionChannels[i]);
-        widget->setProperty("invertChannel", checked);
-        widget->style()->unpolish(widget);
-        widget->style()->polish(widget);
-
-        if (checked)
-            m_actionChannels[i]->setToolTip(tr("Hide all programs of channel %1").arg(m_actionChannels[i]->text()));
-        else
-            m_actionChannels[i]->setToolTip(tr("Show all programs of channel %1").arg(m_actionChannels[i]->text()));
-    }
+    updateActionChannels(checked);
 }
 
 
