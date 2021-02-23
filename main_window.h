@@ -83,6 +83,7 @@ private:
     QToolBar *m_toolbarChannels;
     QToolBar *m_toolbarTools;
     QToolBar *m_toolbarView;
+    QToolBar *m_toolbarHelp;
 
     QAction *m_actionAbout;
     QAction *m_actionColophon;
@@ -100,6 +101,7 @@ private:
     QAction *m_actionToolbarChannels;
     QAction *m_actionToolbarTools;
     QAction *m_actionToolbarView;
+    QAction *m_actionToolbarHelp;
 };
 
 #endif // MAIN_WINDOW_H
