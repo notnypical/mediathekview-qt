@@ -61,7 +61,7 @@ void MainWindow::setApplicationState(const QByteArray &state)
     else {
         m_toolbarApplication->setVisible(true);
         m_toolbarChannels->setVisible(true);
-        m_toolbarTools->setVisible(false);
+        m_toolbarTools->setVisible(true);
         m_toolbarView->setVisible(false);
     }
 }
@@ -95,6 +95,7 @@ QByteArray MainWindow::applicationGeometry() const
 void MainWindow::closeEvent(QCloseEvent *event)
 {
     if (true) {
+        // Application properties
         m_applicationState = m_preferences.restoreApplicationState() ? applicationState() : QByteArray();
         m_applicationGeometry = m_preferences.restoreApplicationGeometry() ? applicationGeometry() : QByteArray();
 
@@ -114,7 +115,7 @@ void MainWindow::readSettings()
     // Preferences
     m_preferences.load(settings);
 
-    // Application properties
+    // Application and dialog properties
     m_applicationState = m_preferences.restoreApplicationState() ? settings.value(QStringLiteral("Application/State"), QByteArray()).toByteArray() : QByteArray();
     m_applicationGeometry = m_preferences.restoreApplicationGeometry() ? settings.value(QStringLiteral("Application/Geometry"), QByteArray()).toByteArray() : QByteArray();
     m_aboutDialogGeometry = settings.value(QStringLiteral("AboutDialog/Geometry"), QByteArray()).toByteArray();
@@ -130,7 +131,7 @@ void MainWindow::writeSettings()
     // Preferences
     m_preferences.save(settings);
 
-    // Application properties
+    // Application and dialog properties
     settings.setValue(QStringLiteral("Application/State"), m_applicationState);
     settings.setValue(QStringLiteral("Application/Geometry"), m_applicationGeometry);
     settings.setValue(QStringLiteral("AboutDialog/Geometry"), m_aboutDialogGeometry);
