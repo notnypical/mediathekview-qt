@@ -20,6 +20,7 @@
 #include "main_window.h"
 
 #include <QApplication>
+#include <QDebug>
 #include <QMenuBar>
 #include <QScreen>
 #include <QStyle>
@@ -145,10 +146,10 @@ void MainWindow::saveSettings()
 
 void MainWindow::createChannels()
 {
-    m_listChannels[QStringLiteral("3sat")] = QStringList() << tr("3sat") << QString("");
+    m_listChannels[QStringLiteral("3sat")] = QStringList() << tr("3sat") << QString();
     m_listChannels[QStringLiteral("ard")] = QStringList() << tr("ARD") << tr("Das Erste");
-    m_listChannels[QStringLiteral("arteDe")] = QStringList() << tr("ARTE.de") << QString("");
-    m_listChannels[QStringLiteral("arteFr")] = QStringList() << tr("ARTE.fr") << QString("");
+    m_listChannels[QStringLiteral("arteDe")] = QStringList() << tr("ARTE.de") << QString();
+    m_listChannels[QStringLiteral("arteFr")] = QStringList() << tr("ARTE.fr") << QString();
     m_listChannels[QStringLiteral("br")] = QStringList() << tr("BR") << tr("Bayerischer Rundfunk");
     m_listChannels[QStringLiteral("dw")] = QStringList() << tr("DW TV") << tr("Deutsche Welle");
     m_listChannels[QStringLiteral("hr")] = QStringList() << tr("HR") << tr("Hessischer Rundfunk");
@@ -156,7 +157,7 @@ void MainWindow::createChannels()
     m_listChannels[QStringLiteral("mdr")] = QStringList() << tr("MDR") << tr("Mitteldeutscher Rundfunk");
     m_listChannels[QStringLiteral("ndr")] = QStringList() << tr("NDR") << tr("Norddeutscher Rundfunk");
     m_listChannels[QStringLiteral("orf")] = QStringList() << tr("ORF") << tr("Österreichischer Rundfunk");
-    m_listChannels[QStringLiteral("phoenix")] = QStringList() << tr("phoenix") << QString("");
+    m_listChannels[QStringLiteral("phoenix")] = QStringList() << tr("phoenix") << QString();
     m_listChannels[QStringLiteral("rbb")] = QStringList() << tr("RBB") << tr("Rundfunk Berlin-Brandenburg");
     m_listChannels[QStringLiteral("sr")] = QStringList() << tr("SR") << tr("Saarländischer Rundfunk");
     m_listChannels[QStringLiteral("srf")] = QStringList() << tr("SRF") << tr("Schweizer Rundfunk");
@@ -211,14 +212,14 @@ void MainWindow::createActions()
 
         auto text = !it.value()[1].isEmpty() ? tr("%1 (%2)").arg(it.value()[0], it.value()[1]) : it.value()[0];
 
-        auto *channel = new QAction(text, this);
-        channel->setObjectName(QStringLiteral("actionChannel_%1").arg(it.key()));
-        channel->setIconText(it.value()[0]);
-        channel->setCheckable(true);
-        channel->setToolTip(tr("Show all programs of channel %1").arg(text));
-        connect(channel, &QAction::toggled, [=](bool checked) { onActionChannelsToggled(channel->objectName(), checked); });
+        auto *actionChannel = new QAction(text, this);
+        actionChannel->setObjectName(QStringLiteral("actionChannel_%1").arg(it.key()));
+        actionChannel->setIconText(it.value()[0]);
+        actionChannel->setCheckable(true);
+        actionChannel->setData(it.key());
+        connect(actionChannel, &QAction::toggled, [=](bool checked) { onActionChannelsToggled(checked, actionChannel->data().toString()); });
 
-        m_actionChannels << channel;
+        m_actionChannels << actionChannel;
     }
 
     m_actionSelectInvert = new QAction(tr("Invert Selection"), this);
@@ -441,7 +442,7 @@ void MainWindow::onActionLiveStreamsToggled(bool checked)
 }
 
 
-void MainWindow::onActionChannelsToggled(const QString &channel, bool checked)
+void MainWindow::onActionChannelsToggled(bool checked, const QString &channel)
 {
 
 }

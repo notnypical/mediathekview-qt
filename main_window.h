@@ -52,7 +52,7 @@ private slots:
     void onActionPreferencesTriggered();
 
     void onActionLiveStreamsToggled(bool checked);
-    void onActionChannelsToggled(const QString &channel, bool checked);
+    void onActionChannelsToggled(bool checked, const QString &channel);
     void onActionSelectInvertToggled(bool checked);
 
     void onActionUpdateTriggered();
