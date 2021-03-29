@@ -33,7 +33,7 @@ KeyboardShortcutsDialog::KeyboardShortcutsDialog(QWidget *parent)
     setWindowTitle(tr("Keyboard Shortcuts"));
 
     // Content
-    auto *keyboardShortcutsPage = new KeyboardShortcutsPage();
+    auto *keyboardShortcutsPage = new KeyboardShortcutsPage(parentWidget());
     keyboardShortcutsPage->setZeroMargins();
 
     // Button box
