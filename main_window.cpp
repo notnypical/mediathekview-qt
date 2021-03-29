@@ -46,10 +46,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     loadSettings();
 
-    // Application properties
-    setApplicationGeometry(m_applicationGeometry);
-    setApplicationState(m_applicationState);
-
     updateActionChannels();
     updateActionFullScreen();
 }
@@ -59,53 +55,9 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::setApplicationState(const QByteArray &state)
-{
-    if (!state.isEmpty()) {
-        restoreState(state);
-    }
-    else {
-        m_toolbarApplication->setVisible(true);
-        m_toolbarChannels->setVisible(true);
-        m_toolbarTools->setVisible(true);
-        m_toolbarView->setVisible(false);
-        m_toolbarHelp->setVisible(false);
-    }
-}
-
-
-QByteArray MainWindow::applicationState() const
-{
-    return saveState();
-}
-
-
-void MainWindow::setApplicationGeometry(const QByteArray &geometry)
-{
-    if (!geometry.isEmpty()) {
-        restoreGeometry(geometry);
-    }
-    else {
-        const auto availableGeometry = screen()->availableGeometry();
-        resize(availableGeometry.width() * 2/3, availableGeometry.height() * 2/3);
-        move((availableGeometry.width() - width()) / 2, (availableGeometry.height() - height()) / 2);
-    }
-}
-
-
-QByteArray MainWindow::applicationGeometry() const
-{
-    return saveGeometry();
-}
-
-
 void MainWindow::closeEvent(QCloseEvent *event)
 {
     if (true) {
-        // Application properties
-        m_applicationGeometry = m_preferences.restoreApplicationGeometry() ? applicationGeometry() : QByteArray();
-        m_applicationState = m_preferences.restoreApplicationState() ? applicationState() : QByteArray();
-
         saveSettings();
         m_preferences.save();
         event->accept();
@@ -120,9 +72,29 @@ void MainWindow::loadSettings()
 {
     QSettings settings;
 
-    // Application and dialog properties
-    m_applicationGeometry = m_preferences.restoreApplicationGeometry() ? settings.value(QStringLiteral("Application/Geometry"), QByteArray()).toByteArray() : QByteArray();
-    m_applicationState = m_preferences.restoreApplicationState() ? settings.value(QStringLiteral("Application/State"), QByteArray()).toByteArray() : QByteArray();
+    // Application properties: Geometry
+    const auto geometry = m_preferences.restoreApplicationGeometry() ? settings.value(QStringLiteral("Application/Geometry"), QByteArray()).toByteArray() : QByteArray();
+    if (!geometry.isEmpty()) {
+        restoreGeometry(geometry);
+    }
+    else {
+        const auto availableGeometry = screen()->availableGeometry();
+        resize(availableGeometry.width() * 2/3, availableGeometry.height() * 2/3);
+        move((availableGeometry.width() - width()) / 2, (availableGeometry.height() - height()) / 2);
+    }
+
+    // Application properties: State
+    const auto state = m_preferences.restoreApplicationState() ? settings.value(QStringLiteral("Application/State"), QByteArray()).toByteArray() : QByteArray();
+    if (!state.isEmpty()) {
+        restoreState(state);
+    }
+    else {
+        m_toolbarApplication->setVisible(true);
+        m_toolbarChannels->setVisible(true);
+        m_toolbarTools->setVisible(true);
+        m_toolbarView->setVisible(false);
+        m_toolbarHelp->setVisible(false);
+    }
 }
 
 
@@ -130,9 +102,13 @@ void MainWindow::saveSettings()
 {
     QSettings settings;
 
-    // Application and dialog properties
-    settings.setValue(QStringLiteral("Application/Geometry"), m_applicationGeometry);
-    settings.setValue(QStringLiteral("Application/State"), m_applicationState);
+    // Application properties: Geometry
+    const auto geometry = m_preferences.restoreApplicationGeometry() ? saveGeometry() : QByteArray();
+    settings.setValue(QStringLiteral("Application/Geometry"), geometry);
+
+    // Application properties: State
+    const auto state = m_preferences.restoreApplicationState() ? saveState() : QByteArray();
+    settings.setValue(QStringLiteral("Application/State"), state);
 }
 
 
