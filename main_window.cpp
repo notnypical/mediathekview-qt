@@ -153,14 +153,12 @@ void MainWindow::createActions()
     m_actionPreferences = new QAction(tr("Preferences…"), this);
     m_actionPreferences->setObjectName(QStringLiteral("actionPreferences"));
     m_actionPreferences->setIcon(QIcon::fromTheme(QStringLiteral("configure"), QIcon(QStringLiteral(":/icons/actions/16/application-configure.svg"))));
-    m_actionPreferences->setIconText(tr("Preferences"));
     m_actionPreferences->setToolTip(tr("Customize the appearance and behavior of the application"));
     connect(m_actionPreferences, &QAction::triggered, this, &MainWindow::onActionPreferencesTriggered);
 
     m_actionQuit = new QAction(tr("Quit"), this);
     m_actionQuit->setObjectName(QStringLiteral("actionQuit"));
     m_actionQuit->setIcon(QIcon::fromTheme(QStringLiteral("application-exit"), QIcon(QStringLiteral(":/icons/actions/16/application-exit.svg"))));
-    m_actionQuit->setIconText(tr("Quit"));
     m_actionQuit->setShortcut(QKeySequence::Quit);
     m_actionQuit->setToolTip(tr("Quit the application [%1]").arg(m_actionQuit->shortcut().toString(QKeySequence::NativeText)));
     connect(m_actionQuit, &QAction::triggered, this, &MainWindow::close);
