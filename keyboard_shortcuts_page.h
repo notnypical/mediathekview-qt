@@ -17,31 +17,26 @@
  * along with MediathekView-Qt.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "keyboard_shortcuts_dialog.h"
+#ifndef KEYBOARD_SHORTCUTS_PAGE_H
+#define KEYBOARD_SHORTCUTS_PAGE_H
 
-#include <QDialogButtonBox>
 #include <QVBoxLayout>
+#include <QWidget>
 
-#include "keyboard_shortcuts_page.h"
 
-
-KeyboardShortcutsDialog::KeyboardShortcutsDialog(QWidget *parent)
-    : QDialog(parent)
+class KeyboardShortcutsPage : public QWidget
 {
-    setMinimumSize(640, 480);
-    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
-    setWindowTitle(tr("Keyboard Shortcuts"));
+    Q_OBJECT
 
-    // Content
-    auto *keyboardShortcutsPage = new KeyboardShortcutsPage();
-    keyboardShortcutsPage->setZeroMargins();
+public:
+    explicit KeyboardShortcutsPage(QWidget *parent = nullptr);
 
-    // Button box
-    auto *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close);
-    connect(buttonBox, &QDialogButtonBox::rejected, this, &KeyboardShortcutsDialog::close);
+    void setZeroMargins();
 
-    // Main layout
-    auto *layout = new QVBoxLayout(this);
-    layout->addWidget(keyboardShortcutsPage);
-    layout->addWidget(buttonBox);
-}
+    QString title() const;
+
+private:
+    QVBoxLayout *m_layout;
+};
+
+#endif // KEYBOARD_SHORTCUTS_PAGE_H
