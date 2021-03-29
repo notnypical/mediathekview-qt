@@ -23,6 +23,7 @@
 #include <QDebug>
 #include <QMenuBar>
 #include <QScreen>
+#include <QSettings>
 #include <QStyle>
 
 #include "about_dialog.h"
@@ -35,13 +36,15 @@ MainWindow::MainWindow(QWidget *parent)
 {
     setWindowIcon(QIcon(QStringLiteral(":/icons/apps/16/mediathekview.svg")));
 
-    loadSettings();
+    m_preferences.load();
 
     createChannels();
 
     createActions();
     createMenus();
     createToolBars();
+
+    loadSettings();
 
     // Application properties
     setApplicationGeometry(m_applicationGeometry);
@@ -104,6 +107,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
         m_applicationState = m_preferences.restoreApplicationState() ? applicationState() : QByteArray();
 
         saveSettings();
+        m_preferences.save();
         event->accept();
     }
     else {
@@ -116,9 +120,6 @@ void MainWindow::loadSettings()
 {
     QSettings settings;
 
-    // Preferences
-    m_preferences.load(settings);
-
     // Application and dialog properties
     m_applicationGeometry = m_preferences.restoreApplicationGeometry() ? settings.value(QStringLiteral("Application/Geometry"), QByteArray()).toByteArray() : QByteArray();
     m_applicationState = m_preferences.restoreApplicationState() ? settings.value(QStringLiteral("Application/State"), QByteArray()).toByteArray() : QByteArray();
@@ -128,9 +129,6 @@ void MainWindow::loadSettings()
 void MainWindow::saveSettings()
 {
     QSettings settings;
-
-    // Preferences
-    m_preferences.save(settings);
 
     // Application and dialog properties
     settings.setValue(QStringLiteral("Application/Geometry"), m_applicationGeometry);
