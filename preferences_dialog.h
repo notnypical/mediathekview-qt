@@ -35,9 +35,6 @@ class PreferencesDialog : public QDialog
 public:
     explicit PreferencesDialog(QWidget *parent = nullptr);
 
-    void setDialogGeometry(const QByteArray &geometry = QByteArray());
-    QByteArray dialogGeometry() const;
-
     void setPreferences(const Preferences &preferences);
     Preferences preferences() const;
 

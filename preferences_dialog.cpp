@@ -28,6 +28,7 @@
 PreferencesDialog::PreferencesDialog(QWidget *parent)
     : QDialog(parent)
 {
+    setMinimumSize(800, 600);
     setWindowTitle(tr("Preferences"));
 
     // Preferences box
@@ -69,21 +70,6 @@ PreferencesDialog::PreferencesDialog(QWidget *parent)
 
     updatePreferences();
     m_buttonApply->setEnabled(false);
-}
-
-
-void PreferencesDialog::setDialogGeometry(const QByteArray &geometry)
-{
-    if (!geometry.isEmpty())
-        restoreGeometry(geometry);
-    else
-        resize(800, 600);
-}
-
-
-QByteArray PreferencesDialog::dialogGeometry() const
-{
-    return saveGeometry();
 }
 
 

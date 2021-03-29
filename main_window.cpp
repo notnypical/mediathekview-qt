@@ -122,7 +122,6 @@ void MainWindow::loadSettings()
     // Application and dialog properties
     m_applicationState = m_preferences.restoreApplicationState() ? settings.value(QStringLiteral("Application/State"), QByteArray()).toByteArray() : QByteArray();
     m_applicationGeometry = m_preferences.restoreApplicationGeometry() ? settings.value(QStringLiteral("Application/Geometry"), QByteArray()).toByteArray() : QByteArray();
-    m_preferencesDialogGeometry = settings.value(QStringLiteral("PreferencesDialog/Geometry"), QByteArray()).toByteArray();
 }
 
 
@@ -136,7 +135,6 @@ void MainWindow::saveSettings()
     // Application and dialog properties
     settings.setValue(QStringLiteral("Application/State"), m_applicationState);
     settings.setValue(QStringLiteral("Application/Geometry"), m_applicationGeometry);
-    settings.setValue(QStringLiteral("PreferencesDialog/Geometry"), m_preferencesDialogGeometry);
 }
 
 
@@ -410,15 +408,11 @@ void MainWindow::onActionColophonTriggered()
 
 void MainWindow::onActionPreferencesTriggered()
 {
-    const auto geometry = m_preferences.restoreDialogGeometry() ? m_preferencesDialogGeometry : QByteArray();
-
     PreferencesDialog dialog(this);
-    dialog.setDialogGeometry(geometry);
     dialog.setPreferences(m_preferences);
     dialog.exec();
 
     m_preferences = dialog.preferences();
-    m_preferencesDialogGeometry = m_preferences.restoreDialogGeometry() ? dialog.dialogGeometry() : QByteArray();
 }
 
 
