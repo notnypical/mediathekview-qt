@@ -30,6 +30,7 @@
 AboutDialog::AboutDialog(QWidget *parent)
     : QDialog(parent)
 {
+    setMinimumSize(480, 320);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowTitle(tr("About %1").arg(QApplication::applicationName()));
 
@@ -49,19 +50,4 @@ AboutDialog::AboutDialog(QWidget *parent)
     layout->addWidget(titleBox);
     layout->addWidget(aboutPage);
     layout->addWidget(buttonBox);
-}
-
-
-void AboutDialog::setDialogGeometry(const QByteArray &geometry)
-{
-    if (!geometry.isEmpty())
-        restoreGeometry(geometry);
-    else
-        resize(480, 320);
-}
-
-
-QByteArray AboutDialog::dialogGeometry() const
-{
-    return saveGeometry();
 }
