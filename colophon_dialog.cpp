@@ -34,6 +34,7 @@
 ColophonDialog::ColophonDialog(QWidget *parent)
     : QDialog(parent)
 {
+    setMinimumSize(640, 480);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowTitle(tr("Colophon"));
 
@@ -63,19 +64,4 @@ ColophonDialog::ColophonDialog(QWidget *parent)
     layout->addWidget(titleBox);
     layout->addWidget(tabBox);
     layout->addWidget(buttonBox);
-}
-
-
-void ColophonDialog::setDialogGeometry(const QByteArray &geometry)
-{
-    if (!geometry.isEmpty())
-        restoreGeometry(geometry);
-    else
-        resize(640, 480);
-}
-
-
-QByteArray ColophonDialog::dialogGeometry() const
-{
-    return saveGeometry();
 }
