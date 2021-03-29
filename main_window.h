@@ -53,6 +53,8 @@ private slots:
 
     void onActionFullScreenTriggered();
 
+    void onActionKeyboardShortcutsTriggered();
+
 private:
     Preferences m_preferences;
 
@@ -93,6 +95,8 @@ private:
     QAction *m_actionToolbarTools;
     QAction *m_actionToolbarView;
     QAction *m_actionToolbarHelp;
+
+    QAction *m_actionKeyboardShortcuts;
 };
 
 #endif // MAIN_WINDOW_H

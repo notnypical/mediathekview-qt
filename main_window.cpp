@@ -242,6 +242,14 @@ void MainWindow::createActions()
     m_actionToolbarHelp->setCheckable(true);
     m_actionToolbarHelp->setToolTip(tr("Display the Help toolbar"));
     connect(m_actionToolbarHelp, &QAction::toggled, [=](bool checked) { m_toolbarHelp->setVisible(checked); });
+
+    // Actions: Help
+    m_actionKeyboardShortcuts = new QAction(tr("Keyboard Shortcuts"), this);
+    m_actionKeyboardShortcuts->setObjectName(QStringLiteral("actionKeyboardShortcuts"));
+    m_actionKeyboardShortcuts->setIcon(QIcon::fromTheme(QStringLiteral("help-keyboard-shortcuts"), QIcon(QStringLiteral(":/icons/actions/16/help-keyboard-shortcuts.svg"))));
+    m_actionKeyboardShortcuts->setIconText(tr("Shortcuts"));
+    m_actionKeyboardShortcuts->setToolTip(tr("List of all keyboard shortcuts"));
+    connect(m_actionKeyboardShortcuts, &QAction::triggered, this, &MainWindow::onActionKeyboardShortcutsTriggered);
 }
 
 
@@ -285,6 +293,7 @@ void MainWindow::createMenus()
     // Menu: Help
     auto *menuHelp = menuBar()->addMenu(tr("Help"));
     menuHelp->setObjectName(QStringLiteral("menuHelp"));
+    menuHelp->addAction(m_actionKeyboardShortcuts);
 }
 
 
@@ -325,6 +334,7 @@ void MainWindow::createToolBars()
     // Toolbar: Help
     m_toolbarHelp = addToolBar(tr("Help Toolbar"));
     m_toolbarHelp->setObjectName(QStringLiteral("toolbarHelp"));
+    m_toolbarHelp->addAction(m_actionKeyboardShortcuts);
     connect(m_toolbarHelp, &QToolBar::visibilityChanged, [=](bool visible) { m_actionToolbarHelp->setChecked(visible); });
 }
 
@@ -420,4 +430,10 @@ void MainWindow::onActionFullScreenTriggered()
         setWindowState(windowState() & ~Qt::WindowFullScreen);
 
     updateActionFullScreen();
+}
+
+
+void MainWindow::onActionKeyboardShortcutsTriggered()
+{
+
 }
