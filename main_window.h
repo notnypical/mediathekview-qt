@@ -26,6 +26,7 @@
 #include <QMainWindow>
 #include <QToolBar>
 
+#include "keyboard_shortcuts_dialog.h"
 #include "preferences.h"
 
 
@@ -56,6 +57,8 @@ private slots:
     void onActionKeyboardShortcutsTriggered();
 
 private:
+    KeyboardShortcutsDialog *m_keyboardShortcutsDialog;
+
     Preferences m_preferences;
 
     void loadSettings();

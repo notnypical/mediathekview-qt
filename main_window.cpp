@@ -435,5 +435,10 @@ void MainWindow::onActionFullScreenTriggered()
 
 void MainWindow::onActionKeyboardShortcutsTriggered()
 {
+    if (!m_keyboardShortcutsDialog)
+        m_keyboardShortcutsDialog = new KeyboardShortcutsDialog(this);
 
+    m_keyboardShortcutsDialog->show();
+    m_keyboardShortcutsDialog->raise();
+    m_keyboardShortcutsDialog->activateWindow();
 }
