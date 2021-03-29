@@ -22,10 +22,9 @@
 
 Preferences::Preferences()
 {
-    // General: State & Geometries
-    m_restoreApplicationState = true;
+    // General: Geometry & State
     m_restoreApplicationGeometry = true;
-    m_restoreDialogGeometry = true;
+    m_restoreApplicationState = true;
 }
 
 
@@ -33,10 +32,9 @@ void Preferences::load(QSettings &settings)
 {
     settings.beginGroup(QStringLiteral("Preferences"));
 
-    // General: State & Geometries
-    setRestoreApplicationState(settings.value(QStringLiteral("RestoreApplicationState"), true).toBool());
+    // General: Geometry & State
     setRestoreApplicationGeometry(settings.value(QStringLiteral("RestoreApplicationGeometry"), true).toBool());
-    setRestoreDialogGeometry(settings.value(QStringLiteral("RestoreDialogGeometry"), true).toBool());
+    setRestoreApplicationState(settings.value(QStringLiteral("RestoreApplicationState"), true).toBool());
 
     settings.endGroup();
 }
@@ -47,27 +45,11 @@ void Preferences::save(QSettings &settings)
     settings.beginGroup(QStringLiteral("Preferences"));
     settings.remove("");
 
-    // General: State & Geometries
-    settings.setValue(QStringLiteral("RestoreApplicationState"), m_restoreApplicationState);
+    // General: Geometry & State
     settings.setValue(QStringLiteral("RestoreApplicationGeometry"), m_restoreApplicationGeometry);
-    settings.setValue(QStringLiteral("RestoreDialogGeometry"), m_restoreDialogGeometry);
+    settings.setValue(QStringLiteral("RestoreApplicationState"), m_restoreApplicationState);
 
     settings.endGroup();
-}
-
-
-void Preferences::setRestoreApplicationState(bool value)
-{
-    m_restoreApplicationState = value;
-}
-
-
-bool Preferences::restoreApplicationState(bool isDefault)
-{
-    if (isDefault)
-        return true;
-
-    return m_restoreApplicationState;
 }
 
 
@@ -86,16 +68,16 @@ bool Preferences::restoreApplicationGeometry(bool isDefault)
 }
 
 
-void Preferences::setRestoreDialogGeometry(bool value)
+void Preferences::setRestoreApplicationState(bool value)
 {
-    m_restoreDialogGeometry = value;
+    m_restoreApplicationState = value;
 }
 
 
-bool Preferences::restoreDialogGeometry(bool isDefault)
+bool Preferences::restoreApplicationState(bool isDefault)
 {
     if (isDefault)
         return true;
 
-    return m_restoreDialogGeometry;
+    return m_restoreApplicationState;
 }

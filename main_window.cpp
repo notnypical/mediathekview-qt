@@ -44,8 +44,8 @@ MainWindow::MainWindow(QWidget *parent)
     createToolBars();
 
     // Application properties
-    setApplicationState(m_applicationState);
     setApplicationGeometry(m_applicationGeometry);
+    setApplicationState(m_applicationState);
 
     updateActionChannels();
     updateActionFullScreen();
@@ -100,8 +100,8 @@ void MainWindow::closeEvent(QCloseEvent *event)
 {
     if (true) {
         // Application properties
-        m_applicationState = m_preferences.restoreApplicationState() ? applicationState() : QByteArray();
         m_applicationGeometry = m_preferences.restoreApplicationGeometry() ? applicationGeometry() : QByteArray();
+        m_applicationState = m_preferences.restoreApplicationState() ? applicationState() : QByteArray();
 
         saveSettings();
         event->accept();
@@ -120,8 +120,8 @@ void MainWindow::loadSettings()
     m_preferences.load(settings);
 
     // Application and dialog properties
-    m_applicationState = m_preferences.restoreApplicationState() ? settings.value(QStringLiteral("Application/State"), QByteArray()).toByteArray() : QByteArray();
     m_applicationGeometry = m_preferences.restoreApplicationGeometry() ? settings.value(QStringLiteral("Application/Geometry"), QByteArray()).toByteArray() : QByteArray();
+    m_applicationState = m_preferences.restoreApplicationState() ? settings.value(QStringLiteral("Application/State"), QByteArray()).toByteArray() : QByteArray();
 }
 
 
@@ -133,8 +133,8 @@ void MainWindow::saveSettings()
     m_preferences.save(settings);
 
     // Application and dialog properties
-    settings.setValue(QStringLiteral("Application/State"), m_applicationState);
     settings.setValue(QStringLiteral("Application/Geometry"), m_applicationGeometry);
+    settings.setValue(QStringLiteral("Application/State"), m_applicationState);
 }
 
 
