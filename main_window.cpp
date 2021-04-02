@@ -36,7 +36,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     setWindowIcon(QIcon(QStringLiteral(":/icons/apps/16/mediathekview.svg")));
 
-    m_preferences.load();
+    m_preferences.loadSettings();
 
     createChannels();
 
@@ -59,7 +59,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
 {
     if (true) {
         saveSettings();
-        m_preferences.save();
+        m_preferences.saveSettings();
         event->accept();
     }
     else {
