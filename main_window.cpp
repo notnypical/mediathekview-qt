@@ -58,8 +58,10 @@ MainWindow::~MainWindow()
 void MainWindow::closeEvent(QCloseEvent *event)
 {
     if (true) {
+        // Store application properties and preferences
         saveSettings();
         m_preferences.saveSettings();
+
         event->accept();
     }
     else {
@@ -138,6 +140,7 @@ void MainWindow::createChannels()
 void MainWindow::createActions()
 {
     // Actions: Application
+
     m_actionAbout = new QAction(tr("About %1").arg(QApplication::applicationName()), this);
     m_actionAbout->setObjectName(QStringLiteral("actionAbout"));
     m_actionAbout->setIcon(QIcon(QStringLiteral(":/icons/apps/16/mediathekview.svg")));
@@ -164,6 +167,7 @@ void MainWindow::createActions()
     connect(m_actionQuit, &QAction::triggered, this, &MainWindow::close);
 
     // Actions: Channels
+
     m_actionLiveStreams = new QAction(tr("Live Streams"), this);
     m_actionLiveStreams->setObjectName(QStringLiteral("actionLiveStreams"));
     m_actionLiveStreams->setIcon(QIcon::fromTheme(QStringLiteral("network-wireless-hotspot"), QIcon(QStringLiteral(":/icons/actions/16/live-stream.svg"))));
@@ -197,6 +201,7 @@ void MainWindow::createActions()
     connect(m_actionSelectInvert, &QAction::toggled, [=](bool checked) { onActionSelectInvertToggled(checked); });
 
     // Actions: Tools
+
     m_actionUpdate = new QAction(tr("Update Database"), this);
     m_actionUpdate->setObjectName(QStringLiteral("actionUpdate"));
     m_actionUpdate->setIcon(QIcon::fromTheme(QStringLiteral("edit-download"), QIcon(QStringLiteral(":/icons/actions/16/edit-download.svg"))));
@@ -206,6 +211,7 @@ void MainWindow::createActions()
     connect(m_actionUpdate, &QAction::triggered, this, &MainWindow::onActionUpdateTriggered);
 
     // Actions: View
+
     m_actionFullScreen = new QAction(this);
     m_actionFullScreen->setObjectName(QStringLiteral("actionFullScreen"));
     m_actionFullScreen->setIconText(tr("Full Screen"));
@@ -244,6 +250,7 @@ void MainWindow::createActions()
     connect(m_actionToolbarHelp, &QAction::toggled, [=](bool checked) { m_toolbarHelp->setVisible(checked); });
 
     // Actions: Help
+
     m_actionKeyboardShortcuts = new QAction(tr("Keyboard Shortcuts"), this);
     m_actionKeyboardShortcuts->setObjectName(QStringLiteral("actionKeyboardShortcuts"));
     m_actionKeyboardShortcuts->setIcon(QIcon::fromTheme(QStringLiteral("help-keyboard-shortcuts"), QIcon(QStringLiteral(":/icons/actions/16/help-keyboard-shortcuts.svg"))));

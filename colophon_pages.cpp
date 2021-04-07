@@ -23,6 +23,10 @@
 #include <QTextBrowser>
 
 
+//
+// Colophon page: About
+//
+
 ColophonAboutPage::ColophonAboutPage(QWidget *parent)
     : QWidget(parent)
 {
@@ -54,6 +58,10 @@ QString ColophonAboutPage::title() const
 }
 
 
+//
+// Colophon page: Authors
+//
+
 ColophonAuthorsPage::ColophonAuthorsPage(QWidget *parent)
     : QWidget(parent)
 {
@@ -83,6 +91,10 @@ QString ColophonAuthorsPage::title() const
     return tr("Authors");
 }
 
+
+//
+// Colophon page: Credits
+//
 
 ColophonCreditsPage::ColophonCreditsPage(QWidget *parent)
     : QWidget(parent)
@@ -115,6 +127,10 @@ QString ColophonCreditsPage::title() const
     return tr("Credits");
 }
 
+
+//
+// Colophon page: Environment
+//
 
 ColophonEnvironmentPage::ColophonEnvironmentPage(QWidget *parent)
     : QWidget(parent)
@@ -155,6 +171,10 @@ QString ColophonEnvironmentPage::title() const
     return tr("Environment");
 }
 
+
+//
+// Colophon page: License
+//
 
 ColophonLicensePage::ColophonLicensePage(QWidget *parent)
     : QWidget(parent)

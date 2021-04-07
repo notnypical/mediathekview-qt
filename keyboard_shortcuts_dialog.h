@@ -28,7 +28,7 @@ class KeyboardShortcutsDialog : public QDialog
     Q_OBJECT
 
 public:
-    KeyboardShortcutsDialog(QWidget *parent = nullptr);
+    explicit KeyboardShortcutsDialog(QWidget *parent = nullptr);
 };
 
 #endif // KEYBOARD_SHORTCUTS_DIALOG_H

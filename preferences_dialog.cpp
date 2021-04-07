@@ -31,12 +31,13 @@ PreferencesDialog::PreferencesDialog(QWidget *parent)
     setMinimumSize(800, 600);
     setWindowTitle(tr("Preferences"));
 
-    // Preferences box
-    m_generalPage = new PreferencesGeneralPage(this);
+    // Content
+
+    m_generalPage = new PreferencesGeneralPage;
     m_generalPage->setZeroMargins();
     connect(m_generalPage, &PreferencesGeneralPage::preferencesChanged, this, &PreferencesDialog::onPreferencesChanged);
 
-    m_databasePage = new PreferencesDatabasePage(this);
+    m_databasePage = new PreferencesDatabasePage;
     m_databasePage->setZeroMargins();
     connect(m_databasePage, &PreferencesDatabasePage::preferencesChanged, this, &PreferencesDialog::onPreferencesChanged);
 

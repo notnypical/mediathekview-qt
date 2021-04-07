@@ -28,6 +28,8 @@ PreferencesDatabasePage::PreferencesDatabasePage(QWidget *parent)
     // Title
     auto *title = new QLabel(tr("<strong style=\"font-size:large;\">Database</strong>"));
 
+    // Content
+
 
     // Main layout
     m_layout = new QVBoxLayout(this);

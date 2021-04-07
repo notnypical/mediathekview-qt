@@ -67,10 +67,7 @@ void Preferences::setRestoreApplicationGeometry(bool value)
 
 bool Preferences::restoreApplicationGeometry(bool isDefault)
 {
-    if (isDefault)
-        return true;
-
-    return m_restoreApplicationGeometry;
+    return !isDefault ? m_restoreApplicationGeometry : true;
 }
 
 
@@ -82,8 +79,5 @@ void Preferences::setRestoreApplicationState(bool value)
 
 bool Preferences::restoreApplicationState(bool isDefault)
 {
-    if (isDefault)
-        return true;
-
-    return m_restoreApplicationState;
+    return !isDefault ? m_restoreApplicationState : true;
 }
