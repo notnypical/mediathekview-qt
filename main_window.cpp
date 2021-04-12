@@ -407,13 +407,14 @@ void MainWindow::onActionPreferencesTriggered()
 
 void MainWindow::onActionLiveStreamsToggled(bool checked)
 {
-
+    Q_UNUSED(checked);
 }
 
 
 void MainWindow::onActionChannelsToggled(bool checked, const QString &channel)
 {
-
+    Q_UNUSED(checked);
+    Q_UNUSED(channel);
 }
 
 
