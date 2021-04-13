@@ -55,6 +55,7 @@ HEADERS += \
     preferences_general_page.h
 
 TRANSLATIONS += \
+    translations/mediathekview-qt_de.ts \
     translations/mediathekview-qt_en.ts
 
 # Default rules for deployment.
