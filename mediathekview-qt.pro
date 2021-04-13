@@ -56,7 +56,8 @@ HEADERS += \
 
 TRANSLATIONS += \
     translations/mediathekview-qt_de.ts \
-    translations/mediathekview-qt_en.ts
+    translations/mediathekview-qt_en.ts \
+    translations/mediathekview-qt_he.ts
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
