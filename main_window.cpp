@@ -139,6 +139,7 @@ void MainWindow::createChannels()
 
 void MainWindow::createActions()
 {
+    //
     // Actions: Application
 
     m_actionAbout = new QAction(tr("About %1").arg(QApplication::applicationName()), this);
@@ -166,6 +167,7 @@ void MainWindow::createActions()
     m_actionQuit->setToolTip(tr("Quit the application"));
     connect(m_actionQuit, &QAction::triggered, this, &MainWindow::close);
 
+    //
     // Actions: Channels
 
     m_actionLiveStreams = new QAction(tr("Live Streams"), this);
@@ -200,6 +202,7 @@ void MainWindow::createActions()
     m_actionSelectInvert->setToolTip(tr("Invert list of selected channels"));
     connect(m_actionSelectInvert, &QAction::toggled, [=](bool checked) { onActionSelectInvertToggled(checked); });
 
+    //
     // Actions: Tools
 
     m_actionUpdate = new QAction(tr("Update Database"), this);
@@ -210,6 +213,7 @@ void MainWindow::createActions()
     m_actionUpdate->setToolTip(tr("Update the local database"));
     connect(m_actionUpdate, &QAction::triggered, this, &MainWindow::onActionUpdateTriggered);
 
+    //
     // Actions: View
 
     m_actionFullScreen = new QAction(this);
@@ -249,6 +253,7 @@ void MainWindow::createActions()
     m_actionToolbarHelp->setToolTip(tr("Display the Help toolbar"));
     connect(m_actionToolbarHelp, &QAction::toggled, [=](bool checked) { m_toolbarHelp->setVisible(checked); });
 
+    //
     // Actions: Help
 
     m_actionKeyboardShortcuts = new QAction(tr("Keyboard Shortcuts"), this);

@@ -24,6 +24,7 @@
 
 
 //
+//
 // Colophon page: About
 //
 
@@ -59,6 +60,7 @@ QString ColophonAboutPage::title() const
 
 
 //
+//
 // Colophon page: Authors
 //
 
@@ -92,6 +94,7 @@ QString ColophonAuthorsPage::title() const
 }
 
 
+//
 //
 // Colophon page: Credits
 //
@@ -128,6 +131,7 @@ QString ColophonCreditsPage::title() const
 }
 
 
+//
 //
 // Colophon page: Environment
 //
@@ -172,6 +176,7 @@ QString ColophonEnvironmentPage::title() const
 }
 
 
+//
 //
 // Colophon page: License
 //
