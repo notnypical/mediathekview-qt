@@ -12,12 +12,12 @@
 <context>
     <name>ColophonAboutPage</name>
     <message>
-        <location filename="../colophon_pages.cpp" line="37"/>
+        <location filename="../colophon_pages.cpp" line="38"/>
         <source>&lt;html&gt;&lt;body&gt;&lt;p&gt;%1 is an open source front-end tool written in Qt for C++ and designed for easy access to the &lt;a href=&quot;https://mediathekview.de&quot; title=&quot;Visit MediathekView&apos;s homepage&quot;&gt;MediathekView&lt;/a&gt; database.&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2020-2021 &lt;a href=&quot;%2&quot; title=&quot;Visit organization&apos;s homepage&quot;&gt;%3&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;This application is licensed under the terms of the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.en.html&quot; title=&quot;Visit license&apos;s homepage&quot;&gt;GNU General Public License, version 3&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colophon_pages.cpp" line="57"/>
+        <location filename="../colophon_pages.cpp" line="58"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
@@ -25,12 +25,12 @@
 <context>
     <name>ColophonAuthorsPage</name>
     <message>
-        <location filename="../colophon_pages.cpp" line="72"/>
+        <location filename="../colophon_pages.cpp" line="74"/>
         <source>&lt;html&gt;&lt;body&gt;&lt;dl&gt;&lt;dt&gt;&lt;strong&gt;NotNypical&lt;/strong&gt;&lt;/dt&gt;&lt;dd&gt;Created and developed by &lt;a href=&quot;https://notnypical.github.io&quot; title=&quot;Visit author&apos;s homepage&quot;&gt;NotNypical&lt;/a&gt;.&lt;/dd&gt;&lt;/dl&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colophon_pages.cpp" line="91"/>
+        <location filename="../colophon_pages.cpp" line="93"/>
         <source>Authors</source>
         <translation type="unfinished"></translation>
     </message>
@@ -38,12 +38,12 @@
 <context>
     <name>ColophonCreditsPage</name>
     <message>
-        <location filename="../colophon_pages.cpp" line="106"/>
+        <location filename="../colophon_pages.cpp" line="109"/>
         <source>&lt;html&gt;&lt;body&gt;&lt;dl&gt;&lt;dt&gt;&lt;strong&gt;BreezeIcons project&lt;/strong&gt;&lt;/dt&gt;&lt;dd&gt;Application logo and icons made by &lt;a href=&quot;https://api.kde.org/frameworks/breeze-icons/html/&quot; title=&quot;Visit project&apos;s homepage&quot;&gt;BreezeIcons project&lt;/a&gt; from &lt;a href=&quot;https://kde.org&quot; title=&quot;Visit organization&apos;s homepage&quot;&gt;KDE&lt;/a&gt; are licensed under &lt;a href=&quot;https://www.gnu.org/licenses/lgpl-3.0.en.html&quot; title=&quot;Visit license&apos;s homepage&quot;&gt;LGPLv3&lt;/a&gt;.&lt;/dd&gt;&lt;/dl&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colophon_pages.cpp" line="127"/>
+        <location filename="../colophon_pages.cpp" line="130"/>
         <source>Credits</source>
         <translation type="unfinished"></translation>
     </message>
@@ -59,12 +59,12 @@
 <context>
     <name>ColophonEnvironmentPage</name>
     <message>
-        <location filename="../colophon_pages.cpp" line="148"/>
+        <location filename="../colophon_pages.cpp" line="152"/>
         <source>&lt;html&gt;&lt;body&gt;&lt;dl&gt;&lt;dt&gt;&lt;strong&gt;Application version&lt;/strong&gt;&lt;/dt&gt;&lt;dd&gt;%1&lt;/dd&gt;&lt;/dl&gt;&lt;dl&gt;&lt;dt&gt;&lt;strong&gt;Qt for C++ version&lt;/strong&gt;&lt;/dt&gt;&lt;dd&gt;Qt %2 (Built against %3)&lt;/dd&gt;&lt;/dl&gt;&lt;dl&gt;&lt;dt&gt;&lt;strong&gt;Operation System&lt;/strong&gt;&lt;/dt&gt;&lt;dd&gt;%4 (Kernel %5 on %6)&lt;/dd&gt;&lt;/dl&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colophon_pages.cpp" line="171"/>
+        <location filename="../colophon_pages.cpp" line="175"/>
         <source>Environment</source>
         <translation type="unfinished"></translation>
     </message>
@@ -72,12 +72,12 @@
 <context>
     <name>ColophonLicensePage</name>
     <message>
-        <location filename="../colophon_pages.cpp" line="186"/>
+        <location filename="../colophon_pages.cpp" line="191"/>
         <source>&lt;html&gt;&lt;body&gt;&lt;p&gt;%1 is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.&lt;/p&gt;&lt;p&gt;%1 is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.&lt;/p&gt;&lt;p&gt;You should have received a copy of the GNU General Public License along with %1. If not, see &lt;a href=&quot;https://www.gnu.org/licenses/&quot; title=&quot;Visit license&apos;s homepage&quot;&gt;https://www.gnu.org/licenses/&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colophon_pages.cpp" line="206"/>
+        <location filename="../colophon_pages.cpp" line="211"/>
         <source>License</source>
         <translation type="unfinished"></translation>
     </message>
@@ -289,247 +289,247 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="144"/>
+        <location filename="../main_window.cpp" line="145"/>
         <source>About %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="147"/>
+        <location filename="../main_window.cpp" line="148"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="148"/>
+        <location filename="../main_window.cpp" line="149"/>
         <source>Brief description of the application</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="151"/>
+        <location filename="../main_window.cpp" line="152"/>
         <source>Colophon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="153"/>
+        <location filename="../main_window.cpp" line="154"/>
         <source>Lengthy description of the application</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="156"/>
+        <location filename="../main_window.cpp" line="157"/>
         <source>Preferences…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="159"/>
+        <location filename="../main_window.cpp" line="160"/>
         <source>Customize the appearance and behavior of the application</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="162"/>
+        <location filename="../main_window.cpp" line="163"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="166"/>
+        <location filename="../main_window.cpp" line="167"/>
         <source>Quit the application</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="171"/>
+        <location filename="../main_window.cpp" line="173"/>
         <source>Live Streams</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="174"/>
+        <location filename="../main_window.cpp" line="176"/>
         <source>Live</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="176"/>
+        <location filename="../main_window.cpp" line="178"/>
         <source>Show all live streaming channels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="183"/>
+        <location filename="../main_window.cpp" line="185"/>
         <source>%1 (%2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="195"/>
+        <location filename="../main_window.cpp" line="197"/>
         <source>Invert Selection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="198"/>
+        <location filename="../main_window.cpp" line="200"/>
         <source>Invert</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="200"/>
+        <location filename="../main_window.cpp" line="202"/>
         <source>Invert list of selected channels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="205"/>
+        <location filename="../main_window.cpp" line="208"/>
         <source>Update Database</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="208"/>
+        <location filename="../main_window.cpp" line="211"/>
         <source>Update</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="210"/>
+        <location filename="../main_window.cpp" line="213"/>
         <source>Update the local database</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="217"/>
+        <location filename="../main_window.cpp" line="221"/>
         <source>Full Screen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="222"/>
+        <location filename="../main_window.cpp" line="226"/>
         <source>Show Application Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="225"/>
+        <location filename="../main_window.cpp" line="229"/>
         <source>Display the Application toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="228"/>
+        <location filename="../main_window.cpp" line="232"/>
         <source>Show Channels Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="231"/>
+        <location filename="../main_window.cpp" line="235"/>
         <source>Display the Channels toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="234"/>
+        <location filename="../main_window.cpp" line="238"/>
         <source>Show Tools Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="237"/>
+        <location filename="../main_window.cpp" line="241"/>
         <source>Display the Tools toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="240"/>
+        <location filename="../main_window.cpp" line="244"/>
         <source>Show View Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="243"/>
+        <location filename="../main_window.cpp" line="247"/>
         <source>Display the View toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="246"/>
+        <location filename="../main_window.cpp" line="250"/>
         <source>Show Help Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="249"/>
+        <location filename="../main_window.cpp" line="253"/>
         <source>Display the Help toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="254"/>
+        <location filename="../main_window.cpp" line="259"/>
         <source>Keyboard Shortcuts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="257"/>
+        <location filename="../main_window.cpp" line="262"/>
         <source>Shortcuts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="258"/>
+        <location filename="../main_window.cpp" line="263"/>
         <source>List of all keyboard shortcuts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="266"/>
+        <location filename="../main_window.cpp" line="271"/>
         <source>Application</source>
         <translation>Anwendung</translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="276"/>
+        <location filename="../main_window.cpp" line="281"/>
         <source>Channels</source>
         <translation>Fernsehsender</translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="285"/>
+        <location filename="../main_window.cpp" line="290"/>
         <source>Tools</source>
         <translation>Werkzeuge</translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="290"/>
+        <location filename="../main_window.cpp" line="295"/>
         <source>View</source>
         <translation>Ansicht</translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="301"/>
+        <location filename="../main_window.cpp" line="306"/>
         <source>Help</source>
         <translation>Hilfe</translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="310"/>
+        <location filename="../main_window.cpp" line="315"/>
         <source>Application Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="319"/>
+        <location filename="../main_window.cpp" line="324"/>
         <source>Channels Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="330"/>
+        <location filename="../main_window.cpp" line="335"/>
         <source>Tools Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="336"/>
+        <location filename="../main_window.cpp" line="341"/>
         <source>View Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="342"/>
+        <location filename="../main_window.cpp" line="347"/>
         <source>Help Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="360"/>
+        <location filename="../main_window.cpp" line="365"/>
         <source>Show all programs of channel %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="362"/>
+        <location filename="../main_window.cpp" line="367"/>
         <source>Hide all programs of channel %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="370"/>
+        <location filename="../main_window.cpp" line="375"/>
         <source>Full Screen Mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="373"/>
+        <location filename="../main_window.cpp" line="378"/>
         <source>Display the window in full screen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="376"/>
+        <location filename="../main_window.cpp" line="381"/>
         <source>Exit Full Screen Mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="379"/>
+        <location filename="../main_window.cpp" line="384"/>
         <source>Exit the full screen mode</source>
         <translation type="unfinished"></translation>
     </message>
@@ -538,11 +538,11 @@
     <name>PreferencesDatabasePage</name>
     <message>
         <location filename="../preferences_database_page.cpp" line="29"/>
-        <source>&lt;strong style=&quot;font-size:large;&quot;&gt;Database&lt;/strong&gt;</source>
+        <source>&lt;strong style=&quot;font-size:large;&quot;&gt;%1&lt;/strong&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preferences_database_page.cpp" line="49"/>
+        <location filename="../preferences_database_page.cpp" line="50"/>
         <source>Database</source>
         <translation type="unfinished"></translation>
     </message>
@@ -559,26 +559,26 @@
     <name>PreferencesGeneralPage</name>
     <message>
         <location filename="../preferences_general_page.cpp" line="30"/>
-        <source>&lt;strong style=&quot;font-size:large;&quot;&gt;General&lt;/strong&gt;</source>
+        <source>&lt;strong style=&quot;font-size:large;&quot;&gt;%1&lt;/strong&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preferences_general_page.cpp" line="34"/>
+        <location filename="../preferences_general_page.cpp" line="35"/>
         <source>Save and restore the application geometry</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preferences_general_page.cpp" line="37"/>
+        <location filename="../preferences_general_page.cpp" line="38"/>
         <source>Save and restore the application state</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preferences_general_page.cpp" line="44"/>
+        <location filename="../preferences_general_page.cpp" line="45"/>
         <source>Geometry &amp;&amp; State</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preferences_general_page.cpp" line="63"/>
+        <location filename="../preferences_general_page.cpp" line="64"/>
         <source>General</source>
         <translation type="unfinished"></translation>
     </message>
