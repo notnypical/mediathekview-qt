@@ -86,16 +86,24 @@ int main(int argc, char *argv[])
     QCommandLineOption languageListOption(QStringLiteral("language-list"),
         QCoreApplication::translate("main", "Lists available application languages."));
 
+    QCommandLineOption languageOption(QStringLiteral("language"),
+        QCoreApplication::translate("main", "Adjusts application language."),
+        QCoreApplication::translate("main", "language code"));
+
     QCommandLineParser parser;
     parser.setApplicationDescription(QCoreApplication::translate("main", "%1 - A front-end tool for the MediathekView database").arg(app.applicationName()));
     parser.addHelpOption();
     parser.addVersionOption();
     parser.addOption(languageListOption);
+    parser.addOption(languageOption);
     parser.process(app);
 
     // Command line: Language list
     if (parser.isSet(languageListOption))
         return showLanguageList();
+
+    // Command line: Language
+    const QString &language = parser.value(languageOption);
 
 
     MainWindow window;
