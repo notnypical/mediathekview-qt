@@ -106,6 +106,20 @@ int main(int argc, char *argv[])
     const QString &language = parser.value(languageOption);
 
 
+    //
+    // Translations
+
+    QLocale locale = !language.isEmpty() ? QLocale(language) : QLocale::system();
+
+    QTranslator translator;
+    if (translator.load(locale, QString(), QString(), QStringLiteral(":/translations")))
+        app.installTranslator(&translator);
+
+    QTranslator translatorQtBase;
+    if (translatorQtBase.load(locale, QStringLiteral("qtbase"), QString("_"), QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
+        app.installTranslator(&translatorQtBase);
+
+
     MainWindow window;
     window.show();
 
