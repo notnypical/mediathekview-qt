@@ -20,7 +20,19 @@
 #include "main_window.h"
 
 #include <QApplication>
+#include <QCommandLineOption>
 #include <QCommandLineParser>
+
+
+int showLanguageList()
+{
+    QString usage = QCoreApplication::instance()->arguments().constFirst();
+    usage += QStringLiteral(" --language <") + QCoreApplication::translate("main", "language code") + QStringLiteral(">");
+
+    printf("%s\n\n", qPrintable(QCoreApplication::translate("main", "Usage: %1").arg(usage)));
+
+    return EXIT_SUCCESS;
+}
 
 
 int main(int argc, char *argv[])
@@ -32,11 +44,24 @@ int main(int argc, char *argv[])
     app.setApplicationDisplayName(QStringLiteral("MediathekView-Qt"));
     app.setApplicationVersion(QStringLiteral("0.1.0"));
 
+
+    //
+    // Command line
+
+    QCommandLineOption languageListOption(QStringLiteral("language-list"),
+        QCoreApplication::translate("main", "Lists available application languages."));
+
     QCommandLineParser parser;
     parser.setApplicationDescription(QCoreApplication::translate("main", "%1 - A front-end tool for the MediathekView database").arg(app.applicationName()));
     parser.addHelpOption();
     parser.addVersionOption();
+    parser.addOption(languageListOption);
     parser.process(app);
+
+    // Command line: Language list
+    if (parser.isSet(languageListOption))
+        return showLanguageList();
+
 
     MainWindow window;
     window.show();
