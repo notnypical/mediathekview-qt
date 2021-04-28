@@ -24,6 +24,7 @@
 #include <QByteArray>
 #include <QCloseEvent>
 #include <QMainWindow>
+#include <QStatusBar>
 #include <QToolBar>
 
 #include "keyboard_shortcuts_dialog.h"
@@ -74,9 +75,12 @@ private:
     QToolBar *m_toolbarView;
     QToolBar *m_toolbarHelp;
 
+    QStatusBar *m_statusbar;
+
     void createActions();
     void createMenus();
     void createToolBars();
+    void createStatusBar();
 
     void updateActionChannels(bool invert = false);
     void updateActionFullScreen();
