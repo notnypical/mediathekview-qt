@@ -25,7 +25,7 @@
 
 #include "preferences.h"
 #include "preferences_page_database.h"
-#include "preferences_general_page.h"
+#include "preferences_page_general.h"
 
 
 class PreferencesDialog : public QDialog
@@ -53,7 +53,7 @@ private:
 
     QPushButton *m_buttonApply;
 
-    PreferencesGeneralPage *m_generalPage;
+    PreferencesPageGeneral *m_pageGeneral;
     PreferencesPageDatabase *m_pageDatabase;
 };
 
