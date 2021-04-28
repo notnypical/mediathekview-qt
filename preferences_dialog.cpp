@@ -38,18 +38,18 @@ PreferencesDialog::PreferencesDialog(QWidget *parent)
     m_generalPage->setZeroMargins();
     connect(m_generalPage, &PreferencesGeneralPage::preferencesChanged, this, &PreferencesDialog::onPreferencesChanged);
 
-    m_databasePage = new PreferencesDatabasePage;
-    m_databasePage->setZeroMargins();
-    connect(m_databasePage, &PreferencesDatabasePage::preferencesChanged, this, &PreferencesDialog::onPreferencesChanged);
+    m_pageDatabase = new PreferencesPageDatabase;
+    m_pageDatabase->setZeroMargins();
+    connect(m_pageDatabase, &PreferencesPageDatabase::preferencesChanged, this, &PreferencesDialog::onPreferencesChanged);
 
     auto *stackedBox = new QStackedWidget;
     stackedBox->addWidget(m_generalPage);
-    stackedBox->addWidget(m_databasePage);
+    stackedBox->addWidget(m_pageDatabase);
     stackedBox->setCurrentIndex(0);
 
     auto *listBox = new QListWidget;
     listBox->addItem(m_generalPage->title());
-    listBox->addItem(m_databasePage->title());
+    listBox->addItem(m_pageDatabase->title());
     listBox->setCurrentRow(stackedBox->currentIndex());
     connect(listBox, &QListWidget::currentRowChanged, stackedBox, &QStackedWidget::setCurrentIndex);
 

@@ -24,7 +24,7 @@
 #include <QPushButton>
 
 #include "preferences.h"
-#include "preferences_database_page.h"
+#include "preferences_page_database.h"
 #include "preferences_general_page.h"
 
 
@@ -54,7 +54,7 @@ private:
     QPushButton *m_buttonApply;
 
     PreferencesGeneralPage *m_generalPage;
-    PreferencesDatabasePage *m_databasePage;
+    PreferencesPageDatabase *m_pageDatabase;
 };
 
 #endif // PREFERENCES_DIALOG_H

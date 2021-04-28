@@ -37,9 +37,9 @@ SOURCES += \
     main.cpp \
     main_window.cpp \
     preferences.cpp \
-    preferences_database_page.cpp \
     preferences_dialog.cpp \
-    preferences_general_page.cpp
+    preferences_general_page.cpp \
+    preferences_page_database.cpp
 
 HEADERS += \
     about_dialog.h \
@@ -50,9 +50,9 @@ HEADERS += \
     keyboard_shortcuts_page.h \
     main_window.h \
     preferences.h \
-    preferences_database_page.h \
     preferences_dialog.h \
-    preferences_general_page.h
+    preferences_general_page.h \
+    preferences_page_database.h
 
 TRANSLATIONS += \
     translations/mediathekview-qt_de.ts \
