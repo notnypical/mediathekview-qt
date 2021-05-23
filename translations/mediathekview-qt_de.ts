@@ -121,7 +121,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../keyboard_shortcuts_page.cpp" line="69"/>
+        <location filename="../keyboard_shortcuts_page.cpp" line="70"/>
         <source>Keyboard Shortcuts</source>
         <translation type="unfinished"></translation>
     </message>
@@ -129,419 +129,24 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../main_window.cpp" line="120"/>
-        <source>3sat</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="121"/>
-        <source>ARD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="121"/>
-        <source>Das Erste</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="122"/>
-        <source>ARTE.de</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="123"/>
-        <source>ARTE.fr</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="124"/>
-        <source>BR</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="124"/>
-        <source>Bayerischer Rundfunk</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="125"/>
-        <source>DW TV</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="125"/>
-        <source>Deutsche Welle</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="126"/>
-        <source>HR</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="126"/>
-        <source>Hessischer Rundfunk</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="127"/>
-        <source>KiKA</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="127"/>
-        <source>Kinderkanal von ARD und ZDF</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="128"/>
-        <source>MDR</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="128"/>
-        <source>Mitteldeutscher Rundfunk</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="129"/>
-        <source>NDR</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="129"/>
-        <source>Norddeutscher Rundfunk</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="130"/>
-        <source>ORF</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="130"/>
-        <source>Österreichischer Rundfunk</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="131"/>
-        <source>phoenix</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="132"/>
-        <source>RBB</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="132"/>
-        <source>Rundfunk Berlin-Brandenburg</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="133"/>
-        <source>SR</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="133"/>
-        <source>Saarländischer Rundfunk</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="134"/>
-        <source>SRF</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="134"/>
-        <source>Schweizer Rundfunk</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="135"/>
-        <source>SWR</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="135"/>
-        <source>Südwestrundfunk</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="136"/>
-        <source>WDR</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="136"/>
-        <source>Westdeutscher Rundfunk</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="137"/>
-        <source>ZDF</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="137"/>
-        <source>Zweites Deutsches Fernsehen</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="146"/>
-        <source>About %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="149"/>
-        <source>About</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="150"/>
-        <source>Brief description of the application</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="153"/>
-        <source>Colophon</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="155"/>
-        <source>Lengthy description of the application</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="158"/>
-        <source>Preferences…</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="161"/>
-        <source>Customize the appearance and behavior of the application</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="164"/>
-        <source>Quit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="168"/>
-        <source>Quit the application</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="174"/>
-        <source>Live Streams</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="177"/>
-        <source>Live</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="179"/>
-        <source>Show all live streaming channels</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="186"/>
-        <source>%1 (%2)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="198"/>
-        <source>Invert Selection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="201"/>
-        <source>Invert</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="203"/>
-        <source>Invert list of selected channels</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="209"/>
-        <source>Update Database</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="212"/>
-        <source>Update</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="214"/>
-        <source>Update the local database</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="222"/>
-        <source>Full Screen</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="227"/>
-        <source>Show Application Toolbar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="230"/>
-        <source>Display the Application toolbar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="233"/>
-        <source>Show Channels Toolbar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="236"/>
-        <source>Display the Channels toolbar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="239"/>
-        <source>Show Tools Toolbar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="242"/>
-        <source>Display the Tools toolbar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="245"/>
-        <source>Show View Toolbar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="248"/>
-        <source>Display the View toolbar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="251"/>
-        <source>Show Help Toolbar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="254"/>
-        <source>Display the Help toolbar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="257"/>
-        <source>Show Statusbar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="261"/>
-        <source>Display the statusbar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="267"/>
-        <source>Keyboard Shortcuts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="270"/>
-        <source>Shortcuts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="271"/>
-        <source>List of all keyboard shortcuts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="279"/>
         <source>Application</source>
-        <translation>Anwendung</translation>
+        <translation type="vanished">Anwendung</translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="289"/>
         <source>Channels</source>
-        <translation>Fernsehsender</translation>
+        <translation type="vanished">Fernsehsender</translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="298"/>
         <source>Tools</source>
-        <translation>Werkzeuge</translation>
+        <translation type="vanished">Werkzeuge</translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="303"/>
         <source>View</source>
-        <translation>Ansicht</translation>
+        <translation type="vanished">Ansicht</translation>
     </message>
     <message>
-        <location filename="../main_window.cpp" line="316"/>
         <source>Help</source>
-        <translation>Hilfe</translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="325"/>
-        <source>Application Toolbar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="334"/>
-        <source>Channels Toolbar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="345"/>
-        <source>Tools Toolbar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="351"/>
-        <source>View Toolbar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="357"/>
-        <source>Help Toolbar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="381"/>
-        <source>Show all programs of channel %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="383"/>
-        <source>Hide all programs of channel %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="391"/>
-        <source>Full Screen Mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="394"/>
-        <source>Display the window in full screen</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="397"/>
-        <source>Exit Full Screen Mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main_window.cpp" line="400"/>
-        <source>Exit the full screen mode</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Hilfe</translation>
     </message>
 </context>
 <context>
@@ -573,23 +178,441 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preferences_page_general.cpp" line="35"/>
+        <location filename="../preferences_page_general.cpp" line="36"/>
         <source>Save and restore the application geometry</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preferences_page_general.cpp" line="38"/>
+        <location filename="../preferences_page_general.cpp" line="39"/>
         <source>Save and restore the application state</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preferences_page_general.cpp" line="45"/>
+        <location filename="../preferences_page_general.cpp" line="46"/>
         <source>Geometry &amp;&amp; State</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preferences_page_general.cpp" line="64"/>
+        <location filename="../preferences_page_general.cpp" line="66"/>
         <source>General</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Window</name>
+    <message>
+        <location filename="../window.cpp" line="119"/>
+        <source>3sat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="120"/>
+        <source>ARD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="120"/>
+        <source>Das Erste</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="121"/>
+        <source>ARTE.de</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="122"/>
+        <source>ARTE.fr</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="123"/>
+        <source>BR</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="123"/>
+        <source>Bayerischer Rundfunk</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="124"/>
+        <source>DW TV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="124"/>
+        <source>Deutsche Welle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="125"/>
+        <source>HR</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="125"/>
+        <source>Hessischer Rundfunk</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="126"/>
+        <source>KiKA</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="126"/>
+        <source>Kinderkanal von ARD und ZDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="127"/>
+        <source>MDR</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="127"/>
+        <source>Mitteldeutscher Rundfunk</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="128"/>
+        <source>NDR</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="128"/>
+        <source>Norddeutscher Rundfunk</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="129"/>
+        <source>ORF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="129"/>
+        <source>Österreichischer Rundfunk</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="130"/>
+        <source>phoenix</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="131"/>
+        <source>RBB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="131"/>
+        <source>Rundfunk Berlin-Brandenburg</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="132"/>
+        <source>SR</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="132"/>
+        <source>Saarländischer Rundfunk</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="133"/>
+        <source>SRF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="133"/>
+        <source>Schweizer Rundfunk</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="134"/>
+        <source>SWR</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="134"/>
+        <source>Südwestrundfunk</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="135"/>
+        <source>WDR</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="135"/>
+        <source>Westdeutscher Rundfunk</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="136"/>
+        <source>ZDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="136"/>
+        <source>Zweites Deutsches Fernsehen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="145"/>
+        <source>About %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="148"/>
+        <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="149"/>
+        <source>Brief description of the application</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="152"/>
+        <source>Colophon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="154"/>
+        <source>Lengthy description of the application</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="157"/>
+        <source>Preferences…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="160"/>
+        <source>Customize the appearance and behavior of the application</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="163"/>
+        <source>Quit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="167"/>
+        <source>Quit the application</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="174"/>
+        <source>Live Streams</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="177"/>
+        <source>Live</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="179"/>
+        <source>Show all live streaming channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="186"/>
+        <source>%1 (%2)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="198"/>
+        <source>Invert Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="201"/>
+        <source>Invert</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="203"/>
+        <source>Invert list of selected channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="210"/>
+        <source>Update Database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="213"/>
+        <source>Update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="215"/>
+        <source>Update the local database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="224"/>
+        <source>Full Screen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="229"/>
+        <source>Show Application Toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="232"/>
+        <source>Display the Application toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="235"/>
+        <source>Show Channels Toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="238"/>
+        <source>Display the Channels toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="241"/>
+        <source>Show Tools Toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="244"/>
+        <source>Display the Tools toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="247"/>
+        <source>Show View Toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="250"/>
+        <source>Display the View toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="253"/>
+        <source>Show Help Toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="256"/>
+        <source>Display the Help toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="259"/>
+        <source>Show Statusbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="263"/>
+        <source>Display the statusbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="270"/>
+        <source>Keyboard Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="273"/>
+        <source>Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="274"/>
+        <source>List of all keyboard shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="282"/>
+        <source>Application</source>
+        <translation type="unfinished">Anwendung</translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="292"/>
+        <source>Channels</source>
+        <translation type="unfinished">Fernsehsender</translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="301"/>
+        <source>Tools</source>
+        <translation type="unfinished">Werkzeuge</translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="306"/>
+        <source>View</source>
+        <translation type="unfinished">Ansicht</translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="319"/>
+        <source>Help</source>
+        <translation type="unfinished">Hilfe</translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="328"/>
+        <source>Application Toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="337"/>
+        <source>Channels Toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="348"/>
+        <source>Tools Toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="354"/>
+        <source>View Toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="360"/>
+        <source>Help Toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="376"/>
+        <source>Full Screen Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="379"/>
+        <source>Display the window in full screen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="382"/>
+        <source>Exit Full Screen Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="385"/>
+        <source>Exit the full screen mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="403"/>
+        <source>Show all programs of channel %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../window.cpp" line="405"/>
+        <source>Hide all programs of channel %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
