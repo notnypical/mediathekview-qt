@@ -17,7 +17,7 @@
  * along with MediathekView-Qt.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "main_window.h"
+#include "window.h"
 
 #include <QApplication>
 #include <QDebug>
@@ -31,7 +31,7 @@
 #include "preferences_dialog.h"
 
 
-MainWindow::MainWindow(QWidget *parent)
+Window::Window(QWidget *parent)
     : QMainWindow(parent)
 {
     setWindowIcon(QIcon(QStringLiteral(":/icons/apps/16/mediathekview.svg")));
@@ -51,12 +51,12 @@ MainWindow::MainWindow(QWidget *parent)
     updateActionFullScreen();
 }
 
-MainWindow::~MainWindow()
+Window::~Window()
 {
 }
 
 
-void MainWindow::closeEvent(QCloseEvent *event)
+void Window::closeEvent(QCloseEvent *event)
 {
     if (true) {
         // Store application properties and preferences
@@ -71,7 +71,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
 }
 
 
-void MainWindow::loadSettings()
+void Window::loadSettings()
 {
     QSettings settings;
 
@@ -101,7 +101,7 @@ void MainWindow::loadSettings()
 }
 
 
-void MainWindow::saveSettings()
+void Window::saveSettings()
 {
     QSettings settings;
 
@@ -115,7 +115,7 @@ void MainWindow::saveSettings()
 }
 
 
-void MainWindow::createChannels()
+void Window::createChannels()
 {
     m_listChannels[QStringLiteral("3sat")] = QStringList() << tr("3sat") << QString();
     m_listChannels[QStringLiteral("ard")] = QStringList() << tr("ARD") << tr("Das Erste");
@@ -138,7 +138,7 @@ void MainWindow::createChannels()
 }
 
 
-void MainWindow::createActions()
+void Window::createActions()
 {
     //
     // Actions: Application
@@ -148,25 +148,25 @@ void MainWindow::createActions()
     m_actionAbout->setIcon(QIcon(QStringLiteral(":/icons/apps/16/mediathekview.svg")));
     m_actionAbout->setIconText(tr("About"));
     m_actionAbout->setToolTip(tr("Brief description of the application"));
-    connect(m_actionAbout, &QAction::triggered, this, &MainWindow::onActionAboutTriggered);
+    connect(m_actionAbout, &QAction::triggered, this, &Window::onActionAboutTriggered);
 
     m_actionColophon = new QAction(tr("Colophon"), this);
     m_actionColophon->setObjectName(QStringLiteral("actionColophon"));
     m_actionColophon->setToolTip(tr("Lengthy description of the application"));
-    connect(m_actionColophon, &QAction::triggered, this, &MainWindow::onActionColophonTriggered);
+    connect(m_actionColophon, &QAction::triggered, this, &Window::onActionColophonTriggered);
 
     m_actionPreferences = new QAction(tr("Preferences…"), this);
     m_actionPreferences->setObjectName(QStringLiteral("actionPreferences"));
     m_actionPreferences->setIcon(QIcon::fromTheme(QStringLiteral("configure"), QIcon(QStringLiteral(":/icons/actions/16/application-configure.svg"))));
     m_actionPreferences->setToolTip(tr("Customize the appearance and behavior of the application"));
-    connect(m_actionPreferences, &QAction::triggered, this, &MainWindow::onActionPreferencesTriggered);
+    connect(m_actionPreferences, &QAction::triggered, this, &Window::onActionPreferencesTriggered);
 
     m_actionQuit = new QAction(tr("Quit"), this);
     m_actionQuit->setObjectName(QStringLiteral("actionQuit"));
     m_actionQuit->setIcon(QIcon::fromTheme(QStringLiteral("application-exit"), QIcon(QStringLiteral(":/icons/actions/16/application-exit.svg"))));
     m_actionQuit->setShortcut(QKeySequence::Quit);
     m_actionQuit->setToolTip(tr("Quit the application"));
-    connect(m_actionQuit, &QAction::triggered, this, &MainWindow::close);
+    connect(m_actionQuit, &QAction::triggered, this, &Window::close);
 
     //
     // Actions: Channels
@@ -212,7 +212,7 @@ void MainWindow::createActions()
     m_actionUpdate->setIconText(tr("Update"));
     m_actionUpdate->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_F5));
     m_actionUpdate->setToolTip(tr("Update the local database"));
-    connect(m_actionUpdate, &QAction::triggered, this, &MainWindow::onActionUpdateTriggered);
+    connect(m_actionUpdate, &QAction::triggered, this, &Window::onActionUpdateTriggered);
 
     //
     // Actions: View
@@ -222,7 +222,7 @@ void MainWindow::createActions()
     m_actionFullScreen->setIconText(tr("Full Screen"));
     m_actionFullScreen->setCheckable(true);
     m_actionFullScreen->setShortcuts(QList<QKeySequence>() << QKeySequence(Qt::Key_F11) << QKeySequence::FullScreen);
-    connect(m_actionFullScreen, &QAction::triggered, this, &MainWindow::onActionFullScreenTriggered);
+    connect(m_actionFullScreen, &QAction::triggered, this, &Window::onActionFullScreenTriggered);
 
     m_actionToolbarApplication = new QAction(tr("Show Application Toolbar"), this);
     m_actionToolbarApplication->setObjectName(QStringLiteral("actionToolbarApplication"));
@@ -269,11 +269,11 @@ void MainWindow::createActions()
     m_actionKeyboardShortcuts->setIcon(QIcon::fromTheme(QStringLiteral("help-keyboard-shortcuts"), QIcon(QStringLiteral(":/icons/actions/16/help-keyboard-shortcuts.svg"))));
     m_actionKeyboardShortcuts->setIconText(tr("Shortcuts"));
     m_actionKeyboardShortcuts->setToolTip(tr("List of all keyboard shortcuts"));
-    connect(m_actionKeyboardShortcuts, &QAction::triggered, this, &MainWindow::onActionKeyboardShortcutsTriggered);
+    connect(m_actionKeyboardShortcuts, &QAction::triggered, this, &Window::onActionKeyboardShortcutsTriggered);
 }
 
 
-void MainWindow::createMenus()
+void Window::createMenus()
 {
     // Menu: Application
     auto *menuApplication = menuBar()->addMenu(tr("Application"));
@@ -319,7 +319,7 @@ void MainWindow::createMenus()
 }
 
 
-void MainWindow::createToolBars()
+void Window::createToolBars()
 {
     // Toolbar: Application
     m_toolbarApplication = addToolBar(tr("Application Toolbar"));
@@ -361,13 +361,13 @@ void MainWindow::createToolBars()
 }
 
 
-void MainWindow::createStatusBar()
+void Window::createStatusBar()
 {
     m_statusbar = statusBar();
 }
 
 
-void MainWindow::updateActionChannels(bool invert)
+void Window::updateActionChannels(bool invert)
 {
     // Tool buttons
     for (int idx = 0; idx < m_actionChannels.size(); idx++) {
@@ -385,7 +385,7 @@ void MainWindow::updateActionChannels(bool invert)
 }
 
 
-void MainWindow::updateActionFullScreen()
+void Window::updateActionFullScreen()
 {
     if (!isFullScreen()) {
         m_actionFullScreen->setText(tr("Full Screen Mode"));
@@ -402,21 +402,21 @@ void MainWindow::updateActionFullScreen()
 }
 
 
-void MainWindow::onActionAboutTriggered()
+void Window::onActionAboutTriggered()
 {
     AboutDialog dialog(this);
     dialog.exec();
 }
 
 
-void MainWindow::onActionColophonTriggered()
+void Window::onActionColophonTriggered()
 {
     ColophonDialog dialog(this);
     dialog.exec();
 }
 
 
-void MainWindow::onActionPreferencesTriggered()
+void Window::onActionPreferencesTriggered()
 {
     PreferencesDialog dialog(this);
     dialog.setPreferences(m_preferences);
@@ -426,32 +426,32 @@ void MainWindow::onActionPreferencesTriggered()
 }
 
 
-void MainWindow::onActionLiveStreamsToggled(bool checked)
+void Window::onActionLiveStreamsToggled(bool checked)
 {
     Q_UNUSED(checked);
 }
 
 
-void MainWindow::onActionChannelsToggled(bool checked, const QString &channel)
+void Window::onActionChannelsToggled(bool checked, const QString &channel)
 {
     Q_UNUSED(checked);
     Q_UNUSED(channel);
 }
 
 
-void MainWindow::onActionSelectInvertToggled(bool checked)
+void Window::onActionSelectInvertToggled(bool checked)
 {
     updateActionChannels(checked);
 }
 
 
-void MainWindow::onActionUpdateTriggered()
+void Window::onActionUpdateTriggered()
 {
 
 }
 
 
-void MainWindow::onActionFullScreenTriggered()
+void Window::onActionFullScreenTriggered()
 {
     if (!isFullScreen())
         setWindowState(windowState() | Qt::WindowFullScreen);
@@ -462,7 +462,7 @@ void MainWindow::onActionFullScreenTriggered()
 }
 
 
-void MainWindow::onActionKeyboardShortcutsTriggered()
+void Window::onActionKeyboardShortcutsTriggered()
 {
     if (!m_keyboardShortcutsDialog)
         m_keyboardShortcutsDialog = new KeyboardShortcutsDialog(this);

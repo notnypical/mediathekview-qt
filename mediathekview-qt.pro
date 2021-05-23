@@ -35,11 +35,11 @@ SOURCES += \
     keyboard_shortcuts_dialog.cpp \
     keyboard_shortcuts_page.cpp \
     main.cpp \
-    main_window.cpp \
     preferences.cpp \
     preferences_dialog.cpp \
     preferences_page_database.cpp \
-    preferences_page_general.cpp
+    preferences_page_general.cpp \
+    window.cpp
 
 HEADERS += \
     about_dialog.h \
@@ -48,11 +48,11 @@ HEADERS += \
     dialog_title_box.h \
     keyboard_shortcuts_dialog.h \
     keyboard_shortcuts_page.h \
-    main_window.h \
     preferences.h \
     preferences_dialog.h \
     preferences_page_database.h \
-    preferences_page_general.h
+    preferences_page_general.h \
+    window.h
 
 TRANSLATIONS += \
     translations/mediathekview-qt_de.ts \

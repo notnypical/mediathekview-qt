@@ -17,14 +17,14 @@
  * along with MediathekView-Qt.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "main_window.h"
-
 #include <QApplication>
 #include <QCommandLineOption>
 #include <QCommandLineParser>
 #include <QDir>
 #include <QLibraryInfo>
 #include <QTranslator>
+
+#include "window.h"
 
 
 const QStringList findTranslations()
@@ -120,8 +120,8 @@ int main(int argc, char *argv[])
         app.installTranslator(&translatorQtBase);
 
 
-    MainWindow window;
-    window.show();
+    Window win;
+    win.show();
 
     return app.exec();
 }
