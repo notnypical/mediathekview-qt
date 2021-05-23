@@ -39,6 +39,9 @@ public:
     Window(QWidget *parent = nullptr);
     ~Window();
 
+signals:
+    void actionTextChanged();
+
 protected:
     void closeEvent(QCloseEvent *event) override;
 
@@ -58,8 +61,6 @@ private slots:
     void onActionKeyboardShortcutsTriggered();
 
 private:
-    KeyboardShortcutsDialog *m_keyboardShortcutsDialog;
-
     Preferences m_preferences;
 
     void loadSettings();
@@ -105,6 +106,8 @@ private:
     QAction *m_actionStatusbar;
 
     QAction *m_actionKeyboardShortcuts;
+
+    KeyboardShortcutsDialog *m_keyboardShortcutsDialog { nullptr };
 };
 
 #endif // WINDOW_H

@@ -35,6 +35,9 @@ public:
 
     QString title() const;
 
+public slots:
+    void onActionTextChanged();
+
 private:
     QVBoxLayout *m_layout;
 };

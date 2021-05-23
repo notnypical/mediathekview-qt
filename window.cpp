@@ -399,6 +399,8 @@ void Window::updateActionFullScreen()
         m_actionFullScreen->setChecked(true);
         m_actionFullScreen->setToolTip(tr("Exit the full screen mode"));
     }
+
+    emit actionTextChanged();
 }
 
 
@@ -464,8 +466,10 @@ void Window::onActionFullScreenTriggered()
 
 void Window::onActionKeyboardShortcutsTriggered()
 {
-    if (!m_keyboardShortcutsDialog)
+    if (!m_keyboardShortcutsDialog) {
         m_keyboardShortcutsDialog = new KeyboardShortcutsDialog(this);
+        connect(this, &Window::actionTextChanged, m_keyboardShortcutsDialog, &KeyboardShortcutsDialog::onActionTextChanged);
+    }
 
     m_keyboardShortcutsDialog->show();
     m_keyboardShortcutsDialog->raise();

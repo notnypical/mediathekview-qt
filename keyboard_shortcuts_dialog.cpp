@@ -35,6 +35,7 @@ KeyboardShortcutsDialog::KeyboardShortcutsDialog(QWidget *parent)
     // Content
     auto *keyboardShortcutsPage = new KeyboardShortcutsPage(parentWidget());
     keyboardShortcutsPage->setZeroMargins();
+    connect(this, &KeyboardShortcutsDialog::actionTextChanged, keyboardShortcutsPage, &KeyboardShortcutsPage::onActionTextChanged);
 
     // Button box
     auto *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close);
@@ -44,4 +45,10 @@ KeyboardShortcutsDialog::KeyboardShortcutsDialog(QWidget *parent)
     auto *layout = new QVBoxLayout(this);
     layout->addWidget(keyboardShortcutsPage);
     layout->addWidget(buttonBox);
+}
+
+
+void KeyboardShortcutsDialog::onActionTextChanged()
+{
+    emit actionTextChanged();
 }

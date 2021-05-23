@@ -29,6 +29,12 @@ class KeyboardShortcutsDialog : public QDialog
 
 public:
     explicit KeyboardShortcutsDialog(QWidget *parent = nullptr);
+
+signals:
+    void actionTextChanged();
+
+public slots:
+    void onActionTextChanged();
 };
 
 #endif // KEYBOARD_SHORTCUTS_DIALOG_H

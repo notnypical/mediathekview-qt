@@ -68,3 +68,9 @@ QString KeyboardShortcutsPage::title() const
 {
     return tr("Keyboard Shortcuts");
 }
+
+
+void KeyboardShortcutsPage::onActionTextChanged()
+{
+
+}
