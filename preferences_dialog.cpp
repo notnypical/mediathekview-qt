@@ -31,6 +31,7 @@ PreferencesDialog::PreferencesDialog(QWidget *parent)
     setMinimumSize(800, 600);
     setWindowTitle(tr("Preferences"));
 
+
     //
     // Content
 
@@ -57,6 +58,7 @@ PreferencesDialog::PreferencesDialog(QWidget *parent)
     preferencesBox->addWidget(listBox, 1);
     preferencesBox->addWidget(stackedBox, 3);
 
+
     // Button box
     auto *buttonBox = new QDialogButtonBox(QDialogButtonBox::RestoreDefaults | QDialogButtonBox::Ok | QDialogButtonBox::Apply | QDialogButtonBox::Cancel);
     m_buttonApply = buttonBox->button(QDialogButtonBox::Apply);
@@ -75,18 +77,18 @@ PreferencesDialog::PreferencesDialog(QWidget *parent)
 }
 
 
+Preferences PreferencesDialog::preferences() const
+{
+    return m_preferences;
+}
+
+
 void PreferencesDialog::setPreferences(const Preferences &preferences)
 {
     m_preferences = preferences;
 
     updatePreferences();
     m_buttonApply->setEnabled(false);
-}
-
-
-Preferences PreferencesDialog::preferences() const
-{
-    return m_preferences;
 }
 
 

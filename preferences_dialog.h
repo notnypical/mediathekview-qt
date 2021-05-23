@@ -35,8 +35,8 @@ class PreferencesDialog : public QDialog
 public:
     explicit PreferencesDialog(QWidget *parent = nullptr);
 
-    void setPreferences(const Preferences &preferences);
     Preferences preferences() const;
+    void setPreferences(const Preferences &preferences);
 
 private slots:
     void onPreferencesChanged();

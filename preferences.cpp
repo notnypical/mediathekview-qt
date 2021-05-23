@@ -59,25 +59,25 @@ void Preferences::saveSettings()
 }
 
 
-void Preferences::setRestoreApplicationGeometry(bool value)
-{
-    m_restoreApplicationGeometry = value;
-}
-
-
 bool Preferences::restoreApplicationGeometry(bool isDefault)
 {
     return !isDefault ? m_restoreApplicationGeometry : true;
 }
 
 
-void Preferences::setRestoreApplicationState(bool value)
+void Preferences::setRestoreApplicationGeometry(bool restore)
 {
-    m_restoreApplicationState = value;
+    m_restoreApplicationGeometry = restore;
 }
 
 
 bool Preferences::restoreApplicationState(bool isDefault)
 {
     return !isDefault ? m_restoreApplicationState : true;
+}
+
+
+void Preferences::setRestoreApplicationState(bool restore)
+{
+    m_restoreApplicationState = restore;
 }

@@ -51,7 +51,7 @@ private slots:
     void onActionPreferencesTriggered();
 
     void onActionLiveStreamsToggled(bool checked);
-    void onActionChannelsToggled(bool checked, const QString &channel);
+    void onActionChannelToggled(bool checked, const QString &channel);
     void onActionSelectInvertToggled(bool checked);
 
     void onActionUpdateTriggered();
@@ -83,8 +83,8 @@ private:
     void createToolBars();
     void createStatusBar();
 
-    void updateActionChannels(bool invert = false);
     void updateActionFullScreen();
+    void updateActionsChannels(bool invert = false);
 
     QAction *m_actionAbout;
     QAction *m_actionColophon;
@@ -92,7 +92,7 @@ private:
     QAction *m_actionQuit;
 
     QAction *m_actionLiveStreams;
-    QList<QAction *> m_actionChannels;
+    QList<QAction *> m_actionsChannels;
     QAction *m_actionSelectInvert;
 
     QAction *m_actionUpdate;

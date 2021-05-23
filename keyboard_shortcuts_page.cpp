@@ -42,6 +42,7 @@ KeyboardShortcutsPage::KeyboardShortcutsPage(QWidget *mainWindow, QWidget *paren
     for (auto *actionItem : actionItems) {
 
         if (!actionItem->shortcut().isEmpty()) {
+
             int idx = tableBox->rowCount();
 
             tableBox->setRowCount(idx + 1);

@@ -20,7 +20,6 @@
 #include "window.h"
 
 #include <QApplication>
-#include <QDebug>
 #include <QMenuBar>
 #include <QScreen>
 #include <QSettings>
@@ -47,8 +46,8 @@ Window::Window(QWidget *parent)
 
     loadSettings();
 
-    updateActionChannels();
     updateActionFullScreen();
+    updateActionsChannels();
 }
 
 Window::~Window()
@@ -168,6 +167,7 @@ void Window::createActions()
     m_actionQuit->setToolTip(tr("Quit the application"));
     connect(m_actionQuit, &QAction::triggered, this, &Window::close);
 
+
     //
     // Actions: Channels
 
@@ -190,9 +190,9 @@ void Window::createActions()
         actionChannel->setIconText(it.value()[0]);
         actionChannel->setCheckable(true);
         actionChannel->setData(it.key());
-        connect(actionChannel, &QAction::toggled, [=](bool checked) { onActionChannelsToggled(checked, actionChannel->data().toString()); });
+        connect(actionChannel, &QAction::toggled, [=](bool checked) { onActionChannelToggled(checked, actionChannel->data().toString()); });
 
-        m_actionChannels << actionChannel;
+        m_actionsChannels << actionChannel;
     }
 
     m_actionSelectInvert = new QAction(tr("Invert Selection"), this);
@@ -202,6 +202,7 @@ void Window::createActions()
     m_actionSelectInvert->setCheckable(true);
     m_actionSelectInvert->setToolTip(tr("Invert list of selected channels"));
     connect(m_actionSelectInvert, &QAction::toggled, [=](bool checked) { onActionSelectInvertToggled(checked); });
+
 
     //
     // Actions: Tools
@@ -213,6 +214,7 @@ void Window::createActions()
     m_actionUpdate->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_F5));
     m_actionUpdate->setToolTip(tr("Update the local database"));
     connect(m_actionUpdate, &QAction::triggered, this, &Window::onActionUpdateTriggered);
+
 
     //
     // Actions: View
@@ -261,6 +263,7 @@ void Window::createActions()
     m_actionStatusbar->setToolTip(tr("Display the statusbar"));
     connect(m_actionStatusbar, &QAction::toggled, [=](bool checked) { m_statusbar->setVisible(checked); });
 
+
     //
     // Actions: Help
 
@@ -290,7 +293,7 @@ void Window::createMenus()
     menuChannels->setObjectName(QStringLiteral("menuChannels"));
     menuChannels->addAction(m_actionLiveStreams);
     menuChannels->addSeparator();
-    menuChannels->addActions(m_actionChannels);
+    menuChannels->addActions(m_actionsChannels);
     menuChannels->addSeparator();
     menuChannels->addAction(m_actionSelectInvert);
 
@@ -336,7 +339,7 @@ void Window::createToolBars()
     m_toolbarChannels->setStyleSheet("*[invertChannel=true] { text-decoration: line-through; }");
     m_toolbarChannels->addAction(m_actionLiveStreams);
     m_toolbarChannels->addSeparator();
-    m_toolbarChannels->addActions(m_actionChannels);
+    m_toolbarChannels->addActions(m_actionsChannels);
     m_toolbarChannels->addSeparator();
     m_toolbarChannels->addAction(m_actionSelectInvert);
     connect(m_toolbarChannels, &QToolBar::visibilityChanged, [=](bool visible) { m_actionToolbarChannels->setChecked(visible); });
@@ -367,24 +370,6 @@ void Window::createStatusBar()
 }
 
 
-void Window::updateActionChannels(bool invert)
-{
-    // Tool buttons
-    for (int idx = 0; idx < m_actionChannels.size(); idx++) {
-
-        auto *widget = m_toolbarChannels->widgetForAction(m_actionChannels[idx]);
-        widget->setProperty("invertChannel", invert);
-        widget->style()->unpolish(widget);
-        widget->style()->polish(widget);
-
-        if (!invert)
-            m_actionChannels[idx]->setToolTip(tr("Show all programs of channel %1").arg(m_actionChannels[idx]->text()));
-        else
-            m_actionChannels[idx]->setToolTip(tr("Hide all programs of channel %1").arg(m_actionChannels[idx]->text()));
-    }
-}
-
-
 void Window::updateActionFullScreen()
 {
     if (!isFullScreen()) {
@@ -401,6 +386,24 @@ void Window::updateActionFullScreen()
     }
 
     emit actionTextChanged();
+}
+
+
+void Window::updateActionsChannels(bool invert)
+{
+    // Tool buttons
+    for (int idx = 0; idx < m_actionsChannels.size(); idx++) {
+
+        auto *widget = m_toolbarChannels->widgetForAction(m_actionsChannels[idx]);
+        widget->setProperty("invertChannel", invert);
+        widget->style()->unpolish(widget);
+        widget->style()->polish(widget);
+
+        if (!invert)
+            m_actionsChannels[idx]->setToolTip(tr("Show all programs of channel %1").arg(m_actionsChannels[idx]->text()));
+        else
+            m_actionsChannels[idx]->setToolTip(tr("Hide all programs of channel %1").arg(m_actionsChannels[idx]->text()));
+    }
 }
 
 
@@ -434,7 +437,7 @@ void Window::onActionLiveStreamsToggled(bool checked)
 }
 
 
-void Window::onActionChannelsToggled(bool checked, const QString &channel)
+void Window::onActionChannelToggled(bool checked, const QString &channel)
 {
     Q_UNUSED(checked);
     Q_UNUSED(channel);
@@ -443,7 +446,7 @@ void Window::onActionChannelsToggled(bool checked, const QString &channel)
 
 void Window::onActionSelectInvertToggled(bool checked)
 {
-    updateActionChannels(checked);
+    updateActionsChannels(checked);
 }
 
 

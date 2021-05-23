@@ -29,6 +29,7 @@ PreferencesPageGeneral::PreferencesPageGeneral(QWidget *parent)
     // Title
     auto *title = new QLabel(tr("<strong style=\"font-size:large;\">%1</strong>").arg(this->title()));
 
+
     //
     // Content: Geometry & State
 
@@ -44,6 +45,7 @@ PreferencesPageGeneral::PreferencesPageGeneral(QWidget *parent)
 
     auto *geometryStateGroup = new QGroupBox(tr("Geometry && State"));
     geometryStateGroup->setLayout(geometryStateLayout);
+
 
     // Main layout
     m_layout = new QVBoxLayout(this);
@@ -71,25 +73,25 @@ void PreferencesPageGeneral::onPreferencesChanged()
 }
 
 
-void PreferencesPageGeneral::setRestoreApplicationGeometry(const bool checked)
-{
-    m_chkRestoreApplicationGeometry->setChecked(checked);
-}
-
-
 bool PreferencesPageGeneral::restoreApplicationGeometry() const
 {
     return m_chkRestoreApplicationGeometry->isChecked();
 }
 
 
-void PreferencesPageGeneral::setRestoreApplicationState(const bool checked)
+void PreferencesPageGeneral::setRestoreApplicationGeometry(const bool restore)
 {
-    m_chkRestoreApplicationState->setChecked(checked);
+    m_chkRestoreApplicationGeometry->setChecked(restore);
 }
 
 
 bool PreferencesPageGeneral::restoreApplicationState() const
 {
     return m_chkRestoreApplicationState->isChecked();
+}
+
+
+void PreferencesPageGeneral::setRestoreApplicationState(const bool restore)
+{
+    m_chkRestoreApplicationState->setChecked(restore);
 }

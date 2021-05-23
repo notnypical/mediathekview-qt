@@ -29,11 +29,11 @@ public:
     void loadSettings();
     void saveSettings();
 
-    void setRestoreApplicationGeometry(bool value);
     bool restoreApplicationGeometry(bool isDefault = false);
+    void setRestoreApplicationGeometry(bool restore);
 
-    void setRestoreApplicationState(bool value);
     bool restoreApplicationState(bool isDefault = false);
+    void setRestoreApplicationState(bool restore);
 
 private:
     bool m_restoreApplicationGeometry;

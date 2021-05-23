@@ -36,11 +36,11 @@ public:
 
     QString title() const;
 
-    void setRestoreApplicationGeometry(const bool checked);
     bool restoreApplicationGeometry() const;
+    void setRestoreApplicationGeometry(const bool restore);
 
-    void setRestoreApplicationState(const bool checked);
     bool restoreApplicationState() const;
+    void setRestoreApplicationState(const bool restore);
 
 signals:
     void preferencesChanged();
