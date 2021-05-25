@@ -46,9 +46,3 @@ KeyboardShortcutsDialog::KeyboardShortcutsDialog(QWidget *parent)
     layout->addWidget(keyboardShortcutsPage);
     layout->addWidget(buttonBox);
 }
-
-
-void KeyboardShortcutsDialog::onActionTextChanged()
-{
-    emit actionTextChanged();
-}

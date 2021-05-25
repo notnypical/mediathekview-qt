@@ -32,9 +32,6 @@ public:
 
 signals:
     void actionTextChanged();
-
-public slots:
-    void onActionTextChanged();
 };
 
 #endif // KEYBOARD_SHORTCUTS_DIALOG_H

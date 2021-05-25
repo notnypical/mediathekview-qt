@@ -471,7 +471,7 @@ void Window::onActionKeyboardShortcutsTriggered()
 {
     if (!m_keyboardShortcutsDialog) {
         m_keyboardShortcutsDialog = new KeyboardShortcutsDialog(this);
-        connect(this, &Window::actionTextChanged, m_keyboardShortcutsDialog, &KeyboardShortcutsDialog::onActionTextChanged);
+        connect(this, &Window::actionTextChanged, m_keyboardShortcutsDialog, &KeyboardShortcutsDialog::actionTextChanged);
     }
 
     m_keyboardShortcutsDialog->show();
